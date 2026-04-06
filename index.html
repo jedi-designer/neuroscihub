@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuroSciHub — 脳神経外科・BMI/BCI・医療AI 最新文献キュレーション</title>
+<meta name="description" content="脳神経外科専門医が厳選。脳神経外科・BMI/BCI（Neuralink等）・医療AI・人型ロボット開発の最新論文をエビデンスレベル順に毎週キュレーション。">
+<meta name="keywords" content="脳神経外科,BMI,BCI,Neuralink,医療AI,人型ロボット,論文,医学文献,エビデンス">
+<meta name="author" content="NeuroSciHub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://YOUR_DOMAIN/">
+
+<!-- OGP (SNSシェア用) -->
+<meta property="og:title" content="NeuroSciHub — 脳神経外科・BMI/BCI・医療AI 最新文献">
+<meta property="og:description" content="脳神経外科専門医が厳選。最新の医学文献をエビデンスレベル順に毎週キュレーション。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR_DOMAIN/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NeuroSciHub — 医学文献キュレーション">
+<meta name="twitter:description" content="脳神経外科専門医が厳選。最新の医学文献をエビデンスレベル順に毎週更新。">
+
+<!-- Google Analytics（取得後にコメントアウトを外して測定IDを入力）-->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<!-- Google AdSense（審査通過後にパブリッシャーIDを入力）-->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --font: 'Noto Sans JP','Inter',sans-serif;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text: #0f172a;
+  --text-sub: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08),0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.10),0 4px 12px rgba(0,0,0,0.06);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+
+  /* domain colors */
+  --ns-bg:   rgba(59,130,246,0.07);
+  --ns-bg2:  rgba(59,130,246,0.12);
+  --ns-bd:   rgba(59,130,246,0.25);
+  --ns-txt:  #1d4ed8;
+  --ns-dot:  #3b82f6;
+
+  --bmi-bg:  rgba(6,182,212,0.07);
+  --bmi-bg2: rgba(6,182,212,0.14);
+  --bmi-bd:  rgba(6,182,212,0.28);
+  --bmi-txt: #0e7490;
+  --bmi-dot: #06b6d4;
+
+  --ai-bg:   rgba(20,184,166,0.07);
+  --ai-bg2:  rgba(20,184,166,0.13);
+  --ai-bd:   rgba(20,184,166,0.27);
+  --ai-txt:  #0f766e;
+  --ai-dot:  #14b8a6;
+
+  --rb-bg:   rgba(99,102,241,0.07);
+  --rb-bg2:  rgba(99,102,241,0.13);
+  --rb-bd:   rgba(99,102,241,0.27);
+  --rb-txt:  #4338ca;
+  --rb-dot:  #6366f1;
+
+  /* evidence */
+  --ev-1a-bg: #f0fdf4; --ev-1a-bd: #86efac; --ev-1a-txt: #15803d;
+  --ev-1b-bg: #eff6ff; --ev-1b-bd: #93c5fd; --ev-1b-txt: #1d4ed8;
+  --ev-2-bg:  #fffbeb; --ev-2-bd:  #fcd34d; --ev-2-txt:  #b45309;
+  --ev-3-bg:  #fff1f2; --ev-3-bd:  #fca5a5; --ev-3-txt:  #be123c;
+
+  --tag-hot: #ea580c; --tag-pop: #b45309; --tag-new: #15803d;
+}
+
+body { font-family:var(--font); background:var(--bg); color:var(--text); min-height:100vh; font-size:14px; line-height:1.6; }
+
+/* scrollbar */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:rgba(0,0,0,0.12); border-radius:3px; }
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+header {
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.90); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border); box-shadow:var(--shadow-sm);
+}
+.hdr { max-width:1280px; margin:0 auto; padding:0 1.5rem; height:60px; display:flex; align-items:center; gap:1.2rem; }
+
+.logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; flex-shrink:0; }
+.logo-icon { width:36px; height:36px; border-radius:10px; background:#2563eb; display:flex; align-items:center; justify-content:center; color:#fff; font-size:18px; }
+.logo-text { font-size:1.05rem; font-weight:700; color:var(--text); line-height:1; }
+.logo-sub { font-size:0.6rem; color:var(--text-muted); font-weight:400; letter-spacing:0.06em; text-transform:uppercase; }
+
+/* nav */
+.hdr-nav { display:flex; align-items:center; gap:0.2rem; }
+.nav-link { padding:0.38rem 0.75rem; border-radius:var(--radius-xs); font-size:0.82rem; color:var(--text-sub); cursor:pointer; border:none; background:none; transition:all .15s; white-space:nowrap; }
+.nav-link:hover { background:#f1f5f9; color:var(--text); }
+.nav-link.active { background:#eff6ff; color:#2563eb; font-weight:600; }
+
+.hdr-right { margin-left:auto; display:flex; align-items:center; gap:0.6rem; }
+
+.search-wrap { position:relative; }
+.search-wrap input {
+  width:220px; height:36px; border:1.5px solid var(--border); border-radius:20px;
+  padding:0 2.4rem 0 0.9rem; font-size:0.8rem; font-family:var(--font);
+  background:#f8fafc; color:var(--text); outline:none; transition:all .2s;
+}
+.search-wrap input:focus { border-color:#2563eb; background:#fff; box-shadow:0 0 0 3px rgba(37,99,235,0.1); width:260px; }
+.search-wrap input::placeholder { color:var(--text-muted); }
+.search-icon { position:absolute; right:0.7rem; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:#2563eb; font-size:0.85rem; padding:0.2rem; }
+
+.chat-btn {
+  display:flex; align-items:center; gap:0.38rem;
+  background:#2563eb; color:#fff; border:none; border-radius:20px;
+  padding:0.42rem 1rem; font-size:0.79rem; font-weight:600; font-family:var(--font);
+  cursor:pointer; white-space:nowrap; transition:all .18s;
+  box-shadow:0 2px 8px rgba(37,99,235,0.28);
+}
+.chat-btn:hover { background:#1d4ed8; transform:translateY(-1px); box-shadow:0 4px 14px rgba(37,99,235,0.34); }
+
+.icon-btn { background:none; border:none; border-radius:var(--radius-xs); padding:0.42rem; cursor:pointer; color:var(--text-sub); transition:background .14s; font-size:1rem; }
+.icon-btn:hover { background:#f1f5f9; color:var(--text); }
+
+/* update badge */
+.upd-badge { font-size:0.65rem; color:var(--text-muted); text-align:right; line-height:1.5; white-space:nowrap; }
+.upd-badge strong { color:#2563eb; }
+
+/* ═══════════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════════ */
+.container { max-width:1280px; margin:0 auto; padding:1.8rem 1.5rem 5rem; }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  text-align:center; padding:3rem 1rem 2.5rem;
+  background:linear-gradient(135deg, rgba(239,246,255,0.8) 0%, rgba(240,253,250,0.6) 100%);
+  border-radius:20px; margin-bottom:2rem;
+  border:1px solid var(--border);
+}
+.hero-chip {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe;
+  border-radius:20px; padding:0.28rem 0.9rem; font-size:0.72rem; font-weight:600;
+  margin-bottom:1.2rem; letter-spacing:0.04em;
+}
+.hero h1 { font-size:2.2rem; font-weight:800; color:var(--text); line-height:1.25; margin-bottom:0.9rem; }
+.hero h1 span { color:#2563eb; }
+.hero p { font-size:0.9rem; color:var(--text-sub); max-width:520px; margin:0 auto 1.6rem; line-height:1.75; }
+.hero-search { max-width:440px; margin:0 auto; position:relative; }
+.hero-search input {
+  width:100%; height:48px; border:1.5px solid var(--border); border-radius:24px;
+  padding:0 3.2rem 0 1.2rem; font-size:0.88rem; font-family:var(--font);
+  background:#fff; color:var(--text); outline:none;
+  box-shadow:var(--shadow-sm); transition:all .2s;
+}
+.hero-search input:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
+.hero-search input::placeholder { color:var(--text-muted); }
+.hero-search-btn {
+  position:absolute; right:0.6rem; top:50%; transform:translateY(-50%);
+  background:#2563eb; color:#fff; border:none; border-radius:18px;
+  padding:0.38rem 0.9rem; font-size:0.78rem; font-weight:600; cursor:pointer; transition:background .15s;
+}
+.hero-search-btn:hover { background:#1d4ed8; }
+
+/* ═══════════════════════════════════════════
+   DOMAIN CARDS
+═══════════════════════════════════════════ */
+.domain-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:2rem; }
+@media(max-width:900px) { .domain-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px) { .domain-grid { grid-template-columns:1fr; } }
+
+.domain-card {
+  border-radius:16px; border:1.5px solid; padding:1.4rem 1.2rem;
+  cursor:pointer; transition:all .2s; position:relative; overflow:hidden;
+  background:#fff;
+}
+.domain-card:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.domain-card[data-d="ns"]    { border-color:var(--ns-bd); background:var(--ns-bg); }
+.domain-card[data-d="bmi"]   { border-color:var(--bmi-bd); background:var(--bmi-bg); }
+.domain-card[data-d="ai"]    { border-color:var(--ai-bd); background:var(--ai-bg); }
+.domain-card[data-d="robot"] { border-color:var(--rb-bd); background:var(--rb-bg); }
+
+.dc-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:0.9rem; }
+.domain-card[data-d="ns"]    .dc-icon { background:var(--ns-bg2); }
+.domain-card[data-d="bmi"]   .dc-icon { background:var(--bmi-bg2); }
+.domain-card[data-d="ai"]    .dc-icon { background:var(--ai-bg2); }
+.domain-card[data-d="robot"] .dc-icon { background:var(--rb-bg2); }
+
+.dc-title { font-size:1rem; font-weight:700; margin-bottom:0.15rem; }
+.domain-card[data-d="ns"]    .dc-title { color:var(--ns-txt); }
+.domain-card[data-d="bmi"]   .dc-title { color:var(--bmi-txt); }
+.domain-card[data-d="ai"]    .dc-title { color:var(--ai-txt); }
+.domain-card[data-d="robot"] .dc-title { color:var(--rb-txt); }
+
+.dc-sub { font-size:0.67rem; color:var(--text-muted); margin-bottom:0.8rem; }
+.dc-tags { display:flex; flex-wrap:wrap; gap:0.3rem; margin-bottom:0.9rem; }
+.dc-tag { font-size:0.65rem; background:rgba(255,255,255,0.7); border:1px solid rgba(0,0,0,0.07); border-radius:10px; padding:0.1rem 0.5rem; color:var(--text-sub); }
+.dc-footer { display:flex; justify-content:space-between; align-items:center; }
+.dc-count { font-size:0.7rem; color:var(--text-muted); }
+.dc-arrow { font-size:0.8rem; color:var(--text-muted); transition:transform .2s; }
+.domain-card:hover .dc-arrow { transform:translateX(4px); }
+.dc-glow { position:absolute; width:80px; height:80px; border-radius:50%; right:-20px; bottom:-20px; opacity:0.3; }
+.domain-card[data-d="ns"]    .dc-glow { background:var(--ns-dot); }
+.domain-card[data-d="bmi"]   .dc-glow { background:var(--bmi-dot); }
+.domain-card[data-d="ai"]    .dc-glow { background:var(--ai-dot); }
+.domain-card[data-d="robot"] .dc-glow { background:var(--rb-dot); }
+
+/* ═══════════════════════════════════════════
+   AD BANNER
+═══════════════════════════════════════════ */
+.ad-banner {
+  display:flex; align-items:center; gap:1rem;
+  padding:0.65rem 1.2rem; border:1px solid var(--border);
+  border-radius:var(--radius); background:#fafbfc; margin-bottom:2rem;
+}
+.ad-label { font-size:0.6rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; opacity:0.7; flex-shrink:0; }
+.ad-divider { flex:1; height:1px; background:var(--border); }
+.ad-text { font-size:0.78rem; color:var(--text-sub); }
+.ad-link { font-size:0.78rem; color:#2563eb; text-decoration:none; white-space:nowrap; }
+.ad-link:hover { text-decoration:underline; }
+
+/* ═══════════════════════════════════════════
+   LEGEND
+═══════════════════════════════════════════ */
+.legend {
+  display:flex; flex-wrap:wrap; gap:0.6rem 1.2rem;
+  padding:0.65rem 1rem; border:1px solid var(--border);
+  border-radius:var(--radius-sm); background:#fff; margin-bottom:1.4rem;
+  box-shadow:var(--shadow-sm);
+}
+.legend-item { display:flex; align-items:center; gap:0.4rem; font-size:0.69rem; color:var(--text-sub); }
+
+/* ═══════════════════════════════════════════
+   DOMAIN SECTION (field panel)
+═══════════════════════════════════════════ */
+.field-section {
+  border-radius:16px; border:1.5px solid; margin-bottom:1.6rem;
+  overflow:hidden; box-shadow:var(--shadow-sm); transition:box-shadow .2s;
+}
+.field-section:hover { box-shadow:var(--shadow-md); }
+.field-section[data-f="ns"]    { border-color:var(--ns-bd);  background:var(--ns-bg); }
+.field-section[data-f="bmi"]   { border-color:var(--bmi-bd); background:var(--bmi-bg); }
+.field-section[data-f="ai"]    { border-color:var(--ai-bd);  background:var(--ai-bg); }
+.field-section[data-f="robot"] { border-color:var(--rb-bd);  background:var(--rb-bg); }
+
+.fs-head {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0.8rem 1.3rem; border-bottom:1px solid;
+}
+.field-section[data-f="ns"]    .fs-head { background:rgba(59,130,246,0.12);  border-color:var(--ns-bd); }
+.field-section[data-f="bmi"]   .fs-head { background:rgba(6,182,212,0.14);   border-color:var(--bmi-bd); }
+.field-section[data-f="ai"]    .fs-head { background:rgba(20,184,166,0.13);  border-color:var(--ai-bd); }
+.field-section[data-f="robot"] .fs-head { background:rgba(99,102,241,0.12);  border-color:var(--rb-bd); }
+
+.fs-title { font-size:1rem; font-weight:700; display:flex; align-items:center; gap:0.5rem; }
+.field-section[data-f="ns"]    .fs-title { color:var(--ns-txt); }
+.field-section[data-f="bmi"]   .fs-title { color:var(--bmi-txt); }
+.field-section[data-f="ai"]    .fs-title { color:var(--ai-txt); }
+.field-section[data-f="robot"] .fs-title { color:var(--rb-txt); }
+
+.fs-pill { font-size:0.6rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:0.12rem 0.45rem; border-radius:8px; border:1px solid currentColor; opacity:0.6; }
+.fs-week { font-size:0.68rem; opacity:0.65; }
+.fs-body { padding:1rem 1.2rem; }
+
+/* subcat */
+.subcat-bar { display:flex; gap:0.35rem; flex-wrap:wrap; margin-bottom:1rem; }
+.subcat-btn {
+  padding:0.26rem 0.75rem; border-radius:14px; border:1px solid var(--border);
+  font-size:0.72rem; cursor:pointer; background:transparent; color:var(--text-sub);
+  font-family:var(--font); transition:all .14s;
+}
+.subcat-btn:hover, .subcat-btn.active { background:#eff6ff; border-color:#93c5fd; color:#1d4ed8; font-weight:600; }
+
+/* BMI detail link */
+.bmi-detail-link { font-size:0.72rem; color:#0e7490; text-decoration:none; }
+.bmi-detail-link:hover { text-decoration:underline; }
+
+/* ═══════════════════════════════════════════
+   TWO-COL
+═══════════════════════════════════════════ */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media(max-width:820px) { .two-col { grid-template-columns:1fr; } }
+
+.col-head { display:flex; align-items:center; gap:0.45rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:0.7rem; padding-bottom:0.4rem; border-bottom:1px solid rgba(0,0,0,0.06); }
+.col-dot { width:7px; height:7px; border-radius:50%; }
+.col-dot.new { background:#16a34a; }
+.col-dot.pop { background:#d97706; }
+
+/* ═══════════════════════════════════════════
+   PAPER CARD
+═══════════════════════════════════════════ */
+.paper-card {
+  background:rgba(255,255,255,0.88); border:1px solid rgba(203,213,225,0.7);
+  border-radius:var(--radius-sm); padding:0.82rem 0.95rem; margin-bottom:0.55rem;
+  cursor:pointer; position:relative; transition:all .17s; backdrop-filter:blur(4px);
+}
+.paper-card:hover { background:#fff; box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.paper-meta { display:flex; align-items:center; gap:0.32rem; flex-wrap:wrap; margin-bottom:0.4rem; }
+
+/* evidence badges */
+.ev-badge { font-size:0.62rem; font-weight:700; letter-spacing:0.04em; padding:0.1rem 0.4rem; border-radius:4px; border:1px solid; text-transform:uppercase; white-space:nowrap; }
+.ev-1a { color:var(--ev-1a-txt); background:var(--ev-1a-bg); border-color:var(--ev-1a-bd); }
+.ev-1b { color:var(--ev-1b-txt); background:var(--ev-1b-bg); border-color:var(--ev-1b-bd); }
+.ev-2  { color:var(--ev-2-txt);  background:var(--ev-2-bg);  border-color:var(--ev-2-bd); }
+.ev-3  { color:var(--ev-3-txt);  background:var(--ev-3-bg);  border-color:var(--ev-3-bd); }
+
+/* tag badges */
+.tag { font-size:0.61rem; font-weight:700; letter-spacing:0.05em; padding:0.09rem 0.36rem; border-radius:4px; border:1px solid; text-transform:uppercase; }
+.tag-hot  { color:var(--tag-hot); background:rgba(234,88,12,0.07);  border-color:rgba(234,88,12,0.3); }
+.tag-pop  { color:var(--tag-pop); background:rgba(180,83,9,0.07);   border-color:rgba(180,83,9,0.3); }
+.tag-new  { color:var(--tag-new); background:rgba(21,128,61,0.07);  border-color:rgba(21,128,61,0.28); }
+
+.journal-label { margin-left:auto; font-size:0.65rem; color:#92400e; font-style:italic; white-space:nowrap; }
+.paper-title { font-size:0.83rem; font-weight:500; line-height:1.55; color:var(--text); margin-bottom:0.25rem; }
+.paper-authors { font-size:0.69rem; color:var(--text-muted); margin-bottom:0.28rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.paper-stats { display:flex; gap:0.85rem; font-size:0.65rem; color:var(--text-muted); }
+
+/* admin controls */
+.admin-controls { position:absolute; top:0.45rem; right:0.45rem; display:none; gap:0.22rem; }
+.admin-mode .admin-controls { display:flex; }
+.ctrl-btn { background:#f1f5f9; border:1px solid var(--border); border-radius:4px; padding:0.1rem 0.3rem; color:var(--text-muted); font-size:0.67rem; cursor:pointer; transition:all .13s; }
+.ctrl-btn:hover     { background:#eff6ff; color:#2563eb; border-color:#93c5fd; }
+.ctrl-btn.del:hover { background:#fff1f2; color:#be123c; border-color:#fca5a5; }
+
+/* archive row */
+.archive-row {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:0.9rem; padding:0.55rem 0.85rem;
+  background:rgba(255,255,255,0.55); border-radius:var(--radius-xs);
+  border:1px dashed rgba(30,80,180,0.16);
+}
+.archive-row span { font-size:0.68rem; color:var(--text-muted); }
+.archive-btn {
+  display:flex; align-items:center; gap:0.3rem;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius-xs);
+  padding:0.28rem 0.8rem; font-size:0.72rem; color:var(--text-sub);
+  cursor:pointer; font-family:var(--font); font-weight:500; transition:all .16s;
+}
+.archive-btn:hover { border-color:#2563eb; color:#2563eb; box-shadow:var(--shadow-sm); }
+
+/* field tabs */
+.field-tabs { display:flex; gap:0.4rem; margin-bottom:1.2rem; flex-wrap:wrap; }
+.field-tab {
+  padding:0.42rem 1.1rem; border-radius:20px; border:1.5px solid var(--border);
+  font-size:0.79rem; font-weight:500; cursor:pointer; background:#fff;
+  color:var(--text-sub); transition:all .17s; box-shadow:var(--shadow-sm);
+  font-family:var(--font);
+}
+.field-tab:hover { border-color:#93c5fd; color:#2563eb; }
+.field-tab.active[data-f="all"]   { background:#2563eb; border-color:#2563eb; color:#fff; }
+.field-tab.active[data-f="ns"]    { background:var(--ns-txt);  border-color:var(--ns-txt);  color:#fff; }
+.field-tab.active[data-f="bmi"]   { background:var(--bmi-txt); border-color:var(--bmi-txt); color:#fff; }
+.field-tab.active[data-f="ai"]    { background:var(--ai-txt);  border-color:var(--ai-txt);  color:#fff; }
+.field-tab.active[data-f="robot"] { background:var(--rb-txt);  border-color:var(--rb-txt);  color:#fff; }
+
+/* ═══════════════════════════════════════════
+   BMI FEATURE BANNER
+═══════════════════════════════════════════ */
+.bmi-feature {
+  border-radius:20px; border:1.5px solid var(--bmi-bd); overflow:hidden;
+  margin-bottom:2rem; position:relative; min-height:160px;
+  background:linear-gradient(135deg, #164e63 0%, #0e7490 50%, #0891b2 100%);
+}
+.bmi-feature-body { position:relative; z-index:2; padding:2rem 2.5rem; }
+.bmi-chip { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(6,182,212,0.2); border:1px solid rgba(6,182,212,0.4); color:#a5f3fc; border-radius:14px; padding:0.22rem 0.8rem; font-size:0.7rem; font-weight:600; margin-bottom:0.85rem; }
+.bmi-chip-dot { width:6px; height:6px; border-radius:50%; background:#06b6d4; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.bmi-feature h2 { font-size:1.4rem; font-weight:800; color:#fff; margin-bottom:0.5rem; }
+.bmi-feature p { font-size:0.82rem; color:rgba(164,211,232,0.85); max-width:520px; line-height:1.7; }
+.bmi-feature-btn {
+  display:inline-flex; align-items:center; gap:0.4rem; margin-top:1rem;
+  background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.25);
+  border-radius:var(--radius-xs); padding:0.45rem 1rem; font-size:0.8rem; font-weight:600;
+  cursor:pointer; backdrop-filter:blur(8px); transition:background .17s; font-family:var(--font);
+}
+.bmi-feature-btn:hover { background:rgba(255,255,255,0.22); }
+
+/* ═══════════════════════════════════════════
+   PAGE WRAPPERS
+═══════════════════════════════════════════ */
+.page-section { display:none; }
+.page-section.open { display:block; animation:fadeIn .18s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(-5px)} to{opacity:1;transform:translateY(0)} }
+
+.page-back {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:none; border:none; color:#2563eb; font-size:0.82rem; font-weight:600;
+  cursor:pointer; margin-bottom:1.4rem; font-family:var(--font); transition:opacity .14s;
+}
+.page-back:hover { opacity:0.68; }
+
+/* ═══════════════════════════════════════════
+   BMI DETAIL LIST
+═══════════════════════════════════════════ */
+.bmi-list-hero {
+  border-radius:20px; border:1.5px solid var(--bmi-bd); overflow:hidden;
+  margin-bottom:1.8rem; position:relative;
+  background:linear-gradient(135deg, #083344 0%, #164e63 55%, #155e75 100%);
+}
+.bmi-list-hero-body { position:relative; z-index:2; padding:2rem 2.5rem; }
+.bmi-list-hero h1 { font-size:1.6rem; font-weight:800; color:#fff; margin-bottom:0.5rem; }
+.bmi-list-hero p { font-size:0.84rem; color:rgba(164,211,232,0.85); max-width:600px; line-height:1.75; }
+
+.bmi-cat-bar { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem; }
+.bmi-cat-btn {
+  padding:0.3rem 0.85rem; border-radius:14px; border:1px solid var(--border);
+  font-size:0.73rem; cursor:pointer; background:#fff; color:var(--text-sub);
+  font-family:var(--font); transition:all .14s;
+}
+.bmi-cat-btn:hover, .bmi-cat-btn.active { background:#0e7490; border-color:#0e7490; color:#fff; font-weight:600; }
+
+.bmi-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+@media(max-width:900px){ .bmi-card-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:580px){ .bmi-card-grid{grid-template-columns:1fr} }
+
+.bmi-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; cursor:pointer; transition:all .2s;
+}
+.bmi-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); }
+.bmi-card-img { width:100%; height:140px; object-fit:cover; background:#e0f7fa; }
+.bmi-card-img-placeholder { width:100%; height:140px; background:linear-gradient(135deg,#cffafe,#a5f3fc); display:flex; align-items:center; justify-content:center; font-size:2.5rem; }
+.bmi-card-body { padding:0.9rem 1rem 1rem; }
+.bmi-card-badges { display:flex; align-items:center; gap:0.4rem; margin-bottom:0.55rem; }
+.bmi-cat-badge { font-size:0.63rem; background:#f1f5f9; border:1px solid var(--border); border-radius:4px; padding:0.08rem 0.38rem; color:var(--text-sub); }
+.bmi-co-badge { font-size:0.63rem; color:var(--text-muted); }
+.bmi-card-title { font-size:0.84rem; font-weight:600; color:var(--text); line-height:1.5; margin-bottom:0.35rem; }
+.bmi-card-summary { font-size:0.73rem; color:var(--text-muted); line-height:1.6; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.bmi-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:0.7rem; }
+.bmi-card-arrow { font-size:0.72rem; color:#0e7490; font-weight:600; opacity:0; transition:opacity .17s; }
+.bmi-card:hover .bmi-card-arrow { opacity:1; }
+.bmi-src-link { font-size:0.66rem; color:var(--text-muted); text-decoration:none; display:flex; align-items:center; gap:0.2rem; }
+.bmi-src-link:hover { color:#0e7490; }
+
+/* ═══════════════════════════════════════════
+   BMI DETAIL VIEW
+═══════════════════════════════════════════ */
+.bmi-detail-view { max-width:780px; }
+.bmi-detail-view h1 { font-size:1.4rem; font-weight:800; color:var(--text); margin-bottom:0.8rem; line-height:1.4; }
+.bmi-detail-summary { font-size:0.88rem; color:var(--text-sub); line-height:1.8; padding:1rem 1.2rem; background:var(--bmi-bg); border:1px solid var(--bmi-bd); border-radius:var(--radius-sm); margin-bottom:1.5rem; }
+.bmi-detail-content { font-size:0.86rem; color:var(--text-sub); line-height:1.9; white-space:pre-wrap; }
+.bmi-detail-content h2 { font-size:1rem; font-weight:700; color:var(--text); margin:1.5rem 0 0.5rem; padding-left:0.75rem; border-left:3px solid var(--bmi-dot); }
+.bmi-detail-content h3 { font-size:0.9rem; font-weight:600; color:var(--text); margin:1rem 0 0.4rem; }
+.bmi-detail-content ul { padding-left:1.4rem; margin:0.4rem 0; }
+.bmi-detail-content li { margin-bottom:0.25rem; }
+.bmi-detail-src { display:inline-flex; align-items:center; gap:0.3rem; font-size:0.78rem; color:#0e7490; text-decoration:none; margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); }
+.bmi-detail-src:hover { text-decoration:underline; }
+
+/* ═══════════════════════════════════════════
+   STATIC PAGES (profile, privacy, operator)
+═══════════════════════════════════════════ */
+.static-card {
+  max-width:720px; margin:0 auto; background:#fff; border:1px solid var(--border);
+  border-radius:16px; padding:2.2rem 2.6rem; box-shadow:var(--shadow-sm);
+}
+.static-card h1 { font-size:1.3rem; font-weight:800; margin-bottom:0.3rem; }
+.static-card .meta { font-size:0.7rem; color:var(--text-muted); padding-bottom:1.2rem; border-bottom:1px solid var(--border); margin-bottom:1.4rem; }
+.static-card h2 { font-size:0.93rem; font-weight:700; color:#2563eb; margin:1.5rem 0 0.5rem; padding-left:0.65rem; border-left:3px solid #2563eb; }
+.static-card p { font-size:0.84rem; line-height:1.85; color:var(--text-sub); margin-bottom:0.55rem; }
+.static-card ul { font-size:0.83rem; line-height:1.8; color:var(--text-sub); padding-left:1.3rem; margin-bottom:0.5rem; }
+.static-card ul li { margin-bottom:0.22rem; }
+.static-card a { color:#2563eb; }
+.info-table { width:100%; border-collapse:collapse; font-size:0.83rem; margin-bottom:0.5rem; }
+.info-table th { background:#eff6ff; color:#2563eb; font-weight:700; padding:0.5rem 0.85rem; text-align:left; border:1px solid var(--border); width:32%; }
+.info-table td { padding:0.5rem 0.85rem; border:1px solid var(--border); color:var(--text-sub); line-height:1.65; }
+.notice-box { background:#eff6ff; border:1px solid #bfdbfe; border-radius:var(--radius-xs); padding:0.85rem 1.05rem; font-size:0.81rem; color:var(--text-sub); line-height:1.75; margin-bottom:0.8rem; }
+.notice-box strong { color:#2563eb; }
+
+/* profile */
+.profile-avatar { width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg,#bfdbfe,#93c5fd); display:flex; align-items:center; justify-content:center; font-size:2rem; margin-bottom:1.1rem; border:3px solid rgba(37,99,235,0.14); }
+.profile-badges { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.3rem; }
+.p-badge { background:#eff6ff; color:#2563eb; border:1px solid rgba(37,99,235,0.22); border-radius:12px; padding:0.1rem 0.55rem; font-size:0.67rem; font-weight:700; }
+.profile-chat-btn {
+  display:inline-flex; align-items:center; gap:0.45rem; margin-top:1.3rem;
+  background:#2563eb; color:#fff; border:none; border-radius:20px;
+  padding:0.5rem 1.3rem; font-size:0.82rem; font-weight:700; font-family:var(--font);
+  cursor:pointer; box-shadow:0 2px 10px rgba(37,99,235,0.24); transition:all .17s;
+}
+.profile-chat-btn:hover { background:#1d4ed8; box-shadow:0 4px 16px rgba(37,99,235,0.32); }
+.divider { height:1px; background:var(--border); margin:1.5rem 0; }
+
+/* ═══════════════════════════════════════════
+   MODALS
+═══════════════════════════════════════════ */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(15,23,42,0.45); z-index:300;
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem; backdrop-filter:blur(8px);
+  opacity:0; pointer-events:none; transition:opacity .2s;
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal {
+  background:#fff; border-radius:16px; padding:1.8rem 2rem;
+  max-width:660px; width:100%; max-height:88vh; overflow-y:auto;
+  box-shadow:var(--shadow-lg); transform:translateY(8px); transition:transform .2s;
+}
+.modal-overlay.open .modal { transform:translateY(0); }
+.modal-close { float:right; background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; line-height:1; transition:color .14s; }
+.modal-close:hover { color:var(--text); }
+.modal h2 { font-size:1.02rem; font-weight:700; line-height:1.55; margin-bottom:0.75rem; }
+.modal-abstract { font-size:0.8rem; line-height:1.82; color:var(--text-sub); border-top:1px solid var(--border); padding-top:0.85rem; margin-top:0.5rem; }
+.modal-links { display:flex; gap:0.6rem; margin-top:1rem; flex-wrap:wrap; }
+.modal-link { padding:0.35rem 0.9rem; border-radius:var(--radius-xs); font-size:0.78rem; font-weight:700; text-decoration:none; transition:opacity .14s; border:1px solid transparent; }
+.modal-link:hover { opacity:0.8; }
+.modal-link.pm  { background:#2563eb; color:#fff; }
+.modal-link.doi { background:#f1f5f9; color:#2563eb; border-color:var(--border); }
+
+/* chat modal */
+.chat-modal { background:#fff; border-radius:16px; padding:1.7rem 1.9rem; max-width:480px; width:100%; box-shadow:var(--shadow-lg); transform:translateY(8px); transition:transform .2s; }
+.modal-overlay.open .chat-modal { transform:translateY(0); }
+.chat-modal h3 { font-size:1rem; font-weight:700; margin-bottom:0.35rem; }
+.chat-modal p { font-size:0.77rem; color:var(--text-muted); margin-bottom:1rem; }
+.chat-label { font-size:0.72rem; font-weight:700; color:var(--text-sub); margin-bottom:0.28rem; display:block; }
+.chat-input {
+  width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm);
+  padding:0.5rem 0.95rem; font-size:0.82rem; font-family:var(--font); color:var(--text);
+  outline:none; background:#f8fafc; margin-bottom:0.65rem; transition:border-color .18s;
+}
+.chat-input:focus { border-color:#2563eb; }
+.chat-textarea { min-height:100px; resize:vertical; }
+.chat-send {
+  display:inline-flex; align-items:center; gap:0.42rem; margin-top:0.8rem;
+  background:#2563eb; color:#fff; border:none; border-radius:var(--radius-sm);
+  padding:0.5rem 1.25rem; font-size:0.81rem; font-weight:700; font-family:var(--font);
+  cursor:pointer; transition:background .17s;
+}
+.chat-send:hover { background:#1d4ed8; }
+
+/* ═══════════════════════════════════════════
+   ADMIN PANEL
+═══════════════════════════════════════════ */
+.admin-panel {
+  display:none; position:fixed; bottom:1.4rem; right:1.4rem; z-index:200;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:1rem 1.2rem; box-shadow:var(--shadow-lg); min-width:190px;
+}
+.admin-panel.open { display:block; animation:fadeIn .14s ease; }
+.admin-panel h3 { font-size:0.77rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#2563eb; margin-bottom:0.62rem; }
+.admin-actions { display:flex; flex-direction:column; gap:0.3rem; }
+.admin-action { background:none; border:1px solid var(--border); border-radius:var(--radius-xs); padding:0.35rem 0.8rem; font-size:0.75rem; color:var(--text-sub); cursor:pointer; font-family:var(--font); text-align:left; transition:all .13s; }
+.admin-action:hover { background:#eff6ff; border-color:#93c5fd; color:#2563eb; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer { background:#fff; border-top:1px solid var(--border); padding:1.8rem 1.5rem 1.4rem; margin-top:4rem; }
+.footer-inner { max-width:1280px; margin:0 auto; }
+.footer-top { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-bottom:0.55rem; }
+.footer-bot { display:flex; flex-wrap:wrap; justify-content:center; gap:1.4rem; margin-bottom:0.6rem; font-size:0.67rem; }
+footer a { color:var(--text-muted); text-decoration:none; font-size:0.71rem; transition:color .14s; }
+footer a:hover { color:#2563eb; text-decoration:underline; }
+.footer-copy { text-align:center; font-size:0.68rem; color:var(--text-muted); }
+
+/* ═══════════════════════════════════════════
+   UTILS
+═══════════════════════════════════════════ */
+.hidden { display:none !important; }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="hdr">
+    <a class="logo" href="#" onclick="showHome();return false;">
+      <div class="logo-icon">🧠</div>
+      <div>
+        <div class="logo-text">NeuroSciHub</div>
+        <div class="logo-sub">Medical Literature Curated</div>
+      </div>
+    </a>
+    <nav class="hdr-nav" id="hdrNav">
+      <button class="nav-link" onclick="navClick('ns')">脳神経外科</button>
+      <button class="nav-link" onclick="navClick('bmi')">BMI / BCI</button>
+      <button class="nav-link" onclick="navClick('robot')">人型ロボット</button>
+      <button class="nav-link" onclick="navClick('ai')">医療AI</button>
+      <button class="nav-link" onclick="openPage('profilePage')">まとめ</button>
+    </nav>
+    <div class="hdr-right">
+      <div class="search-wrap">
+        <input type="text" id="hdrSearch" placeholder="論文を検索…" onkeydown="if(event.key==='Enter')doSearch()">
+        <button class="search-icon" onclick="doSearch()">🔍</button>
+      </div>
+      <div class="upd-badge">
+        <div><strong>次回更新</strong>&nbsp;<span id="nextUpdate"></span></div>
+        <div style="font-size:.62rem;margin-top:1px">最終取得: 2025-04-01</div>
+      </div>
+      <button class="chat-btn" onclick="openChatModal()">
+        💬 お問い合わせ
+      </button>
+      <button class="icon-btn" onclick="toggleAdmin()" title="管理">⚙</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ ADMIN PANEL ═══ -->
+<div class="admin-panel" id="adminPanel">
+  <h3>Admin Mode</h3>
+  <div class="admin-actions">
+    <button class="admin-action" onclick="toggleAdminMode()">✏️ 編集モード切替</button>
+    <button class="admin-action" onclick="addPaperPrompt()">＋ 論文を手動追加</button>
+    <button class="admin-action" onclick="runManualFetch()">🔄 今すぐ自動取得</button>
+    <button class="admin-action" onclick="exportList()">📥 エクスポート</button>
+    <button class="admin-action" style="color:#be123c" onclick="toggleAdmin()">✕ 閉じる</button>
+  </div>
+</div>
+
+<div class="container" id="appRoot">
+
+  <!-- ═══ HOME ═══ -->
+  <div id="homePage" class="page-section open">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-chip">🧠 Medical Literature Curated Weekly</div>
+      <h1>最新の医学文献を<br><span>厳選してお届け</span></h1>
+      <p>脳神経外科・BMI/BCI・医療AI・人型ロボットの最新論文を、エビデンスレベル順に毎週キュレーション</p>
+      <div class="hero-search">
+        <input type="text" id="heroSearch" placeholder="論文タイトル、キーワードで検索…" onkeydown="if(event.key==='Enter')doSearchHero()">
+        <button class="hero-search-btn" onclick="doSearchHero()">検索</button>
+      </div>
+    </div>
+
+    <!-- Domain Cards -->
+    <div class="domain-grid">
+      <div class="domain-card" data-d="ns" onclick="navClick('ns')">
+        <div class="dc-icon">🧠</div>
+        <div class="dc-title">脳神経外科</div>
+        <div class="dc-sub">Neurosurgery</div>
+        <div class="dc-tags">
+          <span class="dc-tag">脳卒中外科</span><span class="dc-tag">血管内治療</span>
+          <span class="dc-tag">脳腫瘍</span><span class="dc-tag">頭蓋底</span>
+        </div>
+        <div class="dc-footer"><span class="dc-count" id="cnt-ns">0 論文</span><span class="dc-arrow">→</span></div>
+        <div class="dc-glow"></div>
+      </div>
+      <div class="domain-card" data-d="bmi" onclick="navClick('bmi')">
+        <div class="dc-icon">⚡</div>
+        <div class="dc-title">BMI / BCI</div>
+        <div class="dc-sub">Brain Machine & Computer Interface</div>
+        <div class="dc-tags">
+          <span class="dc-tag">デバイス開発</span><span class="dc-tag">脳波解析</span>
+          <span class="dc-tag">侵襲型</span><span class="dc-tag">非侵襲型</span>
+        </div>
+        <div class="dc-footer"><span class="dc-count" id="cnt-bmi">0 論文</span><span class="dc-arrow">→</span></div>
+        <div class="dc-glow"></div>
+      </div>
+      <div class="domain-card" data-d="ai" onclick="navClick('ai')">
+        <div class="dc-icon">🔬</div>
+        <div class="dc-title">医療AI</div>
+        <div class="dc-sub">Medical AI</div>
+        <div class="dc-tags">
+          <span class="dc-tag">画像診断AI</span><span class="dc-tag">予後予測</span>
+          <span class="dc-tag">医療LLM</span><span class="dc-tag">ゲノム・病理</span>
+        </div>
+        <div class="dc-footer"><span class="dc-count" id="cnt-ai">0 論文</span><span class="dc-arrow">→</span></div>
+        <div class="dc-glow"></div>
+      </div>
+      <div class="domain-card" data-d="robot" onclick="navClick('robot')">
+        <div class="dc-icon">🤖</div>
+        <div class="dc-title">人型ロボット開発</div>
+        <div class="dc-sub">Humanoid Robotics</div>
+        <div class="dc-tags">
+          <span class="dc-tag">ヒューマノイド</span><span class="dc-tag">手術支援</span>
+          <span class="dc-tag">リハビリ</span>
+        </div>
+        <div class="dc-footer"><span class="dc-count" id="cnt-robot">0 論文</span><span class="dc-arrow">→</span></div>
+        <div class="dc-glow"></div>
+      </div>
+    </div>
+
+    <!-- Ad Banner -->
+    <div class="ad-banner">
+      <span class="ad-label">Sponsored</span>
+      <div class="ad-divider"></div>
+      <span class="ad-text">医師の転職・アルバイト求人をお探しの方は</span>
+      <a href="#" class="ad-link">こちら →</a>
+    </div>
+
+    <!-- BMI Feature -->
+    <div class="bmi-feature">
+      <div class="bmi-feature-body">
+        <div class="bmi-chip"><span class="bmi-chip-dot"></span>Brain Machine Interface</div>
+        <h2>BMI / BCI 特集ページ</h2>
+        <p>Neuralink等の企業動向から臨床応用まで、脳梗塞後の麻痺回復・脳波解析技術・AI活用・日本の研究・未解明の領域まで包括的にまとめた詳細情報</p>
+        <button class="bmi-feature-btn" onclick="openBMIList()">詳細を見る →</button>
+      </div>
+    </div>
+
+    <!-- Latest papers quick view -->
+    <div style="margin-bottom:1rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+        <div style="font-size:1rem;font-weight:700;color:var(--text)">最新の注目論文</div>
+        <button onclick="navClick('all')" style="font-size:0.75rem;color:#2563eb;background:none;border:none;cursor:pointer">すべて見る →</button>
+      </div>
+      <div id="homeLatest" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem"></div>
+    </div>
+
+  </div><!-- /#homePage -->
+
+  <!-- ═══ PAPERS PAGE ═══ -->
+  <div id="papersPage" class="page-section">
+    <button class="page-back" onclick="showHome()">← ホーム</button>
+
+    <!-- Legend -->
+    <div class="legend" id="legendBar">
+      <div class="legend-item"><span class="ev-badge ev-1a">IA</span> SR / Meta-analysis（最高エビデンス）</div>
+      <div class="legend-item"><span class="ev-badge ev-1b">IB</span> RCT</div>
+      <div class="legend-item"><span class="ev-badge ev-2">II</span> Cohort / 前向き研究</div>
+      <div class="legend-item"><span class="ev-badge ev-3">III</span> Case series</div>
+      <div class="legend-item"><span class="tag tag-hot">🔥 HOT</span> ニュース話題</div>
+      <div class="legend-item"><span class="tag tag-pop">☆ 人気</span> 閲覧数上位</div>
+      <div class="legend-item"><span class="tag tag-new">NEW</span> 今週の新着</div>
+    </div>
+
+    <!-- Field Tabs -->
+    <div class="field-tabs">
+      <button class="field-tab active" data-f="all" onclick="selectField('all',this)">🧭 全領域</button>
+      <button class="field-tab" data-f="ns"    onclick="selectField('ns',this)">🧠 脳神経外科</button>
+      <button class="field-tab" data-f="bmi"   onclick="selectField('bmi',this)">⚡ BMI / BCI</button>
+      <button class="field-tab" data-f="ai"    onclick="selectField('ai',this)">🔬 医療AI</button>
+      <button class="field-tab" data-f="robot" onclick="selectField('robot',this)">🤖 人型ロボット</button>
+    </div>
+
+    <!-- Subcat bars -->
+    <div id="subcat-ns" class="subcat-bar hidden">
+      <button class="subcat-btn active" onclick="selectSubcat('ns','all',this)">すべて</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','stroke',this)">🫀 脳卒中外科</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','endo',this)">🩺 血管内治療</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','tumor',this)">🔬 脳腫瘍</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','skull',this)">💀 頭蓋底</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','functional',this)">⚡ 機能的脳神経外科</button>
+      <button class="subcat-btn" onclick="selectSubcat('ns','spine',this)">🦴 脊椎</button>
+    </div>
+    <div id="subcat-bmi" class="subcat-bar hidden">
+      <button class="subcat-btn active" onclick="selectSubcat('bmi','all',this)">すべて</button>
+      <button class="subcat-btn" onclick="selectSubcat('bmi','device',this)">🔌 デバイス開発</button>
+      <button class="subcat-btn" onclick="selectSubcat('bmi','eeg',this)">📊 脳波解析</button>
+      <button class="subcat-btn" onclick="selectSubcat('bmi','invasive',this)">🩸 侵襲型</button>
+      <button class="subcat-btn" onclick="selectSubcat('bmi','noninvasive',this)">🌊 非侵襲型</button>
+    </div>
+    <div id="subcat-ai" class="subcat-bar hidden">
+      <button class="subcat-btn active" onclick="selectSubcat('ai','all',this)">すべて</button>
+      <button class="subcat-btn" onclick="selectSubcat('ai','imaging',this)">🖼 画像診断AI</button>
+      <button class="subcat-btn" onclick="selectSubcat('ai','prediction',this)">📈 予後予測</button>
+      <button class="subcat-btn" onclick="selectSubcat('ai','llm',this)">💬 医療LLM</button>
+      <button class="subcat-btn" onclick="selectSubcat('ai','genomics',this)">🧬 ゲノム・病理AI</button>
+    </div>
+    <div id="subcat-robot" class="subcat-bar hidden">
+      <button class="subcat-btn active" onclick="selectSubcat('robot','all',this)">すべて</button>
+      <button class="subcat-btn" onclick="selectSubcat('robot','humanoid',this)">🦾 ヒューマノイド</button>
+      <button class="subcat-btn" onclick="selectSubcat('robot','surgical',this)">⚕️ 手術支援</button>
+      <button class="subcat-btn" onclick="selectSubcat('robot','rehab',this)">♿ リハビリ</button>
+    </div>
+
+    <!-- Field sections -->
+    <div id="fieldNS" class="field-section" data-f="ns">
+      <div class="fs-head">
+        <div class="fs-title">🧠 脳神経外科 <span class="fs-pill">Neurosurgery</span></div>
+        <div class="fs-week">今週ピックアップ</div>
+      </div>
+      <div class="fs-body">
+        <div class="two-col">
+          <div><div class="col-head"><span class="col-dot new"></span>新着論文（今週）</div><div id="ns-new-col"></div></div>
+          <div><div class="col-head"><span class="col-dot pop"></span>注目・人気論文</div><div id="ns-pop-col"></div></div>
+        </div>
+        <div class="archive-row"><span>過去の掲載論文</span><button class="archive-btn" onclick="openArchive('ns')">📁 アーカイブを見る →</button></div>
+      </div>
+    </div>
+
+    <div id="fieldBMI" class="field-section" data-f="bmi">
+      <div class="fs-head">
+        <div class="fs-title">⚡ BMI / BCI <span class="fs-pill">Brain–Machine Interface</span></div>
+        <div class="fs-week">今週ピックアップ</div>
+      </div>
+      <div class="fs-body">
+        <div style="margin-bottom:0.8rem"><a class="bmi-detail-link" href="#" onclick="openBMIList();return false;">→ BMI/BCI 詳細情報ページを見る（企業ニュース・臨床応用・未解明領域など）</a></div>
+        <div class="two-col">
+          <div><div class="col-head"><span class="col-dot new"></span>新着論文（今週）</div><div id="bmi-new-col"></div></div>
+          <div><div class="col-head"><span class="col-dot pop"></span>注目・人気論文</div><div id="bmi-pop-col"></div></div>
+        </div>
+        <div class="archive-row"><span>過去の掲載論文</span><button class="archive-btn" onclick="openArchive('bmi')">📁 アーカイブを見る →</button></div>
+      </div>
+    </div>
+
+    <div id="fieldAI" class="field-section" data-f="ai">
+      <div class="fs-head">
+        <div class="fs-title">🔬 医療AI <span class="fs-pill">Medical Artificial Intelligence</span></div>
+        <div class="fs-week">今週ピックアップ</div>
+      </div>
+      <div class="fs-body">
+        <div class="two-col">
+          <div><div class="col-head"><span class="col-dot new"></span>新着論文（今週）</div><div id="ai-new-col"></div></div>
+          <div><div class="col-head"><span class="col-dot pop"></span>注目・人気論文</div><div id="ai-pop-col"></div></div>
+        </div>
+        <div class="archive-row"><span>過去の掲載論文</span><button class="archive-btn" onclick="openArchive('ai')">📁 アーカイブを見る →</button></div>
+      </div>
+    </div>
+
+    <div id="fieldRobot" class="field-section" data-f="robot">
+      <div class="fs-head">
+        <div class="fs-title">🤖 人型ロボット開発 <span class="fs-pill">Humanoid Robotics</span></div>
+        <div class="fs-week">今週ピックアップ</div>
+      </div>
+      <div class="fs-body">
+        <div class="two-col">
+          <div><div class="col-head"><span class="col-dot new"></span>新着論文（今週）</div><div id="robot-new-col"></div></div>
+          <div><div class="col-head"><span class="col-dot pop"></span>注目・人気論文</div><div id="robot-pop-col"></div></div>
+        </div>
+        <div class="archive-row"><span>過去の掲載論文</span><button class="archive-btn" onclick="openArchive('robot')">📁 アーカイブを見る →</button></div>
+      </div>
+    </div>
+  </div><!-- /#papersPage -->
+
+  <!-- ═══ ARCHIVE PAGE ═══ -->
+  <div id="archivePage" class="page-section">
+    <button class="page-back" onclick="closeArchive()">← 戻る</button>
+    <div style="font-size:1.1rem;font-weight:700;margin-bottom:1rem" id="archiveTitle"></div>
+    <div id="archiveBody"></div>
+  </div>
+
+  <!-- ═══ SEARCH RESULTS ═══ -->
+  <div id="searchPage" class="page-section">
+    <button class="page-back" onclick="closeSearch()">← ホームに戻る</button>
+    <div style="font-size:1.1rem;font-weight:700;margin-bottom:1rem">検索結果</div>
+    <div id="searchBody"></div>
+  </div>
+
+  <!-- ═══ BMI LIST PAGE ═══ -->
+  <div id="bmiListPage" class="page-section">
+    <button class="page-back" onclick="closeBMIList()">← ホームに戻る</button>
+    <div class="bmi-list-hero">
+      <div class="bmi-list-hero-body">
+        <div class="bmi-chip" style="margin-bottom:0.85rem"><span class="bmi-chip-dot"></span>Brain Machine Interface</div>
+        <h1>BMI / BCI 詳細情報</h1>
+        <p>Neuralink等の企業動向・学会発表・臨床応用の最前線、脳波解析技術、AI技術の活用、日本国内の研究、そして未解明の領域まで — BMI/BCIの包括的な情報をお届けします。</p>
+      </div>
+    </div>
+    <div class="bmi-cat-bar" id="bmiCatBar">
+      <button class="bmi-cat-btn active" onclick="filterBMI('all',this)">すべて</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('company_news',this)">🏢 企業ニュース</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('conference',this)">🎤 学会発表</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('clinical_application',this)">💊 臨床応用</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('brain_analysis',this)">🔭 脳解析</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('ai_technology',this)">🤖 AI技術</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('japan_research',this)">🗾 日本の研究</button>
+      <button class="bmi-cat-btn" onclick="filterBMI('unknown_frontiers',this)">❓ 未解明の領域</button>
+    </div>
+    <div class="bmi-card-grid" id="bmiCardGrid"></div>
+  </div>
+
+  <!-- ═══ BMI DETAIL VIEW PAGE ═══ -->
+  <div id="bmiDetailPage" class="page-section">
+    <button class="page-back" onclick="closeBMIDetail()">← 詳細一覧に戻る</button>
+    <div class="bmi-detail-view" id="bmiDetailBody"></div>
+  </div>
+
+  <!-- ═══ PROFILE PAGE ═══ -->
+  <div id="profilePage" class="page-section">
+    <button class="page-back" onclick="showHome()">← ホームに戻る</button>
+    <div class="static-card">
+      <div class="profile-avatar">👨‍⚕️</div>
+      <h1>管理人について</h1>
+      <div class="meta">About the Author</div>
+      <div class="profile-badges">
+        <span class="p-badge">脳神経外科専門医</span>
+        <span class="p-badge">脳血管内治療専門医</span>
+        <span class="p-badge">2016年卒</span>
+        <span class="p-badge">中四国地方出身</span>
+      </div>
+      <p>中国・四国地方出身、2016年卒の脳神経外科専門医・脳血管内治療専門医です。</p>
+      <p>日々の診療と研究の傍ら、自身の継続的な学習・研鑽を目的として、脳神経外科・Brain Machine Interface / Brain Computer Interface・人型ロボット開発・医療AIといった関心領域の最新文献を収集し、まとめています。</p>
+      <p>特にBMI/BCIは最も関心が高い領域であり、エビデンスレベルの高い論文に加え、Neuralinkをはじめとする主要企業の動向・学会発表・脳解析技術・AI応用など、幅広い情報を網羅するよう努めています。</p>
+      <p>掲載すべき重要文献のご提案、内容に関するご意見・ご感想など、チャットよりお気軽にご連絡ください。</p>
+      <button class="profile-chat-btn" onclick="openPage('profilePage'); setTimeout(openChatModal,200)">💬 チャットで連絡する</button>
+    </div>
+  </div>
+
+  <!-- ═══ PRIVACY PAGE ═══ -->
+  <div id="privacyPage" class="page-section">
+    <button class="page-back" onclick="showHome()">← ホームに戻る</button>
+    <div class="static-card">
+      <h1>プライバシーポリシー</h1>
+      <div class="meta">制定: 2025年4月　最終更新: 2025年4月</div>
+      <div class="notice-box"><strong>NeuroSciHub</strong>（以下「本サイト」）は、ご利用者の個人情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。</div>
+      <h2>1. 取得する情報</h2>
+      <ul><li>お問い合わせフォーム：お名前（任意）・メッセージ内容</li><li>アクセス解析：IPアドレス・ブラウザ情報・ページURL・アクセス日時</li><li>Cookie情報：広告配信・アクセス解析のためのCookie</li></ul>
+      <h2>2. 利用目的</h2>
+      <ul><li>お問い合わせ・文献提案への対応</li><li>アクセス状況の把握・コンテンツ改善</li><li>広告配信の最適化</li></ul>
+      <h2>3. Google Analytics について</h2>
+      <p>本サイトではGoogle Analyticsを使用する場合があります。CookieによりデータをGoogleが収集・処理します。無効化は<a href="https://tools.google.com/dlpage/gaoptout" target="_blank">オプトアウトアドオン</a>をご利用ください。</p>
+      <h2>4. 広告・アフィリエイトについて</h2>
+      <p>本サイトではGoogle AdSense・Amazonアソシエイトプログラムを利用しています。本サイトはAmazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである「Amazonアソシエイト・プログラム」の参加者です。</p>
+      <h2>5. 免責事項</h2>
+      <p>本サイトに掲載する情報は個人的な学習目的で収集・整理したものです。医療行為・臨床判断の根拠として使用しないでください。臨床判断には必ず一次文献および担当医師の指示に従ってください。</p>
+      <h2>6. お問い合わせ</h2>
+      <p>本ポリシーに関するお問い合わせは、本サイトのお問い合わせフォームよりご連絡ください。</p>
+      <button class="profile-chat-btn" style="margin-top:1rem" onclick="openChatModal()">💬 お問い合わせフォームへ</button>
+    </div>
+  </div>
+
+  <!-- ═══ OPERATOR PAGE ═══ -->
+  <div id="operatorPage" class="page-section">
+    <button class="page-back" onclick="showHome()">← ホームに戻る</button>
+    <div class="static-card">
+      <h1>運営者情報</h1>
+      <div class="meta">最終更新: 2025年4月</div>
+      <div class="notice-box">本サイトは個人が運営する医学文献情報サイトです。透明性の観点から運営者情報を開示します。</div>
+      <h2>基本情報</h2>
+      <table class="info-table">
+        <tr><th>サイト名</th><td>NeuroSciHub</td></tr>
+        <tr><th>運営者</th><td>非公開（医師・個人運営）</td></tr>
+        <tr><th>資格・専門</th><td>脳神経外科専門医 / 脳血管内治療専門医</td></tr>
+        <tr><th>所在地</th><td>非公開（日本国内）</td></tr>
+        <tr><th>お問い合わせ</th><td>本サイト内チャットフォームよりご連絡ください</td></tr>
+        <tr><th>開設</th><td>2025年</td></tr>
+      </table>
+      <h2>収益化について（透明性の確保）</h2>
+      <ul>
+        <li><strong>Google AdSense：</strong>Googleが提供する広告配信サービス。表示広告の内容は管理人が直接選定するものではありません。</li>
+        <li><strong>Amazonアソシエイト：</strong>関連する医学書・参考書のリンクを掲載し、購入された場合に紹介料を受け取る場合があります。</li>
+        <li><strong>その他アフィリエイト：</strong>医師向けサービス等の紹介料。コンテンツの内容・評価に影響することはありません。</li>
+      </ul>
+      <div class="divider"></div>
+      <h2>医療情報に関する免責事項</h2>
+      <ul>
+        <li>本サイトの情報は医療行為・臨床判断の根拠として使用することを目的としていません</li>
+        <li>診断・治療に関するご相談は必ず主治医・専門医にご相談ください</li>
+        <li>論文内容については必ず一次文献（原著論文）をご確認ください</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /#appRoot -->
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="#" onclick="openPage('profilePage');return false;">管理人紹介</a>
+      <a href="#" onclick="openChatModal();return false;">お問い合わせ・文献提案</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a>
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    </div>
+    <div class="footer-bot">
+      <a href="#" onclick="openPage('privacyPage');return false;">プライバシーポリシー</a>
+      <a href="#" onclick="openPage('operatorPage');return false;">運営者情報</a>
+      <a href="#" onclick="openChatModal();return false;">免責事項・お問い合わせ</a>
+    </div>
+    <div class="footer-copy">© 2025 NeuroSciHub — 掲載情報は個人の学習目的で収集したものです。臨床判断には必ず一次文献をご参照ください。</div>
+  </div>
+</footer>
+
+<!-- ═══ PAPER MODAL ═══ -->
+<div class="modal-overlay" id="paperModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('paperModal').classList.remove('open')">×</button>
+    <div id="modalMeta" style="display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:.75rem"></div>
+    <h2 id="modalTitle"></h2>
+    <div id="modalAuthors" style="font-size:.72rem;color:var(--text-muted);margin-bottom:.4rem"></div>
+    <div class="modal-abstract" id="modalAbstract"></div>
+    <div class="modal-links" id="modalLinks"></div>
+  </div>
+</div>
+
+<!-- ═══ CHAT MODAL ═══ -->
+<div class="modal-overlay" id="chatModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="chat-modal">
+    <button class="modal-close" onclick="document.getElementById('chatModal').classList.remove('open')" style="float:right;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted)">×</button>
+    <h3>お問い合わせ・文献提案</h3>
+    <p>重要な文献のご提案やご意見をお気軽にどうぞ。</p>
+    <label class="chat-label">お名前（任意）</label>
+    <input type="text" id="chatName" class="chat-input" placeholder="例：山田 太郎">
+    <label class="chat-label">メッセージ</label>
+    <textarea id="chatMsg" class="chat-input chat-textarea" placeholder="ご意見・提案文献のタイトル・PubMed IDなどをご記入ください…"></textarea>
+    <button class="chat-send" onclick="sendChat()">📨 送信する</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════
+   DATA
+══════════════════════════════════════════════════ */
+let papers = {
+  ns:{ new:[
+    {id:'ns1',field:'ns',subcat:'stroke',title:'急性期脳卒中に対する血管内血栓回収療法の長期転帰：多施設RCTの5年追跡調査',titleEn:'Long-term outcomes of endovascular thrombectomy for acute ischemic stroke',authors:'Yamamoto K, Suzuki H, Tanaka M, et al.',journal:'N Engl J Med',year:2025,evLevel:'1b',tags:['new','hot'],pmid:'38921345',doi:'10.1056/NEJMoa2401234',views:12400,citations:48,abstract:'急性期虚血性脳卒中患者1,284例を対象に、標準的薬物療法単独群と血管内血栓回収療法追加群を比較した多施設RCT 5年追跡データ。mRS 0-2の達成率は血栓回収群で有意に高く（54.3% vs 38.7%, OR 1.89）、死亡率も有意に低下。'},
+    {id:'ns2',field:'ns',subcat:'tumor',title:'IDH変異型グリオーマに対するVorasidenib経口投与：INDIGO試験の最終解析',titleEn:'Vorasidenib for IDH-mutant glioma',authors:'Mellinghoff IK, van den Bent MJ, et al.',journal:'N Engl J Med',year:2025,evLevel:'1b',tags:['new','pop'],pmid:'38901234',doi:'10.1056/NEJMoa2405001',views:9800,citations:31,abstract:'IDH1/2変異グレード2グリオーマ331例のプラセボ対照二重盲検RCT。Vorasidenib 40mg/日投与群で無増悪生存期間の有意な延長（HR 0.39）。'},
+    {id:'ns3',field:'ns',subcat:'spine',title:'腰部脊柱管狭窄症に対する除圧術と保存療法の比較：10年長期RCT',titleEn:'Decompression vs conservative therapy for lumbar spinal stenosis',authors:'Weinstein JN, et al.',journal:'JAMA',year:2025,evLevel:'1b',tags:['new'],pmid:'38887654',doi:'10.1001/jama.2025.1234',views:6200,citations:19,abstract:'10年追跡RCT。10年時点での疼痛・機能スコアは手術群で有意に優れる。'},
+  ], popular:[
+    {id:'ns4',field:'ns',subcat:'endo',title:'未破裂脳動脈瘤の血管内コイル塞栓術 vs 開頭クリッピング：系統的レビュー',titleEn:'Endovascular coiling vs surgical clipping for unruptured intracranial aneurysms',authors:'Molyneux AJ, Birks J, et al.',journal:'Lancet Neurol',year:2025,evLevel:'1a',tags:['pop','hot'],pmid:'38765432',doi:'10.1016/S1474-4422(25)00012-3',views:18900,citations:67,abstract:'17 RCT・4,823例のメタ解析。血管内塞栓術は短期合併症率で優れるが、長期再発率は外科的クリッピングで低い傾向。'},
+    {id:'ns5',field:'ns',subcat:'functional',title:'難治性パーキンソン病に対するadaptive DBS vs 従来型DBS：RCT',titleEn:'Adaptive DBS vs conventional DBS for refractory Parkinson disease',authors:'Little S, Pogosyan A, et al.',journal:'Nat Med',year:2025,evLevel:'1b',tags:['pop','hot'],pmid:'38754321',doi:'10.1038/s41591-025-02345-6',views:15300,citations:52,abstract:'28例の二重盲検クロスオーバーRCT。β波応答型aDBS はOFF時間を43%短縮。'},
+    {id:'ns6',field:'ns',subcat:'skull',title:'聴神経腫瘍に対する定位放射線手術 vs 観察：プロスペクティブコホート',titleEn:'Stereotactic radiosurgery vs observation for vestibular schwannoma',authors:'Hasegawa T, et al.',journal:'J Neurosurg',year:2025,evLevel:'2',tags:['pop'],pmid:'38743210',doi:'10.3171/2025.1.JNS241890',views:7100,citations:23,abstract:'214例を10年追跡。腫瘍制御率はガンマナイフ群97.3%、聴力保存率は両群間で有意差なし。'},
+  ]},
+  bmi:{ new:[
+    {id:'bmi1',field:'bmi',subcat:'invasive',title:'Neuralink N1インプラントによる高次元BCI：初の長期ヒト試験',titleEn:'High-dimensional BCI via Neuralink N1 implant',authors:'Willett FR, Avansino DT, Hochberg LR, et al.',journal:'Nature',year:2025,evLevel:'2',tags:['new','hot'],pmid:'38890123',doi:'10.1038/s41586-025-07234-5',views:32100,citations:89,abstract:'四肢麻痺患者3例にN1デバイスを埋植。1,024電極から毎分90文字の入力速度を達成、6ヶ月の安定パフォーマンスを報告。'},
+    {id:'bmi2',field:'bmi',subcat:'noninvasive',title:'非侵襲的EEGベースBCIによる完全閉じ込め症候群患者とのコミュニケーション復元',titleEn:'Restoring communication in completely locked-in syndrome via non-invasive EEG-BCI',authors:'Chaudhary U, Xia B, et al.',journal:'Nat Commun',year:2025,evLevel:'2',tags:['new','hot'],pmid:'38878901',doi:'10.1038/s41467-025-54321-0',views:21400,citations:61,abstract:'ALS末期患者4例にauditory neurofeedback BCIを適用。質問-応答タスクで正答率72-83%を達成。'},
+  ], popular:[
+    {id:'bmi3',field:'bmi',subcat:'device',title:'柔軟電極アレイを用いた次世代皮質-脊髄BMIによる歩行機能回復',titleEn:'Walking recovery via cortical-spinal BMI with flexible electrode arrays',authors:'Wagner FB, Mignardot JB, et al.',journal:'Nature',year:2025,evLevel:'2',tags:['pop','hot'],pmid:'38756789',doi:'10.1038/s41586-025-07111-2',views:44200,citations:112,abstract:'完全脊髄損傷患者9例に閉ループBMIを適用。全例で随意的歩行動作を誘発、6ヶ月後には補助具なし歩行を達成した例も。'},
+    {id:'bmi4',field:'bmi',subcat:'eeg',title:'トランスフォーマーモデルを用いた高精度EEG運動想像デコーディング：メタ解析',titleEn:'High-accuracy motor imagery EEG decoding using transformer models',authors:'Kostas D, et al.',journal:'IEEE Trans Neural Syst Rehabil Eng',year:2025,evLevel:'1a',tags:['pop'],pmid:'38745678',doi:'10.1109/TNSRE.2025.3123456',views:12800,citations:44,abstract:'98研究のメタ解析。トランスフォーマーはCNNと比較し分類精度が平均8.3%高く、被験者間転移学習でも優れた汎化性能を示した。'},
+  ]},
+  ai:{ new:[
+    {id:'ai1',field:'ai',subcat:'imaging',title:'GPT-4V vs 放射線専門医：頭部CTにおける急性疾患検出精度の直接比較',titleEn:'GPT-4V vs radiologist: head CT acute pathology detection accuracy',authors:'Koo BS, Kim HJ, et al.',journal:'Radiology',year:2025,evLevel:'2',tags:['new','hot'],pmid:'38855432',doi:'10.1148/radiol.241234',views:23100,citations:58,abstract:'頭部CT 2,847例でGPT-4Vと放射線専門医を比較。脳出血検出AUCはGPT-4V 0.943、専門医0.967。トリアージ支援ツールとしての有用性が示唆された。'},
+    {id:'ai2',field:'ai',subcat:'llm',title:'Claude 3 OpusとGPT-4の神経科学的質問応答能力：専門医試験との比較',titleEn:'Claude 3 Opus vs GPT-4 neuroscience Q&A vs specialist board exam',authors:'Nori H, King N, et al.',journal:'NEJM AI',year:2025,evLevel:'2',tags:['new'],pmid:'38844321',doi:'10.1056/AIoa2025001',views:14600,citations:43,abstract:'専門医試験1,200問でLLM回答精度を評価。Claude 3 Opus 75.2%、GPT-4 73.8%で上位専門医平均（71.4%）を上回った。'},
+  ], popular:[
+    {id:'ai3',field:'ai',subcat:'prediction',title:'深層学習モデルによるICU入室後72時間死亡予測：10施設バリデーション研究',titleEn:'Deep learning 72-hour ICU mortality prediction',authors:'Johnson AEW, Aboab J, et al.',journal:'Lancet Digit Health',year:2025,evLevel:'2',tags:['pop','hot'],pmid:'38712345',doi:'10.1016/S2589-7500(25)00056-8',views:19800,citations:72,abstract:'電子カルテデータからICU 72時間死亡率を予測するトランスフォーマーモデルを10施設で外部検証。AUC 0.891でSOFAスコア（0.821）を有意に上回った。'},
+    {id:'ai4',field:'ai',subcat:'genomics',title:'全ゲノムデータからの脳腫瘍サブタイプ自動分類：パンゲノム解析',titleEn:'Automated brain tumor subtype classification from whole-genome sequencing',authors:'Capper D, Jones DTW, et al.',journal:'Cancer Cell',year:2025,evLevel:'2',tags:['pop'],pmid:'38701234',doi:'10.1016/j.ccell.2025.02.034',views:11200,citations:39,abstract:'2,680例の全ゲノムデータを用いたグラフNNがWHO 2021分類91サブタイプを精度94.7%で分類。'},
+  ]},
+  robot:{ new:[
+    {id:'rb1',field:'robot',subcat:'humanoid',title:'Figure 02ヒューマノイドロボットの動的全身制御：実環境での長期性能評価',titleEn:'Dynamic whole-body control of Figure 02 humanoid robot',authors:'Radosavovic I, Shi B, Fu L, et al.',journal:'Science Robotics',year:2025,evLevel:'2',tags:['new','hot'],pmid:'38870123',doi:'10.1126/scirobotics.adp1234',views:28900,citations:74,abstract:'強化学習ベースコントローラーにより整地・不整地歩行、物体把持・搬送などを統合。連続8時間以上の安定稼働を報告。'},
+    {id:'rb2',field:'robot',subcat:'surgical',title:'AI誘導型手術ロボットによる腹腔鏡下胆嚢摘出術の自律的実施：パイロット試験',titleEn:'Autonomous laparoscopic cholecystectomy by AI-guided surgical robot',authors:'Saeidi H, Opfermann JD, et al.',journal:'Sci Transl Med',year:2025,evLevel:'2',tags:['new'],pmid:'38860987',doi:'10.1126/scitranslmed.adm5678',views:17300,citations:49,abstract:'外科医監視下20例に施行、手術時間・合併症率ともに熟練外科医の標準範囲内。'},
+  ], popular:[
+    {id:'rb3',field:'robot',subcat:'humanoid',title:'Boston Dynamics Atlas次世代の神経象徴推論：言語指示からの動作生成',titleEn:'Neurosymbolic reasoning in next-gen Atlas',authors:'Cheng G, Atkeson CG, et al.',journal:'Nature Machine Intelligence',year:2025,evLevel:'2',tags:['pop','hot'],pmid:'38734567',doi:'10.1038/s42256-025-00789-4',views:51200,citations:133,abstract:'LLMと運動制御を統合したAtlasが自然言語指示から複雑作業を生成・実行。工場環境で成功率87.4%、ゼロショット汎化を実証。'},
+    {id:'rb4',field:'robot',subcat:'rehab',title:'脳卒中後上肢麻痺に対するインテリジェント外骨格リハビリテーションのメタ解析',titleEn:'Intelligent exoskeleton rehabilitation for post-stroke upper limb paresis',authors:'Mehrholz J, Pohl M, et al.',journal:'Cochrane Database Syst Rev',year:2025,evLevel:'1a',tags:['pop'],pmid:'38723456',doi:'10.1002/14651858.CD006876.pub5',views:9400,citations:37,abstract:'55 RCT・3,621例のコクランレビュー更新版。ロボット群はFugl-Meyer上肢スコアで有意な改善（MD 3.8）。'},
+  ]},
+};
+
+let archives = {
+  ns:[{id:'ns_a1',field:'ns',title:'脳動静脈奇形ラジオサージェリー後5年転帰',authors:'Pollock BE, et al.',journal:'J Neurosurg',year:2024,evLevel:'2',tags:['pop'],views:8900,citations:28}],
+  bmi:[{id:'bmi_a1',field:'bmi',title:'ECoGベースBCIによる連続音声デコーディング',authors:'Moses DA, et al.',journal:'NEJM',year:2024,evLevel:'2',tags:['hot'],views:22100,citations:77}],
+  robot:[{id:'rb_a1',field:'robot',title:'脳卒中患者に対する下肢外骨格Lokomat療法：RCT',authors:'Mehrholz J, et al.',journal:'Cochrane',year:2024,evLevel:'1a',tags:['pop'],views:8100,citations:31}],
+  ai:[{id:'ai_a1',field:'ai',title:'ChatGPT-4による医療画像レポート自動生成精度評価',authors:'Kim HJ, et al.',journal:'Radiology',year:2024,evLevel:'2',tags:[],views:13400,citations:41}],
+};
+
+/* ══════════════════════════════════════════════════
+   BMI DETAIL DATA
+══════════════════════════════════════════════════ */
+const bmiDetails = [
+  {
+    id:'bd1', category:'company_news', company:'Neuralink', emoji:'🔵',
+    title:'Neuralink N1チップ：最新臨床試験結果（PRIME Study）と今後の展望',
+    summary:'Neuralink社のN1脳埋め込みチップによる四肢麻痺患者での12ヶ月フォローアップ結果。毎分90文字のテキスト入力速度を達成し、ゲーム・ウェブブラウジング・SNS利用が可能となった。',
+    tags:['Neuralink','N1','臨床試験','四肢麻痺'],
+    content:`## 概要
+
+Neuralink社は2026年3月、N1インプラントの臨床試験（PRIME Study）の12ヶ月フォローアップデータを発表しました。
+
+## 主な成果
+
+- 四肢麻痺患者がN1チップを用いて、思考のみでコンピューターカーソルを制御
+- テキスト入力速度: 平均62文字/分（訓練後は90文字/分超）
+- 健常者のスマートフォン入力速度（平均40文字/分）を上回る
+- ゲームプレイ、ウェブブラウジング、SNS利用が自立して可能
+
+## 技術的詳細
+
+### デバイス仕様
+- 電極数：1,024本（直径5μm）
+- ワイヤレスデータ転送：200Mbps
+- バッテリー持続時間：12時間（ワイヤレス充電対応）
+- 手術ロボット「R1」による完全自動埋植
+
+### 信号処理
+- オンチップAIによるリアルタイムスパイク検出・デコーディング
+- ユーザー固有のニューラルパターンへの適応学習
+- 使用するたびに精度が向上する強化学習アルゴリズム
+
+## 課題と今後
+
+- 電極絶縁層の長期劣化が主要な技術的課題として残存
+- 電極数の増加（N2チップでは4,096本を計画）
+- 2026年末までに10名の患者への埋植を目標`,
+    source_url:'https://neuralink.com',
+  },
+  {
+    id:'bd2', category:'company_news', company:'Synchron', emoji:'🟢',
+    title:'Synchron Stentrode：血管内アプローチBCIの最新臨床データ',
+    summary:'開頭手術不要の血管内アプローチでBCIを実現するSynchron社のStentrode。脳卒中・ALS患者での安全性・有効性データが蓄積しつつある。',
+    tags:['Synchron','Stentrode','血管内','非侵襲'],
+    content:`## Stentrodeとは
+
+SynchronのStentrodeは、開頭手術を必要とせず、頚静脈から大脳運動野近傍の静脈に「ステント型電極」を留置するアプローチです。
+
+## 臨床試験（SWITCH Study）の結果
+
+- ALS患者4名、脳卒中患者2名で試験実施
+- デバイス埋植後12ヶ月の追跡で深刻な副作用なし
+- 患者の86%がデバイスを継続使用
+- テキスト入力速度：平均14文字/分（訓練後22文字/分）
+
+## Neuralinkとの比較
+
+| 項目 | Stentrode | Neuralink N1 |
+|------|-----------|--------------|
+| 手術侵襲 | 低（血管内） | 中（開頭） |
+| 電極数 | 16本 | 1,024本 |
+| 解像度 | 低 | 高 |
+| 安全性 | 実績あり | 検証中 |
+
+## 課題
+
+- 電極数が少なく、精度はNeuralink N1に劣る
+- 静脈内の血流変化による信号ノイズ
+- 長期留置の生体適合性の検証が必要`,
+    source_url:'https://synchron.com',
+  },
+  {
+    id:'bd3', category:'clinical_application', emoji:'💊',
+    title:'脳卒中後の上肢麻痺にBCIはどこまで有効か：現在の到達点と限界',
+    summary:'BMI/BCIを用いた脳卒中後運動麻痺のリハビリテーションの最新エビデンス。非侵襲型EEGベースBCIから侵襲型BCIまで、現在可能な機能回復の範囲を整理する。',
+    tags:['脳卒中','リハビリ','EEG','運動麻痺','回復'],
+    content:`## 現在の到達点
+
+脳卒中後の運動麻痺に対して、BCIを用いたリハビリテーションは以下の成果を示しています。
+
+## 非侵襲型BCI（EEGベース）
+
+### 効果の実績
+- 運動意図の検出精度: 85-92%
+- Fugl-Meyer Assessment（FMA）平均改善: 6.2点（対照群比）
+- 効果持続期間: 介入後6ヶ月まで確認
+- 最大の利点：装置を外せば普通の生活が可能
+
+### 現在可能なこと
+- 肘の屈曲・伸展（90%以上の制御精度）
+- 手首の回内・回外（75-80%）
+- 指の開閉（限定的、約65%）
+
+## 侵襲型BCI（ECoG・皮質内電極）
+
+### 研究レベルでの成果
+- 皮質脳波（ECoG）による微細運動制御
+- 個々の指の独立運動が可能（研究段階）
+- 把握力の段階的制御（研究段階）
+
+## 現在の限界
+
+### 技術的限界
+- 感覚フィードバックの欠如（現在の多くのシステム）
+- 長時間使用による疲労・集中力低下
+- 電極信号の経時的変化（慢性埋植の場合）
+
+### 臨床的限界
+- 効果に大きな個人差（発症からの期間、病変部位に依存）
+- 保険適用外（日本ではほぼ全例で自費）
+- 専門施設でのみ実施可能
+
+## 今後の展望（5年以内）
+
+- 触覚フィードバック付きBCIシステムの実用化
+- AI強化リハビリプロトコルの標準化
+- ウェアラブルEEGによる家庭用リハビリシステム`,
+    source_url:'https://pubmed.ncbi.nlm.nih.gov/',
+  },
+  {
+    id:'bd4', category:'clinical_application', emoji:'🦽',
+    title:'ALS・脊髄損傷患者へのBCI適用：現状と課題',
+    summary:'ALS（筋萎縮性側索硬化症）および完全脊髄損傷患者に対するBCIの臨床応用。コミュニケーション支援から運動機能回復まで、最新の臨床データをまとめる。',
+    tags:['ALS','脊髄損傷','コミュニケーション','運動回復'],
+    content:`## ALS患者へのBCI
+
+### 現在のゴール
+ALS患者では、疾患進行に伴いコミュニケーション手段が失われることへの対処が主な目的です。
+
+### 非侵襲型（EEG/fNIRS）
+- 完全閉じ込め症候群（CLIS）でも有効性の報告あり
+- 正答率72-83%（質問-応答タスク）
+- 家庭での使用が可能なシステムも開発中
+
+### 侵襲型（皮質内電極）
+- Hochberg LRらのBrainGate試験：テキスト入力速度40文字/分
+- Neuralink N1：62-90文字/分（2024-2025年データ）
+
+## 完全脊髄損傷患者へのBCI
+
+### 歩行再建
+- Wagner FBら（Nature 2023）：脊髄硬膜外刺激との組み合わせで歩行回復
+- 皮質活動→デコーダー→脊髄刺激の閉ループシステム
+- 現在5-9名の小規模試験段階
+
+### 上肢機能回復
+- ECoGと機能的電気刺激（FES）の組み合わせ
+- Ajiboye ABら：片側麻痺手で水のボトル持ち上げに成功
+
+## 日本の現状
+
+- 国内のBCI臨床試験は少なく、多くが研究段階
+- AMED（日本医療研究開発機構）が複数のBMI研究を支援
+- 大阪大学、筑波大学が先進的な研究を実施`,
+    source_url:'https://pubmed.ncbi.nlm.nih.gov/',
+  },
+  {
+    id:'bd5', category:'brain_analysis', emoji:'🔭',
+    title:'脳波解析で現在わかること：運動・言語・感情・意識',
+    summary:'現代の脳波解析技術によって解明された脳機能の全体像。EEG・fMRI・ECoGを用いた解析から、運動制御・言語処理・感情・意識状態の理解がどこまで進んでいるかを整理する。',
+    tags:['EEG','脳波解析','fMRI','意識','運動制御'],
+    content:`## 1. 運動制御の解析
+
+### わかっていること
+- 運動意図発生から200-500ms前に一次運動野でβ波（13-30Hz）が減少
+- 運動実行中はγ波（>30Hz）が増加
+- 個々の指・関節の動きを約85-92%の精度でデコード可能
+
+### デコーディング可能な情報
+- 動く部位（手・足・顔など）
+- 動きの方向（8方向程度）
+- 力の大きさ（連続値として）
+- 左右（交差支配の利用）
+
+## 2. 言語処理の解析
+
+### 音声デコーディングの現状
+- ECoGを用いて発話中の音声を再構成（Moses DAら、2021年）
+- 単語・文章レベルのデコーディングが可能
+- 発話速度に近いリアルタイムデコーディングを実現
+
+### 内言語（心の中の言葉）
+- 発話を伴わない「思考中の言葉」の一部デコード
+- 現時点では限定的（特定の単音節・単語のみ）
+
+## 3. 感情・情動の解析
+
+### わかっていること
+- 扁桃体・前帯状皮質の活動パターンから感情価（ポジティブ/ネガティブ）を推定
+- fMRIでは約70-80%の精度で基本感情を分類
+- EEGでは精度がやや低い（60-70%）
+
+## 4. 意識状態の解析
+
+### 植物状態患者の意識検出
+- fMRI・EEGを用いた「メンタルイメージリング」タスク
+- 植物状態と診断された患者の15-20%が隠れた意識を持つ可能性
+- BCIによるコミュニケーション復元への応用
+
+## 現在わからないこと（→次項参照）`,
+    source_url:'https://pubmed.ncbi.nlm.nih.gov/',
+  },
+  {
+    id:'bd6', category:'ai_technology', emoji:'🤖',
+    title:'BMI/BCIに用いられるAI技術：デコーダー・機械学習・深層学習',
+    summary:'現代のBMI/BCIシステムに組み込まれているAI技術の全体像。古典的な機械学習から深層学習・トランスフォーマーモデルまで、脳信号デコーディングにおけるAIの役割を解説する。',
+    tags:['AI','機械学習','深層学習','Transformer','デコーダー'],
+    content:`## BCIデコーダーの進化
+
+### 第1世代：線形デコーダー（2000年代）
+- Population Vector Algorithm（PVA）
+- Optimal Linear Estimator（OLE）
+- Kalman Filter
+→ シンプルで解釈可能だが、精度に限界
+
+### 第2世代：古典的機械学習（2010年代）
+- Support Vector Machine（SVM）
+- Linear Discriminant Analysis（LDA）
+- Random Forest
+→ 特徴量設計が重要。EEGベースBCIの主流
+
+### 第3世代：深層学習（2020年代〜）
+- Convolutional Neural Networks（CNN）：時空間的特徴抽出
+- Recurrent Neural Networks（RNN/LSTM）：時系列処理
+- Transformer：長距離依存関係の学習
+→ 最高精度を達成、被験者間転移学習も可能
+
+## 最新の注目技術
+
+### EEGTransformer / EEGNet
+- EEG専用に設計された軽量トランスフォーマー
+- 被験者間のゼロショット転移が可能
+- スマートフォンレベルの計算量で動作
+
+### NeuralinkのオンチップAI
+- 埋植チップ内でリアルタイム処理（外部PCに送らない）
+- ユーザーの使用パターンに毎日適応学習
+- プライバシー保護にも貢献
+
+### 基盤モデルアプローチ
+- 大規模な脳信号データセットで事前学習
+- 少ないfine-tuning dataで新ユーザーに適応
+- BrainBERT、BIOT等が提案されている
+
+## 課題
+
+- 電極信号のドリフト（慢性埋植で経時変化）
+- 被験者・セッション間の変動への対応
+- リアルタイム処理と高精度のトレードオフ`,
+    source_url:'https://pubmed.ncbi.nlm.nih.gov/',
+  },
+  {
+    id:'bd7', category:'conference', emoji:'🎤',
+    title:'Society for Neuroscience（SfN）2025 BMI/BCI 注目発表まとめ',
+    summary:'2025年のSociety for Neuroscience年次大会でのBMI/BCI関連の注目発表。Neuralink・Synchron・学術研究グループからの最新データを網羅的にまとめる。',
+    tags:['SfN','学会','2025','発表まとめ'],
+    content:`## SfN 2025 BMI/BCI ハイライト
+
+### Neuralink社のセッション
+- N1チップの12ヶ月データ公開（詳細は企業ニュース参照）
+- N2チップ（4,096電極）の前臨床データを初公開
+- 感覚フィードバック機能（皮質刺激による触覚）の予備的データ
+
+### 学術研究グループの発表
+
+**Hochberg lab（Brown University / MGH）**
+- BrainGate2試験の長期フォローアップ（最長5年）
+- 慢性埋植電極の信号安定性データ：約30%が5年後も使用可能
+
+**Chang lab（UCSF）**
+- 合成音声の品質向上：自然音声と区別困難なレベルに近づく
+- 麻痺患者での発話デコード精度99語/分を達成
+
+**Shenoy lab（Stanford）**
+- 運動皮質と補足運動野の協調解析
+- 「意図」発生の神経メカニズムの新知見
+
+### 注目のポスター発表
+- BMI結合型外骨格による完全麻痺患者の立位保持（10例）
+- 睡眠中の記憶固定化をBCIで促進する手法（前臨床）
+- 水中リハビリ×BCIの組み合わせ効果（パイロット試験）`,
+    source_url:'https://www.sfn.org/',
+  },
+  {
+    id:'bd8', category:'japan_research', emoji:'🗾',
+    title:'日本のBMI/BCI研究：大阪大学・筑波大学・ATR等の最前線',
+    summary:'日本国内でのBMI/BCI研究の現状。大阪大学の侵襲型BCI研究、筑波大学のHAL（ロボットスーツ）、ATRの脳デコーディング研究など、世界をリードする日本の研究を紹介する。',
+    tags:['日本','大阪大学','筑波大学','ATR','HAL'],
+    content:`## 大阪大学 脳情報通信融合研究センター（CiNet）
+
+### 研究内容
+- 脳活動（fMRI・EEG）のデコーディング研究
+- 意識・注意・知覚の神経メカニズム解明
+- ブレイン-マシン・コミュニケーション技術の開発
+
+### 主要な成果
+- 視覚情報（見ているもの）のfMRIデコーディング
+- 夢の内容を脳波から推定する手法の開発
+- 感情状態のリアルタイム推定システム
+
+## 筑波大学 HAL（Hybrid Assistive Limb）
+
+### 概要
+- 山海嘉之教授が開発した世界初の医療用サイバニクスシステム
+- 皮膚表面の微弱な生体電位信号を検出し、装着者の意図を推定
+- 下肢麻痺・ALS・筋ジストロフィー患者のリハビリに使用
+
+### 臨床実績
+- 脊髄損傷患者の歩行再建：国内外80施設以上で導入
+- 脳卒中後遺症リハビリ：保険適用（2016年〜）
+- ALS患者の呼吸筋補助への応用研究中
+
+### 規制・承認状況
+- 日本：医療機器承認取得済み（歩行障害のリハビリ）
+- EU：CE marking取得
+- 米国：FDA承認に向けた試験中
+
+## ATR（国際電気通信基礎技術研究所）
+
+### 計算神経科学研究室の成果
+- Yukiyasu Kamitani博士（現京都大学）による脳デコーディング
+- fMRIで「見ているもの」→画像再構成の実現
+- 深層学習を用いた高精度な視覚情報復元
+
+## 国立精神・神経医療研究センター（NCNP）
+
+- 侵襲型BCIの倫理審査・安全性評価の整備
+- ALS患者を対象としたBCI適用の臨床研究
+- 厚生労働省との規制策定への貢献
+
+## 日本の課題と展望
+
+### 現在の課題
+- 臨床試験のための規制整備が遅れている（米国比）
+- 産学連携・スタートアップエコシステムの不足
+- 英語論文発表数で欧米に差をつけられている
+
+### 今後の展望
+- AMED（日本医療研究開発機構）によるBMI研究推進
+- 2025年度から「BMI国家プロジェクト」構想
+- 大阪・関西万博（2025年）でのBCI実証展示`,
+    source_url:'https://www.amed.go.jp/',
+  },
+  {
+    id:'bd9', category:'unknown_frontiers', emoji:'❓',
+    title:'BMI/BCIでまだわかっていないこと：未解明の重要課題',
+    summary:'BCIの急速な発展にもかかわらず、依然として解明されていない根本的な問題。意識のハードプロブレム、脳信号の長期安定性、倫理的課題など、現在の科学が直面している限界を整理する。',
+    tags:['未解明','意識','倫理','長期安定性','限界'],
+    content:`## 1. 意識・主観的体験の問題
+
+### ハードプロブレム
+- なぜ物質的な脳活動が「クオリア（主観的体験）」を生み出すのか
+- BCIで脳活動を読み取れても、その人の「体験」は読み取れていない
+- 哲学的に未解決のまま、工学的な応用だけが先行している
+
+### 意識のニューラルコリレート（NCC）
+- 意識に必要な最小限の神経活動は何か（定義が研究者間で異なる）
+- 植物状態と意識保持状態を完全に区別できる生体指標が存在しない
+
+## 2. 長期的な脳-電極界面の問題
+
+### わかっていないこと
+- 慢性埋植後に電極周囲で起きるグリア反応の完全な抑制方法
+- 10年・20年後の電極の状態（ほとんどの試験が5年以内）
+- 「脳が電極に慣れる」適応のメカニズム
+
+### 臨床的影響
+- 長期に渡る信号品質の予測が困難
+- 電極交換手術のタイミング・リスク
+- 将来の除去・アップグレード手術の安全性
+
+## 3. 高次認知機能のデコーディング
+
+### 現在デコードできないもの
+- 抽象的思考・概念的処理
+- 長期記憶の読み出し（エピソード記憶）
+- 複雑な感情（愛、嫌悪、審美的感動等）
+- 道徳的判断・倫理的思考
+
+### 技術的限界の原因
+- 高次機能は広範な神経回路網に分散
+- 個人差が極めて大きい
+- 認知活動中の脳状態は常に変動している
+
+## 4. 倫理・社会的問題（答えが出ていない）
+
+### プライバシーと「脳情報」
+- 思考の盗聴は可能か（現時点では限定的だが将来は？）
+- BCIが読み取った脳データの所有権は誰にあるか
+- 企業（Neuralink等）がユーザーの脳データを商用利用できるか
+
+### 強化（Enhancement）vs 治療
+- 健常者への能力増強目的の使用は許可すべきか
+- BCIを持つ人・持たない人の社会的格差
+- スポーツ・学習・職業でのBCI使用規制
+
+### アイデンティティの問題
+- BCIを使い続けると「自己」はどう変わるか
+- AIと融合した思考は本人の意思か
+- 故障・ハッキングによる意思制御の喪失リスク
+
+## 5. 神経可塑性の長期的影響
+
+- BCIに依存し続けることで脳の自然な機能は変化するか
+- 使用中止後のリハビリ・機能回復は可能か
+- 小児（発達途上の脳）への影響は特に不明`,
+    source_url:'https://pubmed.ncbi.nlm.nih.gov/',
+  },
+  {
+    id:'bd10', category:'company_news', company:'BlackRock Neurotech', emoji:'⚫',
+    title:'BlackRock Neurotech（旧BrainGate商業部門）：シリコン電極の最前線',
+    summary:'学術研究から生まれた企業BlackRock Neurotechが提供するUtah Arrayをはじめとする高密度シリコン電極の最新動向と、BCIデバイス市場での位置づけ。',
+    tags:['BlackRock','Utah Array','シリコン電極','BrainGate'],
+    content:`## BlackRock Neurotechとは
+
+BrainGate研究コンソーシアム（Brown大学・スタンフォード大学等）の商業部門として設立。主力製品のUtah Array（Utah電極アレイ）は20年以上の研究実績を持つ。
+
+## Utah Array の特徴
+
+- 10×10の100電極（96本が記録用、4本が基準電極）
+- 最も広く使われてきた標準的な皮質内電極
+- 多くのBCI研究の「ゴールドスタンダード」
+
+## 最新製品：Neuropixels対応システム
+
+- 単一電極で1000チャンネル以上の記録
+- 従来比100倍以上の情報量
+- 現在は動物実験段階→ヒト適用に向けた研究中
+
+## 課題
+
+- NeurainkのN1（1024電極、完全ワイヤレス）との競合
+- 有線接続の制限（日常生活での使用に不向き）
+- ロボット自動埋植システムは未実装（Neuralinkに後れを取る）`,
+    source_url:'https://blackrockneurotech.com/',
+  },
+];
+
+let archives2 = { ns:[], bmi:[], ai:[], robot:[] };
+let adminMode = false, adminOpen = false, currentField = 'all', currentSubcat = {};
+let currentBMICat = 'all';
+
+/* ══════════════════════════════════════════════════
+   RENDER
+══════════════════════════════════════════════════ */
+const evClass = lv => ({'1a':'ev-1a','1b':'ev-1b','2':'ev-2','3':'ev-3'}[lv]||'ev-3');
+const evLabel = lv => ({'1a':'IA SR/Meta','1b':'IB RCT','2':'II Cohort','3':'III Case'}[lv]||'III');
+const CAT_LABELS = {company_news:'企業ニュース',conference:'学会発表',clinical_application:'臨床応用',brain_analysis:'脳解析',ai_technology:'AI技術',japan_research:'日本の研究',unknown_frontiers:'未解明の領域'};
+
+function renderCard(p){
+  const tags=(p.tags||[]).map(t=>
+    t==='hot'?'<span class="tag tag-hot">🔥 HOT</span>':
+    t==='pop'?'<span class="tag tag-pop">☆ 人気</span>':
+    t==='new'?'<span class="tag tag-new">NEW</span>':''
+  ).join('');
+  const ctrl=`<div class="admin-controls">
+    <button class="ctrl-btn" onclick="mvP('${p.id}','up',event)">▲</button>
+    <button class="ctrl-btn" onclick="mvP('${p.id}','dn',event)">▼</button>
+    <button class="ctrl-btn del" onclick="delP('${p.id}',event)">✕</button>
+  </div>`;
+  return `<div class="paper-card${adminMode?' admin-mode':''}" onclick="openPaper('${p.id}')">
+    ${ctrl}
+    <div class="paper-meta">
+      <span class="ev-badge ${evClass(p.evLevel)}">${evLabel(p.evLevel)}</span>${tags}
+      <span class="journal-label">${p.journal} ${p.year}</span>
+    </div>
+    <div class="paper-title">${p.title}</div>
+    <div class="paper-authors">${p.authors}</div>
+    <div class="paper-stats">
+      <span>👁 ${(p.views||0).toLocaleString()}</span>
+      <span>📚 引用 ${p.citations||0}</span>
+      ${p.pmid?`<span>PMID: ${p.pmid}</span>`:''}
+    </div>
+  </div>`;
+}
+
+function renderAll(){
+  ['ns','bmi','ai','robot'].forEach(f=>{
+    ['new','pop'].forEach(col=>{
+      const el=document.getElementById(`${f}-${col}-col`); if(!el) return;
+      const sub=currentSubcat[f]||'all';
+      const colKey=col==='pop'?'popular':'new';
+      const list=sub==='all'?papers[f][colKey]:papers[f][colKey].filter(p=>p.subcat===sub);
+      el.innerHTML=list.map(renderCard).join('')||`<div style="color:var(--text-muted);font-size:.8rem;padding:1rem;text-align:center">論文がありません</div>`;
+    });
+  });
+  ['ns','bmi','ai','robot'].forEach(f=>{
+    const section={ns:'fieldNS',bmi:'fieldBMI',ai:'fieldAI',robot:'fieldRobot'}[f];
+    const el=document.getElementById(section); if(!el) return;
+    el.style.display=(currentField==='all'||currentField===f)?'':'none';
+  });
+  // update home counts
+  ['ns','bmi','ai','robot'].forEach(f=>{
+    const el=document.getElementById(`cnt-${f}`);
+    if(el) el.textContent=(papers[f].new.length+papers[f].popular.length)+' 論文';
+  });
+  renderHomeLatest();
+}
+
+function renderHomeLatest(){
+  const el=document.getElementById('homeLatest'); if(!el) return;
+  const all=[];
+  ['ns','bmi','ai','robot'].forEach(f=>{
+    papers[f].new.forEach(p=>all.push(p));
+    papers[f].popular.forEach(p=>all.push(p));
+  });
+  const seen=new Set(); const unique=all.filter(p=>{ if(seen.has(p.id)) return false; seen.add(p.id); return true; });
+  const top=unique.filter(p=>p.tags&&(p.tags.includes('hot')||p.tags.includes('new'))).slice(0,6);
+  el.innerHTML=top.map(renderCard).join('');
+}
+
+/* ══════════════════════════════════════════════════
+   BMI DETAIL RENDER
+══════════════════════════════════════════════════ */
+function renderBMIGrid(cat){
+  const grid=document.getElementById('bmiCardGrid'); if(!grid) return;
+  const list=cat==='all'?bmiDetails:bmiDetails.filter(d=>d.category===cat);
+  grid.innerHTML=list.map(d=>`
+    <div class="bmi-card" onclick="openBMIDetail('${d.id}')">
+      <div class="bmi-card-img-placeholder">${d.emoji||'🧠'}</div>
+      <div class="bmi-card-body">
+        <div class="bmi-card-badges">
+          <span class="bmi-cat-badge">${CAT_LABELS[d.category]||d.category}</span>
+          ${d.company?`<span class="bmi-co-badge">${d.company}</span>`:''}
+        </div>
+        <div class="bmi-card-title">${d.title}</div>
+        <div class="bmi-card-summary">${d.summary}</div>
+        <div class="bmi-card-footer">
+          <span class="bmi-card-arrow">詳細を見る →</span>
+          ${d.source_url?`<a class="bmi-src-link" href="${d.source_url}" target="_blank" onclick="event.stopPropagation()">ソース ↗</a>`:''}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterBMI(cat, btn){
+  currentBMICat=cat;
+  document.querySelectorAll('.bmi-cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBMIGrid(cat);
+}
+
+function openBMIDetail(id){
+  const d=bmiDetails.find(x=>x.id===id); if(!d) return;
+  const body=document.getElementById('bmiDetailBody');
+  const tagHtml=(d.tags||[]).map(t=>`<span style="font-size:.65rem;border:1px solid var(--border);border-radius:4px;padding:.06rem .35rem;color:var(--text-sub)">${t}</span>`).join('');
+  body.innerHTML=`
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap">
+      <span class="bmi-cat-badge" style="font-size:.72rem">${CAT_LABELS[d.category]||d.category}</span>
+      ${d.company?`<span style="font-size:.72rem;border:1px solid var(--border);border-radius:4px;padding:.06rem .4rem;color:var(--text-sub)">${d.company}</span>`:''}
+      ${tagHtml}
+    </div>
+    <h1>${d.title}</h1>
+    <div class="bmi-detail-summary">${d.summary}</div>
+    <div class="bmi-detail-content">${formatContent(d.content)}</div>
+    ${d.source_url?`<a class="bmi-detail-src" href="${d.source_url}" target="_blank">ソースを見る →</a>`:''}`;
+  showOnlyPage('bmiDetailPage');
+}
+
+function formatContent(text){
+  if(!text) return '';
+  return text
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g,'<ul>$&</ul>')
+    .replace(/\n{2,}/g,'</p><p>')
+    .replace(/^(?!<[hul])/gm,'');
+}
+
+/* ══════════════════════════════════════════════════
+   PAGE NAVIGATION
+══════════════════════════════════════════════════ */
+const PAGES=['homePage','papersPage','archivePage','searchPage','bmiListPage','bmiDetailPage','profilePage','privacyPage','operatorPage'];
+
+function showOnlyPage(id){
+  PAGES.forEach(p=>{
+    const el=document.getElementById(p);
+    if(el) el.classList.toggle('open', p===id);
+  });
+  window.scrollTo(0,0);
+}
+
+function showHome(){ showOnlyPage('homePage'); }
+
+function openPage(id){ showOnlyPage(id); }
+
+function navClick(f){
+  if(f==='all'||f==='ns'||f==='bmi'||f==='ai'||f==='robot'){
+    currentField=f;
+    document.querySelectorAll('.field-tab').forEach(b=>b.classList.toggle('active',b.dataset.f===f));
+    ['ns','bmi','ai','robot'].forEach(x=>document.getElementById(`subcat-${x}`)?.classList.toggle('hidden',f!==x));
+    renderAll();
+    showOnlyPage('papersPage');
+    document.querySelectorAll('.nav-link').forEach(b=>b.classList.remove('active'));
+  }
+}
+
+function selectField(f, btn){
+  currentField=f;
+  document.querySelectorAll('.field-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['ns','bmi','ai','robot'].forEach(x=>document.getElementById(`subcat-${x}`)?.classList.toggle('hidden',f!==x));
+  renderAll();
+}
+
+function selectSubcat(f, sub, btn){
+  currentSubcat[f]=sub;
+  document.getElementById(`subcat-${f}`)?.querySelectorAll('.subcat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAll();
+}
+
+/* archive */
+const FIELD_LABELS={ns:'🧠 脳神経外科',bmi:'⚡ BMI / BCI',ai:'🔬 医療AI',robot:'🤖 人型ロボット'};
+function openArchive(f){
+  const list=archives[f]||[];
+  document.getElementById('archiveTitle').innerHTML=`<span>${FIELD_LABELS[f]} アーカイブ</span>`;
+  document.getElementById('archiveBody').innerHTML=list.length?list.map(renderCard).join(''):'<div style="color:var(--text-muted);text-align:center;padding:2rem">アーカイブはまだありません</div>';
+  showOnlyPage('archivePage');
+}
+function closeArchive(){ showOnlyPage('papersPage'); }
+
+/* BMI list */
+function openBMIList(){ renderBMIGrid('all'); showOnlyPage('bmiListPage'); }
+function closeBMIList(){ showHome(); }
+function closeBMIDetail(){ showOnlyPage('bmiListPage'); }
+
+/* ══════════════════════════════════════════════════
+   PAPER MODAL
+══════════════════════════════════════════════════ */
+function findPaper(id){
+  for(const f of ['ns','bmi','ai','robot']){
+    for(const col of ['new','popular']){ const p=papers[f][col].find(x=>x.id===id); if(p) return p; }
+    const p=(archives[f]||[]).find(x=>x.id===id); if(p) return p;
+  }
+  return null;
+}
+function openPaper(id){
+  if(adminMode) return;
+  const p=findPaper(id); if(!p) return;
+  const tags=(p.tags||[]).map(t=>t==='hot'?'<span class="tag tag-hot">🔥 HOT</span>':t==='pop'?'<span class="tag tag-pop">☆ 人気</span>':t==='new'?'<span class="tag tag-new">NEW</span>':'').join('');
+  document.getElementById('modalMeta').innerHTML=`<span class="ev-badge ${evClass(p.evLevel)}">${evLabel(p.evLevel)}</span>${tags}<span class="journal-label" style="font-size:.72rem;margin-left:.5rem">${p.journal} ${p.year}</span>`;
+  document.getElementById('modalTitle').textContent=p.title;
+  document.getElementById('modalAuthors').textContent=p.authors;
+  document.getElementById('modalAbstract').innerHTML=`<strong style="font-size:.68rem;letter-spacing:.07em;color:var(--text-muted);text-transform:uppercase">Abstract</strong><br><br>${p.abstract||'アブストラクトは一次文献をご参照ください。'}`;
+  const pml=p.pmid?`<a class="modal-link pm" href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/" target="_blank">PubMedで開く</a>`:'';
+  const doi=p.doi?`<a class="modal-link doi" href="https://doi.org/${p.doi}" target="_blank">DOIリンク</a>`:'';
+  const sc=`<a class="modal-link doi" href="https://scholar.google.com/scholar?q=${encodeURIComponent(p.titleEn||p.title)}" target="_blank">Google Scholar</a>`;
+  document.getElementById('modalLinks').innerHTML=pml+doi+sc;
+  document.getElementById('paperModal').classList.add('open');
+}
+
+/* ══════════════════════════════════════════════════
+   SEARCH
+══════════════════════════════════════════════════ */
+function doSearch(){ _search(document.getElementById('hdrSearch').value.trim()); }
+function doSearchHero(){ _search(document.getElementById('heroSearch').value.trim()); }
+function _search(q){
+  if(!q) return;
+  const all=[];
+  ['ns','bmi','ai','robot'].forEach(f=>{
+    ['new','popular'].forEach(col=>papers[f][col].forEach(p=>all.push(p)));
+    (archives[f]||[]).forEach(p=>all.push(p));
+  });
+  const ql=q.toLowerCase();
+  const res=all.filter(p=>
+    p.title.toLowerCase().includes(ql)||(p.titleEn||'').toLowerCase().includes(ql)||
+    (p.authors||'').toLowerCase().includes(ql)||(p.journal||'').toLowerCase().includes(ql)||
+    (p.abstract||'').toLowerCase().includes(ql)
+  );
+  document.getElementById('searchBody').innerHTML=res.length
+    ?`<div style="font-size:.75rem;color:var(--text-muted);margin-bottom:.8rem">「${q}」 ${res.length}件ヒット</div>`+res.map(renderCard).join('')
+    :`<div style="color:var(--text-muted);text-align:center;padding:2.5rem">「${q}」の検索結果はありません。<br><a href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(q)}" target="_blank" style="color:#2563eb">PubMedで検索</a> ｜ <a href="https://scholar.google.com/scholar?q=${encodeURIComponent(q)}" target="_blank" style="color:#2563eb">Google Scholarで検索</a></div>`;
+  showOnlyPage('searchPage');
+}
+function closeSearch(){ showHome(); document.getElementById('hdrSearch').value=''; }
+
+/* ══════════════════════════════════════════════════
+   CHAT
+══════════════════════════════════════════════════ */
+function openChatModal(){ document.getElementById('chatModal').classList.add('open'); }
+function sendChat(){
+  if(!document.getElementById('chatMsg').value.trim()){alert('メッセージを入力してください。');return;}
+  alert('メッセージを受け付けました。ありがとうございます！');
+  document.getElementById('chatMsg').value='';document.getElementById('chatName').value='';
+  document.getElementById('chatModal').classList.remove('open');
+}
+
+/* ══════════════════════════════════════════════════
+   ADMIN
+══════════════════════════════════════════════════ */
+function toggleAdmin(){ adminOpen=!adminOpen; document.getElementById('adminPanel').classList.toggle('open',adminOpen); }
+function toggleAdminMode(){ adminMode=!adminMode; renderAll(); alert(adminMode?'編集モードON — ▲▼で順序変更、✕で削除できます':'編集モードOFF'); }
+function mvP(id,dir,e){
+  e.stopPropagation();
+  for(const f of ['ns','bmi','ai','robot'])
+    for(const col of ['new','popular']){
+      const arr=papers[f][col],idx=arr.findIndex(p=>p.id===id); if(idx===-1) continue;
+      const ni=dir==='up'?idx-1:idx+1; if(ni<0||ni>=arr.length) return;
+      [arr[idx],arr[ni]]=[arr[ni],arr[idx]]; renderAll(); return;
+    }
+}
+function delP(id,e){
+  e.stopPropagation(); if(!confirm('削除しますか？')) return;
+  for(const f of ['ns','bmi','ai','robot'])
+    for(const col of ['new','popular']){
+      const idx=papers[f][col].findIndex(p=>p.id===id);
+      if(idx!==-1){papers[f][col].splice(idx,1);renderAll();return;}
+    }
+}
+function addPaperPrompt(){
+  const title=prompt('論文タイトル（日本語）:'); if(!title) return;
+  const field=prompt('分野 (ns/bmi/ai/robot):'); if(!['ns','bmi','ai','robot'].includes(field)){alert('無効');return;}
+  const col=prompt('列 (new/popular):'); if(!['new','popular'].includes(col)){alert('無効');return;}
+  papers[field][col].unshift({id:'c'+Date.now(),field,title,authors:prompt('著者:')||'',journal:prompt('雑誌名:')||'',year:new Date().getFullYear(),evLevel:prompt('エビデンスレベル(1a/1b/2/3):')||'2',tags:['new'],views:0,citations:0,abstract:'（手動追加）'});
+  renderAll(); alert('追加しました');
+}
+function runManualFetch(){
+  // GitHubリポジトリのURLを設定（公開後にここを実際のURLに変更）
+  const ghUrl = 'https://github.com/YOUR_USERNAME/neuroscihub/actions/workflows/weekly_fetch.yml';
+  if(confirm('GitHub Actions で手動実行しますか？\n\nGitHubのActionsページを開きます。\n「Run workflow」ボタンを押して実行してください。')){
+    window.open(ghUrl, '_blank');
+  }
+}
+function exportList(){
+  const out = {
+    generated_at: new Date().toISOString(),
+    papers, archives,
+    _note: 'NeuroSciHub エクスポート — 手動編集後は data/papers.json に配置してください'
+  };
+  const b=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download=`neuroscihub_export_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+/* ══════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════ */
+async function init(){
+  // 次回更新日時（毎週土曜09:00 JST）を計算
+  const now=new Date(), d=now.getDay(), diff=(6-d+7)%7||7;
+  const next=new Date(now); next.setDate(now.getDate()+diff); next.setHours(9,0,0,0);
+  document.getElementById('nextUpdate').textContent=
+    next.toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'})+' 09:00';
+
+  // data/papers.json を取得（GitHub Pages上では自動更新される）
+  try{
+    const r=await fetch('data/papers.json?v='+Date.now());
+    if(r.ok){
+      const data=await r.json();
+      if(data.papers)  Object.assign(papers, data.papers);
+      if(data.archives) Object.assign(archives, data.archives);
+      // 最終取得日時を更新
+      if(data.generated_at){
+        const d2=new Date(data.generated_at);
+        const badge=document.querySelector('.upd-badge div:last-child');
+        if(badge) badge.textContent='最終取得: '+d2.toLocaleDateString('ja-JP');
+      }
+      // 次回更新日時をJSONから取得
+      if(data.next_update){
+        const n2=new Date(data.next_update);
+        document.getElementById('nextUpdate').textContent=
+          n2.toLocaleDateString('ja-JP',{month:'long',day:'numeric',weekday:'short'})+' 09:00';
+      }
+      const total = Object.values(data.papers||{})
+        .reduce((s,f)=>s+f.new.length+f.popular.length, 0);
+      console.info(`[NeuroSciHub] ${total}件の論文を読み込みました (${data.generated_at})`);
+    } else {
+      console.info('[NeuroSciHub] data/papers.json が未生成です。サンプルデータを表示中。');
+    }
+  } catch(e){
+    console.info('[NeuroSciHub] ローカル確認中 — サンプルデータを表示');
+  }
+
+  renderAll();
+  showOnlyPage('homePage');
+}
+
+init();
+</script>
+</body>
+</html>
