@@ -1,17 +1,9 @@
 name: 週次論文自動収集・デプロイ
 
 on:
-  # 毎週土曜 00:00 UTC = 09:00 JST
   schedule:
     - cron: "0 0 * * 6"
-
-  # 管理画面「今すぐ自動取得」ボタン用
   workflow_dispatch:
-    inputs:
-      days_back:
-        description: "取得対象日数（デフォルト8）"
-        required: false
-        default: "8"
 
 jobs:
   fetch-and-deploy:
@@ -20,64 +12,27 @@ jobs:
       contents: write
 
     steps:
-      # ── 1. チェックアウト ──────────────────────────────────
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # ── 2. Python セットアップ ────────────────────────────
-      - name: Set up Python 3.12
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
-      # ── 3. 依存インストール ──────────────────────────────
       - name: Install dependencies
         run: pip install requests
 
-      # ── 4. 論文収集スクリプト実行 ────────────────────────
-      - name: Run fetch_papers.py
+      - name: Run fetch script
         env:
           PUBMED_API_KEY: ${{ secrets.PUBMED_API_KEY }}
-          S2_API_KEY:     ${{ secrets.S2_API_KEY }}
-          CONTACT_EMAIL:  ${{ secrets.CONTACT_EMAIL }}
-        run: python scripts/fetch_papers.py
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: python3 scripts/fetch_papers.py
 
-      # ── 5. 結果サマリー表示 ──────────────────────────────
-      - name: Summary
-        run: |
-          echo "=== 生成ファイル ==="
-          ls -lh data/papers.json
-          echo ""
-          echo "=== 論文数サマリー ==="
-          python3 - << 'EOF'
-          import json
-          with open("data/papers.json", encoding="utf-8") as f:
-              d = json.load(f)
-          print(f"生成日時: {d['generated_at']}")
-          print(f"次回更新: {d['next_update']}")
-          print("")
-          for field, cols in d["papers"].items():
-              total = len(cols["new"]) + len(cols["popular"])
-              arch  = len(d.get("archives", {}).get(field, []))
-              print(f"  {field:8s}: new={len(cols['new'])}, popular={len(cols['popular'])}, archive={arch}, 計{total}件")
-          EOF
-
-      # ── 6. コミット・プッシュ ────────────────────────────
       - name: Commit and push
         run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name  "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
           git add data/papers.json
-          git diff --staged --quiet && echo "変更なし (スキップ)" || (
-            git commit -m "🗓️ 週次論文更新: $(date +'%Y-%m-%d')" && git push
-          )
-
-      # ── 7. 失敗通知 ──────────────────────────────────────
-      - name: Notify on failure
-        if: failure()
-        run: |
-          echo "::error::論文収集が失敗しました。"
-          echo "::error::APIキー (PUBMED_API_KEY, S2_API_KEY) と CONTACT_EMAIL の設定を確認してください。"
+          git diff --staged --quiet || git commit -m "📚 週次論文更新: $(date +'%Y-%m-%d')"
+          git push
