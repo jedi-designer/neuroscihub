@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T03:39:17.612372Z",
+  "generated_at": "2026-04-07T04:16:03.095409Z",
   "next_update": "2026-04-11T00:00:00Z",
   "papers": {
     "ns": {
@@ -706,28 +706,6 @@
           "published_date": "2026-04-07"
         },
         {
-          "pmid": "41939087",
-          "title": "Comparative Impact of ChatGPT and Conventional Search Tools on Clinical Reasoning Performance: A Randomized Crossover Study in Preclinical Medical Students.",
-          "abstract": "[PURPOSE] To compare the impact of ChatGPT and conventional search strategies on clinical reasoning performance among preclinical medical students. [PATIENTS AND METHODS] A randomized crossover study was conducted at a single institution during a musculoskeletal system course involving 46 second-year medical students. Participants completed a baseline pre-test followed by two structured intervention phases in which they analyzed standardized clinical cases using either ChatGPT or conventional search tools (Google or PubMed). A 60-minute washout period was implemented before crossover to the alternate modality. Post-tests were administered after each phase. The primary outcome was clinical reasoning performance measured using an eight-point rubric-based scale. Secondary outcomes included se…",
-          "authors": "Nartthanarung A, Plangsiri K, Kongmalai P",
-          "journal": "Adv Med Educ Pract",
-          "year": 2026,
-          "doi": "10.2147/AMEP.S603679",
-          "evLevel": "1b",
-          "subcat": "llm",
-          "field": "ai",
-          "id": "ai_41939087",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-07"
-        },
-        {
           "pmid": "41016582",
           "title": "A deep learning method for diagnosis of oral potentially malignant disorders.",
           "abstract": "[OBJECTIVES] This study aimed to develop and validate a two-stage deep learning method for diagnosing oral potentially malignant disorders (OPMDs). We also compared its diagnostic performance with that of clinicians at different levels of seniority and evaluated its utility as a clinical decision support tool. [METHODS] A two-stage deep learning method was developed. CLA OPMD-OOML was designed to differentiate OPMDs from other oral mucosal lesions (OOML), while CLA OPMDs was designed to classify specific OPMD subtypes. The method was trained on an internal dataset (ZJUSS, n = 3305), and its generalizability was evaluated on two external multicenter datasets (WCHS and CS-SJTU, n = 1756). In a blinded, two-step comparative study, nine clinicians (junior, intermediate, and senior groups) perf…",
@@ -765,6 +743,28 @@
           "altmetric": 0,
           "news_count": 0,
           "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-07"
+        },
+        {
+          "pmid": "40030189",
+          "title": "DT-VNet: Deep Transformer-Based VNet Framework for 3D Prostate MRI Segmentation.",
+          "abstract": "Magnetic ResonanceImaging (MRI) is widely used in examining and diagnosing prostate diseases due to its high resolution. However, the diverse morphology of prostate tissue presents a significant challenge for precise gland segmentation. Convolutional Neural Networks have demonstrated effectiveness in segmenting prostate regions. Nevertheless, their limited capability in extracting global long-range semantic features often leads to unstable network segmentation performance. To address these challenges, we propose a Deep Transformer-based Vnet framework (DT-VNet), which consists of a symmetric encoder-decoder architecture that explores global contextual features and retains local feature information. To effectively learn global and local features, We propose the Deep Union Transformer (DU-Tr…",
+          "authors": "Cai Y, Lu H, Wu S, Berretti S, Wan S",
+          "journal": "IEEE J Biomed Health Inform",
+          "year": 2026,
+          "doi": "10.1109/JBHI.2024.3486966",
+          "evLevel": "3",
+          "subcat": "imaging",
+          "field": "ai",
+          "id": "ai_40030189",
+          "citations": 6,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 1,
           "tags": [
             "new"
           ],
