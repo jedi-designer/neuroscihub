@@ -1739,7 +1739,17 @@ function sendChat(){
 /* ══════════════════════════════════════════════════
    ADMIN
 ══════════════════════════════════════════════════ */
-function toggleAdmin(){ adminOpen=!adminOpen; document.getElementById('adminPanel').classList.toggle('open',adminOpen); }
+function toggleAdmin(){
+  if(!adminOpen){
+    const pw = prompt('管理者パスワードを入力してください：');
+    if(pw !== 'NSH2025admin'){
+      alert('パスワードが違います');
+      return;
+    }
+  }
+  adminOpen=!adminOpen;
+  document.getElementById('adminPanel').classList.toggle('open',adminOpen);
+}
 function toggleAdminMode(){ adminMode=!adminMode; renderAll(); alert(adminMode?'編集モードON — ▲▼で順序変更、✕で削除できます':'編集モードOFF'); }
 function mvP(id,dir,e){
   e.stopPropagation();
