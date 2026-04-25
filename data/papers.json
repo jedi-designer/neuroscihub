@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-18T02:18:35.059525Z",
-  "next_update": "2026-04-25T00:00:00Z",
+  "generated_at": "2026-04-25T02:19:22.088943Z",
+  "next_update": "2026-05-02T00:00:00Z",
   "papers": {
     "ns": {
       "new": [
         {
-          "pmid": "40695608",
-          "title": "Stroke thrombectomy with a novel reperfusion system including a 0.088'' aspiration catheter: the Imperative Trial.",
-          "abstract": "[BACKGROUND] Mechanical thrombectomy is the standard of care for large vessel occlusion (LVO) stroke, yet most device trials focus on individual technologies rather than complete systems. [OBJECTIVE] To evaluate the safety and efficacy of the Zoom Reperfusion System compared with performance goals derived from a meta-analysis of trials using established thrombectomy technologies. [METHODS] Prospective, multicenter, non-randomized, investigational device exemption trial conducted across 26 United States centers from October 2021 to March 2024. Adults with anterior circulation LVO stroke within 8 hours of onset were treated using the Zoom System, which includes aspiration catheters ranging from 0.035″ to 0.071″, and a novel 0.088″ intracranial guide/aspiration catheter. The primary efficacy …",
-          "authors": "Mack W, De Leacy RA, Grossberg JA, Majidi S, Tomalty RD, et al.",
-          "journal": "J Neurointerv Surg",
+          "pmid": "41988972",
+          "title": "Intensive Versus Standard Blood Pressure Control After Endovascular Thrombectomy in Acute Ischemic Stroke: A Meta-Analysis of Randomized Controlled Trials.",
+          "abstract": "[BACKGROUND] The optimal strategy for blood pressure management following mechanical thrombectomy for acute ischemic stroke due to large vessel occlusion remains a subject of ongoing research. [METHODS] We comprehensively searched PubMed, Embase, and the Cochrane Library from inception to June 20, 2025. Randomized controlled trials comparing intensive versus standard blood pressure control following mechanical thrombectomy for acute ischemic stroke were included. The primary outcomes were excellent functional outcome (modified Rankin Scale score 0-1 at 90 days) and good functional outcome (modified Rankin Scale score 0-2 at 90 days). Pooled odds ratios (ORs) with 95% CIs were calculated using a random-effects model. [RESULTS] A total of 6 randomized controlled trials were included. The poo…",
+          "authors": "Hashmi TM, Ahmed M, Ashraf H, Shakir M, Bhatti IA, et al.",
+          "journal": "J Am Heart Assoc",
           "year": 2026,
-          "doi": "10.1136/jnis-2025-023719",
+          "doi": "10.1161/JAHA.125.045503",
           "evLevel": "1a",
           "subcat": "stroke",
           "field": "ns",
-          "id": "ns_40695608",
-          "citations": 2,
+          "id": "ns_41988972",
+          "citations": 0,
           "altmetric": 0,
           "news_count": 0,
           "influential": 0,
@@ -24,7 +24,7 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
           "pmid": "41996656",
@@ -46,7 +46,51 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42029026",
+          "title": "Overlapping Stents for Dissecting Intracranial Aneurysms: A Systematic Review With Single-Arm Meta-Analysis.",
+          "abstract": "[PURPOSE] To assess the safety, efficacy, and clinical outcomes of overlapping stent-assisted reconstruction for dissecting intracranial aneurysms (DIAs) through a systematic review and single-arm meta-analysis. [METHODS] A systematic search of PubMed, Embase, and the Cochrane Library was conducted up to March 2025 for studies reporting outcomes of patients with angiographically confirmed DIAs treated with overlapping stents. Retrospective or prospective series including ≥5 patients were eligible. Data on angiographic, functional, and procedural outcomes were extracted. Pooled prevalence and 95% confidence intervals (CIs) were calculated under a random-effects model (DerSimonian-Laird). Study quality was evaluated using the Newcastle-Ottawa Scale. [RESULTS] Eleven retrospective studies enc…",
+          "authors": "Andrade Fernandes JV, Maximiano MLB, Donato KO, Han ML, Falcão L, et al.",
+          "journal": "J Endovasc Ther",
+          "year": 2026,
+          "doi": "10.1177/15266028261436715",
+          "evLevel": "1a",
+          "subcat": "endo",
+          "field": "ns",
+          "id": "ns_42029026",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42027695",
+          "title": "Cerebrovascular fibromuscular dysplasia.",
+          "abstract": "[BACKGROUND] Cerebrovascular fibromuscular dysplasia (FMD), that is, involving the cervical or intracranial arteries, is frequently overlooked despite its association with several neurological manifestations. [OBJECTIVES] To describe cerebrovascular FMD. [DESIGN] Systematic review. [DATA SOURCES AND METHODS] We searched PubMed, Embase, and Medline up to December 2024. We identified additional studies by handsearching the bibliographies of relevant studies. We included articles describing at least one aspect of epidemiology, manifestations, prognosis, and management of cerebrovascular FMD and preferentially focused on studies including ⩾15 patients. The quality of evidence was rated according to the Oxford Centre for Evidence-Based Medicine levels of evidence. [RESULTS] We included 119 stud…",
+          "authors": "Boulanger M, Nehme A, Touzé E",
+          "journal": "Ther Adv Neurol Disord",
+          "year": 2026,
+          "doi": "10.1177/17562864251386246",
+          "evLevel": "1a",
+          "subcat": "endo",
+          "field": "ns",
+          "id": "ns_42027695",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
         },
         {
           "pmid": "41995519",
@@ -68,108 +112,20 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
-          "pmid": "41983690",
-          "title": "Congress of Neurological Surgeons Systematic Review and Evidence-Based Guidelines for the Treatment of Adults With WHO Grade II Diffuse Glioma: Update.",
-          "abstract": "[BACKGROUND] The management of World Health Organization (WHO) grade II diffuse glioma is an important facet of all physicians involved in neuro-oncology. [OBJECTIVE] This is an update of the evidence-based guidelines for management of WHO grade II diffuse gliomas published by the Congress of Neurological Surgeons and American Association of Neurological Surgeons in 2015. [METHODS] The medical literature from January 1, 2013, through January 31, 2020, was searched to determine if information was available to update, modify, or create new recommendations related to imaging, surgical approaches, neuropathology and molecular markers, radiotherapy, chemotherapy, and management of tumor recurrence. [RESULTS] The writing group used the information from the updated literature search to formulate …",
-          "authors": "Ormond DR, Badve C, Redjal N, Orringer D, Lo S, et al.",
-          "journal": "Neurosurgery",
+          "pmid": "42011003",
+          "title": "Comparison of Clinical and Radiological Outcomes Between Suction Aspiration and Combination Methods of Mechanical Thrombectomy in Patients With Acute Cerebral Infarction: The COMPETE Trial.",
+          "abstract": "[BACKGROUND] Recent advances in suction catheter technology suggest that suction aspiration may prevent thrombus fragmentation during mechanical thrombectomy. We therefore hypothesize that the radiological outcomes of suction aspiration as a first-line treatment would not be inferior to those of the combination technique. This study aims to evaluate the radiological and clinical outcomes of first-line suction aspiration compared with those of the first-line combination technique for large artery occlusion amenable to both modalities. [METHODS] The COMPETE trial is a prospective, randomized, multicenter, noninferiority, open-label trial. A total of 1,136 patients will be randomized at a 1:1 ratio to either the suction aspiration or combination technique groups. [RESULTS] The primary endpoin…",
+          "authors": "Lee J, Sheen SH, Jin SC, Choi Y, Hyun D, et al.",
+          "journal": "J Korean Med Sci",
           "year": 2026,
-          "doi": "10.1227/neu.0000000000003912",
-          "evLevel": "1a",
-          "subcat": "tumor",
-          "field": "ns",
-          "id": "ns_41983690",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41973251",
-          "title": "The role of age and Galassi type in management and surgical outcomes of pediatric middle fossa arachnoid cysts: a systematic review and meta-analysis.",
-          "abstract": "[PURPOSE] Arachnoid cysts are found in approximately 2.6% of the pediatric population, mostly asymptomatic, incidental findings. However, those with mass effect symptoms from cyst growth may require surgery. Because of the variability in progression, we investigated the interaction of patient age with middle fossa arachnoid cyst (MFAC) clinical outcomes. [METHODS] A systematic review using PubMed, Google Scholar, and Web of Science electronic databases was completed according to the PRISMA guidelines to identify articles detailing pediatric MFACs. [RESULTS] Sixty articles meeting the inclusion criteria, totaling 1024 patients, were included. Signs of elevated ICP (194/873, prevalence: 22.2%, 95% CI: 19.5-25.0%) and primary headaches (263/873, prevalence: 30.1%, 95% CI: 27.1-33.2%) were the…",
-          "authors": "Jenkins A, Guirguis M, Smith P, Witten G, Anand S, et al.",
-          "journal": "Childs Nerv Syst",
-          "year": 2026,
-          "doi": "10.1007/s00381-026-07253-5",
-          "evLevel": "1a",
-          "subcat": "skull",
-          "field": "ns",
-          "id": "ns_41973251",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41991107",
-          "title": "Evaluating the Utility of Melatonin in Spine Surgery: A Systematic Review and Meta-Analysis of Randomized Clinical Trials.",
-          "abstract": "[BACKGROUND] Spine surgery is increasingly performed worldwide, and acute postoperative stressors such as pain and anxiety remain highly prevalent despite historical management with opioids and other pharmacological agents. Recently, interest has emerged in melatonin administration given its endogenous physiological roles, low cost, favorable adverse event profile, and documented benefits throughout surgical literature. [PURPOSE] This study aims to consolidate the existing evidence on melatonin's utility specifically in spine surgery, an area not yet comprehensively evaluated, to inform clinical practice and enhance spine surgeon comprehension. [STUDY DESIGN/SETTING] Pre-registered on PROSPERO, this systematic review queried PubMed/MEDLINE, CINAHL, SPORTDiscus, and Web of Science on Novemb…",
-          "authors": "Yazdanpanah S, Hanks HE, Baz S, Ton A, Baumann AN, et al.",
-          "journal": "Spine J",
-          "year": 2026,
-          "doi": "10.1016/j.spinee.2026.04.020",
-          "evLevel": "1a",
-          "subcat": "spine",
-          "field": "ns",
-          "id": "ns_41991107",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41921523",
-          "title": "Deferral of percutaneous coronary intervention in patients undergoing transcatheter aortic valve implantation (PRO-TAVI): an investigator-initiated, multicentre, open-label, non-inferiority, randomised controlled trial.",
-          "abstract": "[BACKGROUND] Coronary artery disease is common in patients undergoing transcatheter aortic valve implantation (TAVI). We aimed to assess whether deferral of percutaneous coronary intervention (PCI) is non-inferior to routine PCI before TAVI in patients with coronary artery disease. [METHODS] In this investigator-initiated, open-label, randomised controlled trial, done at 12 hospitals in the Netherlands, TAVI patients with coronary artery disease were randomly assigned in a 1:1 ratio to deferral of PCI or PCI before TAVI. Randomisation was done by use of a web-based system with random block sizes of 2 and 4, and stratification by presence of coronary artery disease involving proximal left anterior descending artery. The primary endpoint was a composite of all-cause mortality, myocardial inf…",
-          "authors": "Delewi R, Aarts HM, Broeze GM, Hemelrijk KI, van Ginkel DJ, et al.",
-          "journal": "Lancet",
-          "year": 2026,
-          "doi": "10.1016/S0140-6736(26)00308-9",
+          "doi": "10.3346/jkms.2026.41.e164",
           "evLevel": "1b",
           "subcat": "stroke",
           "field": "ns",
-          "id": "ns_41921523",
-          "citations": 1,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "40664427",
-          "title": "Systolic blood pressure within 24 hours after successful reperfusion correlates with outcomes in acute ischemic stroke: a secondary analysis of the EHCHANTED2/MT Trial.",
-          "abstract": "[BACKGROUND] The optimal threshold or range for systolic blood pressure (SBP) control in patients with successful reperfusion after endovascular thrombectomy for acute ischemic stroke (AIS) remains undefined. This study investigated whether SBP within the first 24 hours after successful reperfusion correlates with functional outcomes in AIS. [METHODS] In this secondary analysis of the ENCHANTED2/MT trial, patients were categorized into two groups (120-140 mm Hg and 140-180 mm Hg, respectively) based on achieved SBP within 24 hours after randomization. The primary outcome was the modified Rankin Scale (mRS) score at 90 days. Secondary outcomes included neurological deterioration at 7 days, major disability (mRS score of 3-5 at 90 days), hospitalization duration, and health-related quality o…",
-          "authors": "Liu Y, Zhu X, Zhang D, Li Z, Zhang G, et al.",
-          "journal": "J Neurointerv Surg",
-          "year": 2026,
-          "doi": "10.1136/jnis-2025-023697",
-          "evLevel": "1b",
-          "subcat": "stroke",
-          "field": "ns",
-          "id": "ns_40664427",
+          "id": "ns_42011003",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -178,7 +134,51 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42003301",
+          "title": "No antithrombotic therapy versus single antiplatelet therapy after percutaneous left atrial appendage closure in non-valvular atrial fibrillation: rationale and design of the multicentre, randomised, non-inferiority NAPT-LAAC trial.",
+          "abstract": "The current standard regimen for antithrombotic therapy after percutaneous left atrial appendage closure (LAAC) in patients with non-valvular atrial fibrillation (NVAF) recommends long-term use of antiplatelet agents. However, this recommendation is not supported by sufficient clinical evidence. Since LAAC is a treatment option for managing patients at high risk of bleeding, it is necessary to clarify whether long-term antiplatelet therapy is truly required after LAAC. The Non-Antithrombotic Versus. Single antiPlatelet Therapy Following Left Atrial Appendage Closure (NAPT-LAAC) trial, a prospective, randomised, controlled, open-label, blinded-endpoint multicentre study, will be conducted in Japan. It was designed to evaluate whether non-antithrombotic therapy is non-inferior to antiplatele…",
+          "authors": "Otsuka T, Yamamoto M, Asami M, Naganuma T, Ohno Y, et al.",
+          "journal": "EuroIntervention",
+          "year": 2026,
+          "doi": "10.4244/EIJ-D-25-01307",
+          "evLevel": "1b",
+          "subcat": "stroke",
+          "field": "ns",
+          "id": "ns_42003301",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42017224",
+          "title": "Endovascular Thrombectomy Versus Standard Medical Management in Acute Anterior Cerebral Artery Occlusion Stroke: The ORIENTAL-MeVO Registry Study.",
+          "abstract": "[BACKGROUND] The benefit of endovascular thrombectomy (EVT) in patients with stroke with proximal large vessel occlusion in the anterior circulation has been confirmed by several randomized controlled trials. However, evidence regarding EVT for anterior cerebral artery occlusion (ACAo) remains limited. This study aimed to compare clinical outcomes between EVT and standard medical management (SMM) in patients with ACAo. [METHODS] This retrospective multicenter study examined data from patients with acute ischemic stroke caused by ACAo (A1/A2/A3 segments) within 24 hours of symptom onset across 25 Chinese centers between September 2019 and September 2024. Eligible patients had ACAo verified by computed tomography angiography, magnetic resonance angiography, and digital subtraction angiograph…",
+          "authors": "Zhang K, Jing X, Abdalkader M, Wang J, Tao C, et al.",
+          "journal": "Stroke",
+          "year": 2026,
+          "doi": "10.1161/STROKEAHA.125.054127",
+          "evLevel": "1b",
+          "subcat": "endo",
+          "field": "ns",
+          "id": "ns_42017224",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
         }
       ],
       "popular": []
@@ -186,149 +186,17 @@
     "bmi": {
       "new": [
         {
-          "pmid": "41861408",
-          "title": "Navigation paradigms for non-invasive BCI-controlled wheelchairs: a systematic review.",
-          "abstract": "Brain-controlled powered wheelchairs represent a promising advancement for individuals with neurological conditions that significantly impair motor function. Despite substantial progress, brain-controlled wheelchairs have not been adapted for real-world settings. This article systematically reviews recent trends in brain-computer interface (BCI) technology for wheelchair navigation and control, highlighting the contributions and limitations of various navigation paradigms. The review was conducted in accordance with the Preferred Reporting Items for Systematic reviews and Meta-Analyses guidelines, sourcing studies from four databases (PubMed, Scopus, IEEE Xplore, Google Scholar) published between 2000 and April 2025. It focused on non-invasive BCI paradigms and real-world navigation experi…",
-          "authors": "Ukaegbu UF, Houshmand S, Hammond L, Adams K, Andersen J, et al.",
-          "journal": "Prog Biomed Eng (Bristol)",
+          "pmid": "42021568",
+          "title": "From Bio-Interface Materials to Neural Integration: The Next-Generation Brain-Machine Interfaces Powered by Hydrogels.",
+          "abstract": "Brain-machine interfaces (BMIs), which serve as revolutionary tools for neural recording, modulation, and rehabilitation, are highly dependent on the biocompatibility and mechanical suitability of their electrode materials. Although traditional metal electrodes possess excellent conductivity, their inherent rigidity causes a substantial mechanical mismatch with soft neural tissue, leading to chronic inflammatory responses and poor long-term stability. The emergence of hydrogel electrodes has provided a breakthrough solution to this fundamental limitation. Hydrogels, characterized by their softness, high ionic conductivity, and tissue-like compliance, offer a viable solution to mitigate these issues. This review systematically explores the material properties of hydrogel-integrated BMIs, pr…",
+          "authors": "Li Z, Ge R, Zhao Z, Xiao H, Du C, et al.",
+          "journal": "Adv Mater",
           "year": 2026,
-          "doi": "10.1088/2516-1091/ae5563",
-          "evLevel": "1a",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41861408",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41965492",
-          "title": "Artificial Intelligence and Machine Learning in Pediatric Epilepsy: A Systematic Review.",
-          "abstract": "[INTRODUCTION] To evaluate the progress of artificial intelligence (AI)-based tools in interpreting clinical data, to compare the existing models, to identify the most proficient models and to determine the limitations of current models and existing research. [METHODS] Three databases were searched to identify studies in any language that met the eligibility criteria. At least three independent reviewers screened and evaluated each record. [RESULTS] Convolutional neural networks emerged as the predominant deep learning architecture, whereas support vector machines were the most frequently used classical machine learning approach. AI-driven seizure detection showed diagnostic performance approaching that of experienced specialists. Reported applications include the detection of specific epi…",
-          "authors": "Malik E, Wizner M, Karpierz JI, Pająk Z, Roszkowska M, et al.",
-          "journal": "Neurol Ther",
-          "year": 2026,
-          "doi": "10.1007/s40120-026-00924-0",
-          "evLevel": "1a",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41965492",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41961852",
-          "title": "Brain-computer interface-based neurofeedback training enables transferable control of cortical state switching in humans.",
-          "abstract": "Behavioral flexibility relies on transient neural dynamics that govern cortical state transitions. However, whether humans can deliberately learn to control such state transitions and generalize trained neural dynamics beyond contexts remains unclear. Here, we demonstrate that operation of a brain-computer interface (BCI) which links time evolution of sensorimotor activity with real-time feedback enables volitional control over the targeted neural population. Compared with a double-blind sham control group, trained participants modulated sensorimotor oscillations in the absence of BCI. Data-driven latent-state analysis further revealed stronger interregional phase coupling and steeper broadband spectral slope in the medial frontal cortex during transitions. The training-induced reorganizat…",
-          "authors": "Iwama S, Matsuoka A, Ushiba J",
-          "journal": "Proc Natl Acad Sci U S A",
-          "year": 2026,
-          "doi": "10.1073/pnas.2525769123",
-          "evLevel": "1b",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41961852",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41649157",
-          "title": "Mamba-based deep learning approach for sleep staging on a wireless multimodal wearable system without electroencephalography.",
-          "abstract": "[STUDY OBJECTIVES] We investigate a Mamba-based deep learning approach for sleep staging on signals from ANNE One (Sibel Health, Chicago, IL), a non-intrusive dual-module wireless wearable system measuring chest electrocardiography, triaxial accelerometry, chest temperature, and finger photoplethysmography and finger temperature. [METHODS] We obtained wearable sensor recordings from 357 adults undergoing concurrent polysomnography at a tertiary care sleep lab. Each polysomnography recording was manually scored, and these annotations served as ground truth labels for training and evaluation of our models. Polysomnography and wearable sensor data were automatically aligned using their electrocardiography channels with manual confirmation by visual inspection. We trained a Mamba-based recurre…",
-          "authors": "Zhang AH, He-Mo A, Yin RF, Li C, Tang Y, et al.",
-          "journal": "Sleep",
-          "year": 2026,
-          "doi": "10.1093/sleep/zsag022",
-          "evLevel": "3",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41649157",
-          "citations": 2,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41288599",
-          "title": "Multimodal cardiovascular risk profiling using self-supervised learning of polysomnography.",
-          "abstract": "[STUDY OBJECTIVES] Polysomnography (PSG) provides a comprehensive assessment of brain, cardiac, and respiratory activity during sleep. While it is widely used for diagnosing sleep disorders, its potential to assess future health risks has not been fully explored. This study aimed to develop and evaluate an interpretable framework to identify physiological patterns in PSG data linked to cardiovascular disease (CVD) outcomes, without relying on manual annotations (e.g. sleep stages). [METHODS] We developed a self-supervised deep learning model that extracts meaningful patterns from multi-modal signals (electroencephalography [EEG], electrocardiography [ECG], and respiratory signals [Resp]). The model was trained on data from 4398 participants. Projection scores were derived by contrasting em…",
-          "authors": "He Z, Li H, Yuan G, Killgore WDS, Quan SF, et al.",
-          "journal": "Sleep",
-          "year": 2026,
-          "doi": "10.1093/sleep/zsaf371",
-          "evLevel": "3",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41288599",
-          "citations": 2,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41530894",
-          "title": "Fetal sleep: a cross-species review of physiology, measurement, and classification.",
-          "abstract": "[STUDY OBJECTIVES] Fetal sleep is a vital yet underexplored aspect of prenatal neurodevelopment. Its cyclic organization reflects the maturation of central neural circuits, and disturbances in these patterns may offer some of the earliest detectable signs of neurological compromise. This is the first review to integrate more than seven decades of research into a unified, cross-species synthesis of fetal sleep. We examine: (1) Physiology and Ontogeny-comparing human fetuses with animal models; and (2) Methodological Evolution-transitioning from invasive neurophysiology to non-invasive monitoring and deep learning frameworks. [METHODS] A structured narrative synthesis was guided by a systematic literature search across four databases (PubMed, Scopus, IEEE Xplore, and Google Scholar). From 29…",
-          "authors": "Tang W, Vargas-Calixto J, Katebi N, Galinsky R, Clifford GD, et al.",
-          "journal": "Sleep",
-          "year": 2026,
-          "doi": "10.1093/sleep/zsag003",
-          "evLevel": "3",
-          "subcat": "eeg",
-          "field": "bmi",
-          "id": "bmi_41530894",
-          "citations": 1,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41965314",
-          "title": "Endovascular neural interfaces: current platforms and clinical readiness.",
-          "abstract": "Neurointerventional techniques are facilitating a new class of neural interfaces that record and stimulate brain activity from within the cerebral vasculature. Conventional scalp electroencephalography (EEG) is safe and widely scalable but is limited by skull attenuation and volume conduction, whereas electrocorticography and stereoelectroencephalography provide higher-amplitude signals at the cost of craniotomy or stereotactic depth implantation and procedure-related morbidity. Endovascular approaches offer a distinct access paradigm by leveraging familiar catheter-based workflows to reach cortical veins and dural sinuses. They occupy a practical middle ground that enhances signal quality relative to scalp EEG while mitigating some of the procedural risks associated with open or multi-tra…",
-          "authors": "Hosoo H, Araki K, Masuda Y, Ishida H, Matsumaru Y",
-          "journal": "J Neurointerv Surg",
-          "year": 2026,
-          "doi": "10.1136/jnis-2025-024870",
+          "doi": "10.1002/adma.202523422",
           "evLevel": "3",
           "subcat": "device",
           "field": "bmi",
-          "id": "bmi_41965314",
+          "id": "bmi_42021568",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -337,20 +205,20 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
-          "pmid": "41987849",
-          "title": "Emerging Neural Recording and Neurostimulation Technologies Based on Brain-Computer Interface: A Promising Approach for Neuropsychiatric Disorders.",
-          "abstract": "Neurological and psychiatric disorders, arising from disruptions in neural circuitry, pose a major and growing challenge to global healthcare systems. Brain-computer interface (BCI) technology has emerged as a promising approach, enabling direct communication between the brain and external devices. By facilitating bidirectional interaction with the nervous system, BCIs open new avenues for both diagnosis and treatment. In this review, we examine recent advances in recording and stimulation technologies within the BCI framework and evaluate their therapeutic potential across major neuropsychiatric disorders. We focus particularly on post-stroke motor rehabilitation as a representative paradigm, providing detailed analysis of the mechanisms, clinical evidence, and future prospects of endovas…",
-          "authors": "Xu Y, Chen D, Ye Q, Zhang P, Shi J, et al.",
-          "journal": "MedComm (2020)",
+          "pmid": "42000827",
+          "title": "A systematic evaluation of EEG electrode geometry for enhanced signals: an experimental approach.",
+          "abstract": "The advancement of neural recording technologies is critical for improving our understanding of brain function and enhancing the efficacy of brain-computer-interfaces. Electroencephalography (EEG), is a non-invasive technique for recording brain electrical activity via scalp electrodes. The geometry and material of electrodes significantly influence signal quality and noise. Here, we investigated the effect of electrode geometry on EEG performance. Time-domain analysis of the selected nanostructured pin-shaped gold-based dry electrodes, showed an in-phase conductance of 0.9 mS (effective resistance ~ 1.1 kΩ) without applied pressure. Also, impedance spectroscopy revealed a reduced electrode-skin impedance of ~ 300 kΩ at 100 Hz, with the bulk resistance of ~ 1.95 Ω, consistent with expected…",
+          "authors": "Razaghi Z, Faraji M, Mohammadpour R, Ebrahimpour R, Zad AI",
+          "journal": "Sci Rep",
           "year": 2026,
-          "doi": "10.1002/mco2.70739",
+          "doi": "10.1038/s41598-026-47459-w",
           "evLevel": "3",
           "subcat": "device",
           "field": "bmi",
-          "id": "bmi_41987849",
+          "id": "bmi_42000827",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -359,13 +227,167 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42024948",
+          "title": "NeuroDecoder: A new framework for image decoding and reconstruction of EEG signals.",
+          "abstract": "Brain-Computer Interface (BCI) technology holds great promise for enhancing human health and quality of life, with visual stimulus reconstruction from EEG signals being a key application. However, the complexity and noise of EEG data challenge existing reconstruction methods. To address these issues, we propose NeuroDecoder, an end-to-end multimodal guidance generation framework that produces high-quality images from EEG signals. The key innovation is the collaborative mitigation of EEG noise and cross-modal representation discrepancies through a noise-robust encoder, mask-based triple-contrastive alignment, and a fixed generative model. Specifically, NeuroDecoder consists of three integrated learning stages: 1) EEG Decoding, 2) Modality Alignment, and 3) Image Reconstruction. In the decod…",
+          "authors": "Ma W, Zhang H, Li Y, Wei M",
+          "journal": "IEEE J Biomed Health Inform",
+          "year": 2026,
+          "doi": "10.1109/JBHI.2026.3686624",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_42024948",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "41998183",
+          "title": "Advancing EEG-based assessment of consciousness and cognition in prolonged disorders of consciousness.",
+          "abstract": "[BACKGROUND] Accurate assessment of residual awareness in patients with Prolonged Disorders of Consciousness (PDoC) remains a major clinical challenge, as conventional behavioural tools can underestimate covert cognition. This study evaluates whether a structured, multi-phase motor imagery Brain-Computer Interface (MI-BCI) protocol provides objective electroencephalography (EEG)-based indicators of awareness that complement behavioural assessments. [METHODS] Forty-four participants (N = 44) completed repeated imagined-movement tasks using wearable EEG (PDoC: Unresponsive Wakefulness Syndrome (UWS, n = 14), Minimally Conscious State (MCS, n = 17), Locked-In Syndrome (LIS, n = 11); two able-bodied participants as benchmarks; ClinicalTrials.gov: NCT03827187; 30-01-2019). The protocol assessed…",
+          "authors": "du Bois N, Korik A, Hodge S, Hudson L, Elahi AS, et al.",
+          "journal": "Commun Med (Lond)",
+          "year": 2026,
+          "doi": "10.1038/s43856-026-01574-x",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_41998183",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42003758",
+          "title": "An Interpretability Framework for Convolutional Neural Network-Based Electroencephalography Analysis Discovers New Spatial and Spectral Epileptic Biomarkers.",
+          "abstract": "Deep learning (DL) models, particularly convolutional neural networks (CNNs), have shown promise in automated epileptic seizure detection from electroencephalogram (EEG). However, their \"black-box\" nature limits clinical adoption, as interpretability is critical for trust and validation in medical applications. A novel interpretability method for CNN-based seizure detection models, designed to uncover meaningful spatial and spectral EEG biomarkers, is proposed. The approach combines frequency- and spatial-domain interpretation to provide both global model behavior analysis and local, sample-specific explanations. It also accounts for the task-specific design, neurophysiological grounding and cross-framework validation - concepts often neglected by many state-of-the-art methods. Results are…",
+          "authors": "Grubov VV, Karpov OE, Nazarikov SI, Kurkin SA, Utyashev NP, et al.",
+          "journal": "Int J Neural Syst",
+          "year": 2026,
+          "doi": "10.1142/S0129065726500334",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_42003758",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42013272",
+          "title": "BR-SFDA: A Source-Target Bidirectional Refined SFDA for Privacy Preserving EEG-based BCIs.",
+          "abstract": "Due to significant inter-subject variability in feature distributions caused by the diversity of neural activity patterns, Electroencephalography (EEG)-based brain-computer interface (BCI) systems face considerable challenges in cross-subject EEG decoding. Though transfer learning has been widely introduced for knowledge transfer from source subject(s) to target subject and exhibited great success, a non-negligible issue is that source subjects' EEG data usually contains privacy information and should be protected. To address both issues, we propose a source-target bidirectional refined source-free domain adaptation (BR-SFDA) framework in this paper for privacy preserving cross-subject EEG classification. BR-SFDA makes improvements from two aspects under the popular 'pretraining and fine-t…",
+          "authors": "Zhang J, Liu J, Wang L, Peng Y, Kong W, et al.",
+          "journal": "IEEE J Biomed Health Inform",
+          "year": 2026,
+          "doi": "10.1109/JBHI.2026.3686008",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_42013272",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "41997170",
+          "title": "Adapting frozen foundation models for montage-agnostic high-resolution EEG event segmentation.",
+          "abstract": "Deploying brain-computer interfaces (BCIs) outside controlled laboratories requires detecting neural events in continuous electroencephalography (EEG) without relying on time-locked synchronization, while simultaneously generalizing across the diverse electrode montages encountered with different acquisition hardware. We investigate whether frozen EEG foundation models can be adapted to perform high temporal resolution event segmentation across unseen montages and datasets without subject-specific calibration.&#xD;&#xD;Approach. We introduce a lightweight, parameter-efficient preprocessing layer that interpolates learned channel embeddings based on electrode coordinates, enabling any frozen foundation model backbone to accept arbitrary montages. A shallow segmentation head is attached to p…",
+          "authors": "Ma J, Ruotsalo T",
+          "journal": "J Neural Eng",
+          "year": 2026,
+          "doi": "10.1088/1741-2552/ae6142",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_41997170",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42014805",
+          "title": "Neural-LWE: a biometric-anchored authenticated key agreement for post-quantum brain-computer interfaces.",
+          "abstract": "",
+          "authors": "Nasiraee H, Nazari F, Samsami-Khodadad F, Liu X",
+          "journal": "Sci Rep",
+          "year": 2026,
+          "doi": "10.1038/s41598-026-48527-x",
+          "evLevel": "3",
+          "subcat": "eeg",
+          "field": "bmi",
+          "id": "bmi_42014805",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
         }
       ],
       "popular": []
     },
     "robot": {
       "new": [
+        {
+          "pmid": "42002022",
+          "title": "Fully Digital and Robot-Assisted Workflow for Mandibular Molar Autotransplantation: A Proof-of-Concept.",
+          "abstract": "[OBJECTIVES] To present a robot-assisted protocol for autogenous mandibular molar transplantation using an autonomous robotic system for shape-matched recipient socket preparation. [METHODS] The novel workflow comprises the following steps: 1) Preoperative planning: Based on preoperative intraoral scans and cone-beam computed tomography (CBCT) data, the transplant position of the donor tooth was precisely planned, and the surgical path was generated. An intraoral registration device was designed and fabricated, and a donor tooth replica was 3D-printed. 2) Intraoperative execution: Following the preoperative plan, the robot performed supervised autonomous, layer-by-layer, incremental milling to prepare a personalized osteotomy socket that accurately matched the donor root morphology. All re…",
+          "authors": "Liu C, Hou R, Chen G, Zhou L, Zhang Y, et al.",
+          "journal": "J Dent",
+          "year": 2026,
+          "doi": "10.1016/j.jdent.2026.106704",
+          "evLevel": "3",
+          "subcat": "surgical",
+          "field": "robot",
+          "id": "robot_42002022",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
         {
           "pmid": "41978391",
           "title": "[Current status and future perspectives of precision treatment for locally advanced rectal cancer].",
@@ -386,29 +408,7 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41992327",
-          "title": "Modeling and validation of crutch-supported exoskeleton gait using a double-inverted pendulum approach.",
-          "abstract": "",
-          "authors": "Norouzzadeh R, Behzadipour S, Mohebbi A, Lancini M",
-          "journal": "J Neuroeng Rehabil",
-          "year": 2026,
-          "doi": "10.1186/s12984-026-01922-x",
-          "evLevel": "3",
-          "subcat": "rehab",
-          "field": "robot",
-          "id": "robot_41992327",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
           "pmid": "41996429",
@@ -430,20 +430,20 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
-          "pmid": "41991653",
-          "title": "Applications of artificial intelligence in mechanical engineering for the field of upper limb exoskeletons.",
-          "abstract": "The development, selection, and adaptation of assistive technologies such as exoskeletons to assist people with disabilities is associated with a complex decision-making process due to the uncertainty of evaluation criteria. Traditional decision-making methods in this area often fail to address these complex challenges, leading to inefficiencies in the preparation and implementation of the exoskeleton production process and, consequently, reduced product quality. To overcome these challenges, this article proposes an artificial intelligence (AI)-based decision support approach for the development of upper limb exoskeletons. This approach reduces costs, improves production quality, and accelerates exoskeleton design and production, with accuracy reaching 100 per cent using a multilayer perc…",
-          "authors": "Rojek I",
-          "journal": "Sci Rep",
+          "pmid": "42010653",
+          "title": "Lower limb active exoskeletons, exosuits, assistive devices and specifications: a scoping review.",
+          "abstract": "",
+          "authors": "Trott RE, Kleinig TJ, Hillier SL, Reynolds KJ, Hobbs DA",
+          "journal": "J Neuroeng Rehabil",
           "year": 2026,
-          "doi": "10.1038/s41598-026-48968-4",
+          "doi": "10.1186/s12984-026-01955-2",
           "evLevel": "3",
           "subcat": "rehab",
           "field": "robot",
-          "id": "robot_41991653",
+          "id": "robot_42010653",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -452,29 +452,7 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41989350",
-          "title": "Robotic-Assisted rehabilitation in stroke patients using the hybrid assistive limb (Hal): A narrative review.",
-          "abstract": "BackgroundStroke remains a leading cause of long-term disability worldwide. Robotic-assisted rehabilitation, particularly with the Hybrid Assistive Limb (HAL), has emerged as an innovative approach to enhance motor recovery and functional outcomes. HAL is a wearable exoskeleton that detects bioelectrical signals and provides real-time support, offering unique opportunities for task-specific and intensive neurorehabilitation.ObjectiveThis narrative review summarizes recent clinical evidence on the application of HAL in stroke rehabilitation, focusing on its effects on gait, upper limb recovery, activities of daily living (ADL), and safety, while discussing its limitations and future directions.MethodsA literature search of PubMed and Scopus was conducted for studies investigating HAL-assist…",
-          "authors": "Yuzhu L, Krishnaswamy G",
-          "journal": "Technol Health Care",
-          "year": 2026,
-          "doi": "10.1177/09287329261440743",
-          "evLevel": "3",
-          "subcat": "rehab",
-          "field": "robot",
-          "id": "robot_41989350",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         }
       ],
       "popular": []
@@ -482,17 +460,17 @@
     "ai": {
       "new": [
         {
-          "pmid": "41992690",
-          "title": "Accuracy of Deep Learning for Detecting Axillary Lymph Node Metastasis in Breast Cancer: Systematic Review and Meta-Analysis.",
-          "abstract": "[BACKGROUND] Axillary lymph node metastasis (ALNM) is an important factor in detecting breast cancer (BC). However, the noninvasive diagnosis of ALNM remains challenging. While some deep learning (DL) models have been developed for preoperative ALNM assessment, their performance lacks systematic evaluation. [OBJECTIVE] This study aims to evaluate the effectiveness of DL in detecting ALNM, providing evidence to support clinical diagnostic tools. [METHODS] Embase, Web of Science, PubMed, and Cochrane Library were searched from their inception through January 26, 2026. The Quality Assessment of Diagnostic Accuracy Studies was used to assess the risk of bias in the included studies. A bivariate mixed effects model was applied for analysis, and subgroup analyses were conducted based on differen…",
-          "authors": "Wang X, Li T, Wang X, Fu D",
-          "journal": "J Med Internet Res",
+          "pmid": "42028301",
+          "title": "Diagnostic Test Accuracy of Artificial Intelligence in Large Vessel Occlusion: A Systematic Review and Meta-Analysis.",
+          "abstract": "Large vessel occlusion (LVO) requires prompt detection, and CT angiography (CTA) is frequently used due to its short acquisition time and visibility of vessels. Artificial intelligence (AI), including Viz-LVO, CINA-LVO, RAPID-CTA and JLK, may be available as emerging tools for supporting timely and accurate diagnoses. This study aimed to examine and summarise the evidence of AI diagnostic performance in detecting LVO. Scopus, PubMed and ScienceDirect were utilised to search relevant articles before February 2, 2025. Studies were included in the primary outcomes analysis if they reported an overall confusion diagnostic matrix and were included in the secondary outcomes if they reported AI's diagnostic performance by occlusion site. Of the 878 records, 11 articles were included, and 10.937 p…",
+          "authors": "Susanti L, Cuandra KN, Tristan CD, Fatahillah MZ, Shofiy AR, et al.",
+          "journal": "Neurol Res Int",
           "year": 2026,
-          "doi": "10.2196/77593",
+          "doi": "10.1155/nri/5709868",
           "evLevel": "1a",
           "subcat": "imaging",
           "field": "ai",
-          "id": "ai_41992690",
+          "id": "ai_42028301",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -501,86 +479,20 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
-          "pmid": "41990487",
-          "title": "Lung cancer diagnosis from CT scans using artificial intelligence techniques: A global perspective.",
-          "abstract": "[OBJECTIVE] In this research, we conducted a systematic review of artificial intelligence techniques used for the diagnosis of lung cancer. [METHODS] A systematic search of Web of Science, PubMed, Scopus, Epistemonikos, Cochrane, Medline, and Embase databases was carried out, containing the literature published up to June 2025. Prediction model risk of bias assessment tool (PROBAST) was used to evaluate the risk of bias and applicability of the diagnostic model studies included in the current research. [RESULTS] 204 studies were included. The included articles utilized various AI techniques, including CNN (Convolutional Neural Network), SVM (Support Vector Machine), RF (Random Forest), KNN (K-Nearest Neighbor), PM-DL (Pattern Matching combined with Deep Learning), ANN (Artificial Neural Ne…",
-          "authors": "Wang Y, Liu W, Cao Y, Chen F",
-          "journal": "Clinics (Sao Paulo)",
+          "pmid": "42026140",
+          "title": "The effect of medical explanations from large language models on diagnostic accuracy in radiology.",
+          "abstract": "Large language models (LLMs) are increasingly used by physicians for diagnostic support. A key advantage of LLMs is the ability to generate explanations that can help physicians understand the reasoning behind a diagnosis. However, the best-suited format for LLM-generated explanations remains unclear. In this large-scale study, we examined the effect of different formats for LLM explanations on clinical decision-making. For this, we conducted a randomized experiment with radiologists reviewing patient cases with radiological images (N = 2020 assessments). Participants received either no LLM support (control group) or were supported by one of three LLM-generated explanations: (1) a standard output providing the diagnosis without explanation; (2) a differential diagnosis comparing multiple p…",
+          "authors": "Spitzer P, Hendriks D, Rudolph J, Schlaeger S, Ricke J, et al.",
+          "journal": "NPJ Digit Med",
           "year": 2026,
-          "doi": "10.1016/j.clinsp.2026.100930",
-          "evLevel": "1a",
-          "subcat": "imaging",
-          "field": "ai",
-          "id": "ai_41990487",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41996287",
-          "title": "Artificial Intelligence in Trauma Care: A Systematic Review of Resuscitation, Diagnosis, Risk Prediction, and Management.",
-          "abstract": "[BACKGROUND] Artificial intelligence (AI) is increasingly being explored in trauma care as a tool to support clinical decision-making. [OBJECTIVE] To evaluate current evidence on AI applications in trauma resuscitation, diagnosis, complication prediction, and patient management. [METHODS] A systematic review was conducted using PubMed, Web of Science, ScienceDirect, and Cochrane databases to identify studies published between 2015 and 2025. After screening 2968 records, 58 studies met inclusion criteria and were analyzed using a narrative synthesis approach. [RESULTS] AI models were applied to trauma resuscitation (n = 8), diagnosis (n = 18), complication prediction (n = 23), and patient management (n = 9). Machine learning and deep learning approaches demonstrated performance comparable w…",
-          "authors": "Prashar S, Nasef Y, Brown A, Nishida C, Rogers LS, et al.",
-          "journal": "J Trauma Nurs",
-          "year": 2026,
-          "doi": "10.1097/JTN.0000000000000920",
-          "evLevel": "1a",
-          "subcat": "prediction",
-          "field": "ai",
-          "id": "ai_41996287",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41965492",
-          "title": "Artificial Intelligence and Machine Learning in Pediatric Epilepsy: A Systematic Review.",
-          "abstract": "[INTRODUCTION] To evaluate the progress of artificial intelligence (AI)-based tools in interpreting clinical data, to compare the existing models, to identify the most proficient models and to determine the limitations of current models and existing research. [METHODS] Three databases were searched to identify studies in any language that met the eligibility criteria. At least three independent reviewers screened and evaluated each record. [RESULTS] Convolutional neural networks emerged as the predominant deep learning architecture, whereas support vector machines were the most frequently used classical machine learning approach. AI-driven seizure detection showed diagnostic performance approaching that of experienced specialists. Reported applications include the detection of specific epi…",
-          "authors": "Malik E, Wizner M, Karpierz JI, Pająk Z, Roszkowska M, et al.",
-          "journal": "Neurol Ther",
-          "year": 2026,
-          "doi": "10.1007/s40120-026-00924-0",
-          "evLevel": "1a",
-          "subcat": "prediction",
-          "field": "ai",
-          "id": "ai_41965492",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41979367",
-          "title": "ChatGPT provides accurate and safe responses to patient questions on hip arthroscopy, while completeness remains variable: A systematic review and single-arm meta-analysis.",
-          "abstract": "[PURPOSE] Large language models, such as ChatGPT, are increasingly used by patients seeking information on hip arthroscopy (HAS) and femoroacetabular impingement (FAI). Despite their linguistic fluency, the accuracy, completeness and safety of procedure-specific patient information remain unclear. Although orthopaedic studies report variable performance across subspecialties, no systematic evaluation has specifically addressed HAS. [METHODS] PubMed, Embase, Scopus, CINAHL and Epistemonikos were searched to 10 February 2026 for studies evaluating ChatGPT responses to patient-oriented HAS or FAI questions. Randomized and non-randomized studies, observational cohorts and case series were eligible. Data on question sources, model versions, rating systems and performance domains (accuracy, rele…",
-          "authors": "Ramadanov N, Penchev P, Voss M, Heinz M, Prill R, et al.",
-          "journal": "Knee Surg Sports Traumatol Arthrosc",
-          "year": 2026,
-          "doi": "10.1002/ksa.70396",
-          "evLevel": "1a",
+          "doi": "10.1038/s41746-026-02619-0",
+          "evLevel": "1b",
           "subcat": "llm",
           "field": "ai",
-          "id": "ai_41979367",
+          "id": "ai_42026140",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -589,64 +501,42 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
         },
         {
-          "pmid": "41987670",
-          "title": "Scenario-based evaluation of large language models for reference accuracy in dermatology: literature retrieval on latent tuberculosis in psoriasis patients on anti-IL-17/23 therapy.",
-          "abstract": "[BACKGROUND] Large language models (LLMs) could accelerate clinical literature searches, but their reliability is compromised by \"hallucinations\" generating false references. This study compared three general-purpose LLMs using a standardized dermatology literature retrieval prompt for reference accuracy, relevance, and hallucination rates. [METHODS] A clinical scenario on latent tuberculosis management in psoriasis patients on IL-17/23 inhibitors was defined. To establish a reference standard, references (n=74) from the two most recent and comprehensive systematic reviews on the topic were screened. These two reviews were selected as they represented the most current and complete syntheses of evidence on this clinical question; using their reference lists ensured a focused, expert-validat…",
-          "authors": "Altunisik N, Altunisik Toplu S, Turkmen D",
-          "journal": "Cutan Ocul Toxicol",
+          "pmid": "41349002",
+          "title": "Impact of Growth-promoting Therapies on Puberty, Growth, and Final Height in Classical 21-hydroxylase Deficiency.",
+          "abstract": "[CONTEXT] Congenital adrenal hyperplasia due to 21-hydroxylase deficiency (21-OHD) poses significant growth challenges, including accelerated bone maturation, precocious puberty, and compromised final height (FH). Data on pubertal growth in large 21-OHD cohorts remain limited. [OBJECTIVE] To assess puberty timing, duration, height gain, FH outcomes, and the effects of growth-promoting therapies (GPTs), including GnRH analog, aromatase inhibitors, and cyproterone acetate, in a large cohort with genetically confirmed classical 21-OHD. [DESIGN AND SETTING] A multicenter, retrospective, longitudinal analysis of 284 patients (46,XX: 160; 46,XY: 124). [METHODS] Data on puberty, growth, and treatments were collected from clinical records. Growth curves were plotted based on GPT use. [RESULTS] Med…",
+          "authors": "Yavas Abali Z, Yildiz M, Abali S, Moniri A, Bas F, et al.",
+          "journal": "J Clin Endocrinol Metab",
           "year": 2026,
-          "doi": "10.1080/15569527.2026.2656177",
-          "evLevel": "1a",
-          "subcat": "llm",
-          "field": "ai",
-          "id": "ai_41987670",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41987633",
-          "title": "Radiomics and Radiogenomics in Prognostic Assessment of Head and Neck Cancer: A Systematic Review of Cutting-Edge Approaches.",
-          "abstract": "[AIM] The integration of radiomics and radiogenomics in the prognostication of head and neck cancer represents a rapidly evolving field within precision oncology. This systematic review aims to appraise advanced methods in radiomics and radiogenomics concerning prognostication in head and neck cancer, with a particular focus on methodological developments and clinical applications. [METHODS] A systematic literature search was conducted across seven major electronic databases: PubMed/MEDLINE, Embase, Web of Science, Scopus, Cochrane Library, CINAHL, and Google Scholar from January 2013 to December 2023. The search strategy incorporated database-specific syntax, controlled vocabulary such as Medical Subject Headings (MeSH) and Emtree terms, and supplementary free-text terms. [RESULTS] Twelve…",
-          "authors": "Qamar Z, Abdul NS, Shenoy M, Soman C, Shivakumar S, et al.",
-          "journal": "Ann Ital Chir",
-          "year": 2026,
-          "doi": "10.62713/aic.4059",
-          "evLevel": "1a",
-          "subcat": "genomics",
-          "field": "ai",
-          "id": "ai_41987633",
-          "citations": 0,
-          "altmetric": 0,
-          "news_count": 0,
-          "influential": 0,
-          "tags": [
-            "new"
-          ],
-          "views": 0,
-          "published_date": "2026-04-18"
-        },
-        {
-          "pmid": "41992197",
-          "title": "Non-invasive diagnosis strategy integrating PSMA PET/CT and mpMRI for patients with suspected prostate cancer: a multi-center study.",
-          "abstract": "[BACKGROUND] Multiparametric MRI (mpMRI) and ^68 Ga-PSMA PET/CT are widely used for prostate cancer (PCa) diagnosis but remain limited by false positives and modest specificity, particularly in distinguishing benign prostate diseases (BPDs) and clinically significant PCa (csPCa). Existing studies often rely on small, single-center cohorts with limited generalizability. This study aimed to develop and externally validate a multimodal radiomics model integrating PET/CT and mpMRI for automated PCa diagnosis, and to evaluate the impact of prostate VOI delineation strategies. [METHODS] A total of 488 patients with suspected PCa who underwent both ^68 Ga-PSMA PET/CT and mpMRI (T2 and DWI) followed by biopsy were retrospectively enrolled from two centers (366 for model development and ten-fold in…",
-          "authors": "Wang Y, Tang Y, Chen J, Sha H, Qi L, et al.",
-          "journal": "BMC Med",
-          "year": 2026,
-          "doi": "10.1186/s12916-026-04859-z",
+          "doi": "10.1210/clinem/dgaf612",
           "evLevel": "2",
-          "subcat": "imaging",
+          "subcat": "llm",
           "field": "ai",
-          "id": "ai_41992197",
+          "id": "ai_41349002",
+          "citations": 2,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42012745",
+          "title": "Deep learning-based early prediction of carotid plaque response to lipid-lowering therapy using longitudinal multimodal ultrasound imaging.",
+          "abstract": "[OBJECTIVE] This study aimed to develop and validate a deep learning prediction model using longitudinal multimodal ultrasound imaging for early identification of treatment-sensitive and treatment-resistant carotid plaques in patients receiving lipid-lowering therapy. [MATERIALS AND METHODS] This prospective study enrolled 802 patients with vulnerable carotid plaques or stenosis ≥ 50%. Patients underwent serial multimodal ultrasound examinations, including B-mode imaging, superb microvascular imaging, and shear wave elastography at baseline and 3, 6, 9, and 12 months after initiating statin therapy. The dataset was divided into training and testing sets using stratified sampling with data augmentation. A hybrid DL model combining convolutional neural networks and long short-term memory net…",
+          "authors": "Jiang L, Sun Y, Huang W, Wang S, Pan D, et al.",
+          "journal": "Insights Imaging",
+          "year": 2026,
+          "doi": "10.1186/s13244-026-02286-5",
+          "evLevel": "2",
+          "subcat": "prediction",
+          "field": "ai",
+          "id": "ai_42012745",
           "citations": 0,
           "altmetric": 0,
           "news_count": 0,
@@ -655,7 +545,95 @@
             "new"
           ],
           "views": 0,
-          "published_date": "2026-04-18"
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42025543",
+          "title": "Detection of young-onset type 2 diabetes using deep learning across primary and secondary care: a nationwide, retrospective cohort study.",
+          "abstract": "[BACKGROUND] Once considered a disease observed in older adults, type 2 diabetes is now increasingly seen in youth and adolescence. Young-onset (<40 years of age) type 2 diabetes progresses more rapidly than late-onset disease, but remains frequently underdiagnosed due to scarce screening and frequent misclassification. We aimed to develop a prediction model for young-onset type 2 diabetes to improve detection and reduce long-term health-care burden. [METHODS] For this nationwide, retrospective cohort study, we constructed a deep learning-based prediction algorithm for young-onset type 2 diabetes driven by routine care data from both primary and secondary health-care sectors. We used this model to predict future risk at multiple time horizons spanning 0-24 months using data on previous hos…",
+          "authors": "Johansen CH, Hjaltelin JX, Placido D, Cadell S, Mortensen LH, et al.",
+          "journal": "Lancet Digit Health",
+          "year": 2026,
+          "doi": "10.1016/j.landig.2025.100968",
+          "evLevel": "2",
+          "subcat": "prediction",
+          "field": "ai",
+          "id": "ai_42025543",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42015601",
+          "title": "Explainable machine learning using urinary metabolomics to predict pediatric sepsis-associated acute kidney injury: a two-center prospective observational study.",
+          "abstract": "Sepsis-induced acute kidney injury (S-AKI) is a common and serious complication in critically ill children with a poor prognosis, and its early and accurate prediction remains challenging due to the lack of reliable biomarkers. Urinary small-molecule metabolomics offers a promising approach to capture the dynamic metabolic changes during the progression of S-AKI. In this two-center prospective observational study, we enrolled 360 children from both centers. Urine samples were collected within 24h after hospitalized children diagnosed with sepsis, stored at -80 °C, and analyzed using gas chromatography-mass spectrometry (GC-MS). Based on urinary metabolic fingerprints (U-MF), we developed and validated a machine learning model for early prediction of S-AKI. The Shapley Additive Explanations…",
+          "authors": "Qian Y, Jiang Z, Miao H, Chu L, Zeng J, et al.",
+          "journal": "Ren Fail",
+          "year": 2026,
+          "doi": "10.1080/0886022X.2026.2650262",
+          "evLevel": "2",
+          "subcat": "prediction",
+          "field": "ai",
+          "id": "ai_42015601",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "42012324",
+          "title": "Multi-modal large language models for paediatric tele-ophthalmology: A blinded real-world evaluation of diagnostic accuracy and safety.",
+          "abstract": "[BACKGROUND] The rapid integration of large language models (LLMs) into online medical consultations demands rigorous evaluation, particularly in specialized fields like paediatric ophthalmology. This study systematically assessed the diagnostic accuracy, safety and communication quality of advanced LLMs in real-world paediatric ophthalmology tele-consultations, with a focus on comparing text-only inputs to multi-modal inputs (text paired with parent-taken mobile photographs). [METHODS] A prospective, blinded, multi-model study was conducted using 50 authentic paediatric ophthalmology cases from an internet-based hospital platform. Four leading LLMs-Grok 4.1, GPT 5.1 Thinking, Gemini 2.5 Pro (advanced models) and GPT-4o (baseline)-were tested in multi-modal and text-only scenarios. Respons…",
+          "authors": "Kang D, Yuan L, Feng J, Grzybowski A, Jin K",
+          "journal": "Acta Ophthalmol",
+          "year": 2026,
+          "doi": "10.1111/aos.70136",
+          "evLevel": "2",
+          "subcat": "llm",
+          "field": "ai",
+          "id": "ai_42012324",
+          "citations": 0,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
+        },
+        {
+          "pmid": "41378767",
+          "title": "An Interpretable Machine-Learning Model for Predicting Occult Central Lymph Node Metastasis in Papillary Thyroid Cancer.",
+          "abstract": "[CONTEXT] Accurate preoperative prediction of occult lymph node metastasis (OLNM) in clinically lymph node negative (cN0) papillary thyroid carcinoma (PTC) is critical for optimizing therapeutic strategy, particularly for thermal ablation and active surveillance. [OBJECTIVE] The aim of this study was to develop an interpretable machine-learning (ML) model to predict the risk of OLNM in cN0 PTC patients. [METHODS] This retrospective study analyzed data of 961 cN0 PTC patients (August 2018-August 2023). Multivariable logistic regression identified independent risk factors for OLNM in cN0 PTC. The cohort was randomly divided into the training and test sets, and a subset of patients with tumors sized 1 cm or less was further extracted from the test set for internal validation. Eight ML models …",
+          "authors": "Wang Z, Yang S, Li Y, Tian J, Li Y, et al.",
+          "journal": "J Clin Endocrinol Metab",
+          "year": 2026,
+          "doi": "10.1210/clinem/dgaf636",
+          "evLevel": "3",
+          "subcat": "prediction",
+          "field": "ai",
+          "id": "ai_41378767",
+          "citations": 2,
+          "altmetric": 0,
+          "news_count": 0,
+          "influential": 0,
+          "tags": [
+            "new"
+          ],
+          "views": 0,
+          "published_date": "2026-04-25"
         }
       ],
       "popular": []
