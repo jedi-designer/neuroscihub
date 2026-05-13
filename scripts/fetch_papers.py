@@ -33,6 +33,46 @@ ARCHIVE_KEEP   = 40         # アーカイブ保持数（分野ごと）
 NEW_KEEP       = 8          # new列の最大表示数
 POPULAR_KEEP   = 8          # popular列の最大表示数
 
+# ── 必須テーマ保証設定 ─────────────────────────────────
+# 毎週必ず含めるテーマ。通常クエリで取得件数が不足した場合、
+# GUARANTEED_DAYS_BACK まで遡って補完する。
+GUARANTEED_MIN_COUNT = 2    # 必須テーマごとの最低保証件数
+GUARANTEED_DAYS_BACK = 30   # 補完時に遡る最大日数
+
+# 必須テーマ定義: { label, field, subcat, query, priority }
+# priority: 高いほど new列の先頭に配置
+GUARANTEED_TOPICS = [
+    {
+        "label": "血栓回収術（Thrombectomy）",
+        "field": "ns",
+        "subcat": "stroke",
+        "priority": 10,
+        "query": (
+            '("thrombectomy"[TW] OR "mechanical thrombectomy"[TW] OR '
+            '"endovascular thrombectomy"[TW] OR "stent retriever"[TW] OR '
+            '"aspiration thrombectomy"[TW] OR "TICI"[TW] OR '
+            '"large vessel occlusion"[TW] OR "LVO"[TW]) AND '
+            '("ischemic stroke"[MeSH] OR "acute ischemic stroke"[TW] OR '
+            '"cerebral infarction"[MeSH])'
+        ),
+    },
+    {
+        "label": "脳動脈瘤治療（Aneurysm Treatment）",
+        "field": "ns",
+        "subcat": "endo",
+        "priority": 10,
+        "query": (
+            '("intracranial aneurysm"[MeSH] OR "cerebral aneurysm"[TW] OR '
+            '"brain aneurysm"[TW]) AND '
+            '("coil embolization"[TW] OR "coiling"[TW] OR "clipping"[TW] OR '
+            '"flow diverter"[TW] OR "pipeline embolization"[TW] OR '
+            '"Woven EndoBridge"[TW] OR "WEB device"[TW] OR '
+            '"endovascular treatment"[TW] OR "surgical clipping"[TW] OR '
+            '"microsurgery"[TW] OR "subarachnoid hemorrhage"[MeSH])'
+        ),
+    },
+]
+
 BASE_PUBMED    = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 BASE_CROSSREF  = "https://api.crossref.org/works"
 BASE_S2        = "https://api.semanticscholar.org/graph/v1/paper"
@@ -233,6 +273,96 @@ def pubmed_search(query, max_results=MAX_PER_QUERY):
     except Exception:
         return []
 
+def pubmed_search_dated(query, days_back, max_results=MAX_PER_QUERY):
+    """日付範囲を指定できるPubMed検索（必須テーマ補完用）"""
+    params = {
+        "db": "pubmed", "term": query,
+        "retmax": max_results, "retmode": "json",
+        "sort": "relevance",
+        "datetype": "pdat",
+        "mindate": days_ago_str(days_back),
+        "maxdate": today_str(),
+    }
+    if PUBMED_API_KEY:
+        params["api_key"] = PUBMED_API_KEY
+    r = safe_get(f"{BASE_PUBMED}/esearch.fcgi", params=params)
+    if not r:
+        return []
+    try:
+        return r.json().get("esearchresult", {}).get("idlist", [])
+    except Exception:
+        return []
+
+def fetch_guaranteed_topic(topic, existing_pmids):
+    """
+    必須テーマの論文を保証件数以上取得する。
+    通常期間(DAYS_BACK)で不足する場合はGUARANTEED_DAYS_BACKまで遡って補完。
+    Returns: list of enriched article dicts
+    """
+    label   = topic["label"]
+    query   = topic["query"]
+    field   = topic["field"]
+    subcat  = topic["subcat"]
+
+    print(f"\n  [GUARANTEED] {label}")
+
+    # Step1: 通常期間で検索
+    pmids = pubmed_search_dated(query, DAYS_BACK, max_results=MAX_PER_QUERY)
+    pmids = [p for p in pmids if p not in existing_pmids]
+    print(f"    直近{DAYS_BACK}日: {len(pmids)} 件")
+
+    # Step2: 件数不足なら遡り期間で補完
+    if len(pmids) < GUARANTEED_MIN_COUNT:
+        print(f"    ⚠ 件数不足({len(pmids)}<{GUARANTEED_MIN_COUNT}) → 直近{GUARANTEED_DAYS_BACK}日に拡大")
+        extended_pmids = pubmed_search_dated(query, GUARANTEED_DAYS_BACK, max_results=MAX_PER_QUERY * 2)
+        extended_pmids = [p for p in extended_pmids if p not in existing_pmids]
+        # 通常期間で取れたものは先頭に残し、追加分をマージ
+        seen = set(pmids)
+        for p in extended_pmids:
+            if p not in seen:
+                pmids.append(p)
+                seen.add(p)
+            if len(pmids) >= GUARANTEED_MIN_COUNT + 2:
+                break
+        print(f"    拡大後: {len(pmids)} 件")
+
+    if not pmids:
+        print(f"    [SKIP] 論文が見つかりませんでした")
+        return []
+
+    # Step3: 記事本文取得
+    articles = pubmed_fetch(pmids[:MAX_PER_QUERY])
+    time.sleep(0.5)
+
+    # Step4: エンリッチ
+    enriched = []
+    for i, art in enumerate(articles):
+        print(f"    [{i+1}/{len(articles)}] {art['pmid']} {art['title'][:45]}…")
+        citations = crossref_citations(art["doi"])
+        time.sleep(0.4)
+        s2 = semantic_scholar(doi=art["doi"], pmid=art["pmid"])
+        citations = max(citations, s2.get("citations_s2", 0))
+        influential = s2.get("influential", 0)
+        time.sleep(0.4)
+        alt_score, news_cnt = altmetric(doi=art["doi"], pmid=art["pmid"])
+        time.sleep(0.6)
+
+        art["subcat"]        = subcat
+        art["field"]         = field
+        art["id"]            = make_id(field, art["pmid"])
+        art["citations"]     = citations
+        art["altmetric"]     = round(alt_score, 1)
+        art["news_count"]    = news_cnt
+        art["influential"]   = influential
+        art["tags"]          = assign_tags(citations, alt_score, news_cnt)
+        art["views"]         = 0
+        art["published_date"] = today_str()
+        art["guaranteed"]    = True   # 必須テーマフラグ
+        enriched.append(art)
+
+    print(f"    ✓ {len(enriched)} 件取得完了")
+    return enriched
+
 def pubmed_fetch(pmids):
     if not pmids:
         return []
@@ -423,6 +553,10 @@ def fetch_all():
 
     total_fetched = 0
 
+    # ─── STEP 1: 通常クエリで全分野取得 ───────────────────
+    # 取得済みPMIDを追跡して重複排除
+    all_seen_pmids = set()
+
     for field_key, field_cfg in SEARCH_QUERIES.items():
         print(f"\n── {field_cfg['label']} ──────────────────────────")
 
@@ -451,6 +585,7 @@ def fetch_all():
         for art in all_articles:
             if art["pmid"] not in seen_pmids:
                 seen_pmids.add(art["pmid"])
+                all_seen_pmids.add(art["pmid"])
                 unique_articles.append(art)
 
         print(f"\n  重複排除後: {len(unique_articles)} 件 → 外部API取得開始")
@@ -490,12 +625,11 @@ def fetch_all():
             else:
                 new_papers[field_key]["new"].append(art)
 
-        # エビデンスレベル順 → 被引用数降順でソート
+        # エビデンスレベル順 → 被引用数降順でソート（必須テーマ挿入前の仮ソート）
         for col in ["new", "popular"]:
             new_papers[field_key][col].sort(
                 key=lambda p: (EV_ORDER.get(p.get("evLevel", "3"), 3), -p.get("citations", 0))
             )
-            new_papers[field_key][col] = new_papers[field_key][col][:NEW_KEEP if col == "new" else POPULAR_KEEP]
 
         # アーカイブ更新: 前週の popular をアーカイブへ
         prev_pop = existing.get("papers", {}).get(field_key, {}).get("popular", [])
@@ -507,6 +641,83 @@ def fetch_all():
 
         time.sleep(1.0)
 
+    # ─── STEP 2: 必須テーマ保証取得 ───────────────────────
+    print(f"\n{'='*60}")
+    print(f" STEP 2: 必須テーマ保証取得 ({len(GUARANTEED_TOPICS)} テーマ)")
+    print(f"{'='*60}")
+
+    for topic in GUARANTEED_TOPICS:
+        field  = topic["field"]
+        subcat = topic["subcat"]
+
+        # 既にそのsubcatで取得済みの件数を確認
+        existing_in_subcat = [
+            p for col in ["new", "popular"]
+            for p in new_papers[field][col]
+            if p.get("subcat") == subcat
+        ]
+        print(f"\n  {topic['label']}: 既存 {len(existing_in_subcat)} 件")
+
+        if len(existing_in_subcat) >= GUARANTEED_MIN_COUNT:
+            print(f"  → 件数十分({len(existing_in_subcat)}≥{GUARANTEED_MIN_COUNT})。スキップ")
+            continue
+
+        # 補完取得（既取得PMIDを除外して重複防止）
+        guaranteed_articles = fetch_guaranteed_topic(topic, all_seen_pmids)
+        total_fetched += len(guaranteed_articles)
+
+        # 取得できた論文を登録済みPMIDセットに追加
+        for art in guaranteed_articles:
+            all_seen_pmids.add(art["pmid"])
+
+        # new列の先頭に優先挿入（priorityフラグ付き）
+        # popular判定
+        guaranteed_new = []
+        guaranteed_pop = []
+        for art in guaranteed_articles:
+            if art["citations"] >= POPULAR_MIN_CITATIONS or art["altmetric"] >= POPULAR_MIN_ALTMETRIC:
+                guaranteed_pop.append(art)
+            else:
+                guaranteed_new.append(art)
+
+        # 先頭に挿入（必須テーマを最優先表示）
+        new_papers[field]["new"]     = guaranteed_new + new_papers[field]["new"]
+        new_papers[field]["popular"] = guaranteed_pop + new_papers[field]["popular"]
+
+    # ─── STEP 3: 最終ソート・件数制限 ────────────────────
+    print(f"\n{'='*60}")
+    print(f" STEP 3: 最終整形")
+    print(f"{'='*60}")
+
+    for field_key in SEARCH_QUERIES:
+        for col in ["new", "popular"]:
+            arts = new_papers[field_key][col]
+            # 重複排除（PMIDベース）
+            seen = set()
+            deduped = []
+            for a in arts:
+                if a["pmid"] not in seen:
+                    seen.add(a["pmid"])
+                    deduped.append(a)
+
+            # guaranteed論文を最上位に保ちつつ、残りをエビデンス順でソート
+            guaranteed_arts = [a for a in deduped if a.get("guaranteed")]
+            normal_arts     = [a for a in deduped if not a.get("guaranteed")]
+            normal_arts.sort(
+                key=lambda p: (EV_ORDER.get(p.get("evLevel", "3"), 3), -p.get("citations", 0))
+            )
+            keep = NEW_KEEP if col == "new" else POPULAR_KEEP
+            new_papers[field_key][col] = (guaranteed_arts + normal_arts)[:keep]
+
+        g_count = sum(
+            1 for col in ["new","popular"]
+            for a in new_papers[field_key][col]
+            if a.get("guaranteed")
+        )
+        print(f"  {field_key}: new={len(new_papers[field_key]['new'])}, "
+              f"popular={len(new_papers[field_key]['popular'])} "
+              f"(うち必須テーマ: {g_count}件)")
+
     # ─── 出力 ───────────────────────────────────────────
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     output = {
@@ -514,6 +725,7 @@ def fetch_all():
         "next_update":  next_saturday_iso(),
         "papers":       new_papers,
         "archives":     new_archives,
+        "_guaranteed_topics": [t["label"] for t in GUARANTEED_TOPICS],
     }
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
@@ -527,7 +739,8 @@ def fetch_all():
         n = len(new_papers[field_key]["new"])
         p = len(new_papers[field_key]["popular"])
         a = len(new_archives[field_key])
-        print(f"  {field_key:8s}: new={n}, popular={p}, archive={a}")
+        g = sum(1 for col in ["new","popular"] for x in new_papers[field_key][col] if x.get("guaranteed"))
+        print(f"  {field_key:8s}: new={n}, popular={p}, archive={a}, 必須テーマ={g}")
 
 if __name__ == "__main__":
     fetch_all()

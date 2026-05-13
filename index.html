@@ -583,6 +583,141 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
    UTILS
 ═══════════════════════════════════════════ */
 .hidden { display:none !important; }
+
+/* ═══════════════════════════════════════════
+   SUMMARY / SCORE RANKING PAGE
+═══════════════════════════════════════════ */
+.summary-header {
+  background:linear-gradient(135deg,rgba(37,99,235,0.08) 0%,rgba(20,184,166,0.06) 100%);
+  border:1px solid var(--border); border-radius:16px;
+  padding:1.5rem 1.8rem; margin-bottom:1.4rem;
+}
+.summary-header h2 { font-size:1.3rem; font-weight:800; color:var(--text); margin-bottom:0.35rem; }
+.summary-header p { font-size:0.82rem; color:var(--text-sub); line-height:1.7; }
+
+.score-legend {
+  display:flex; flex-wrap:wrap; gap:0.5rem 1.2rem;
+  padding:0.7rem 1rem; border:1px solid var(--border); border-radius:var(--radius-sm);
+  background:#fff; margin-bottom:1.2rem; font-size:0.72rem; color:var(--text-sub);
+}
+.score-legend-item { display:flex; align-items:center; gap:0.35rem; }
+.score-legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+.summary-filter-bar {
+  display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:1.2rem; align-items:center;
+}
+.summary-filter-btn {
+  padding:0.28rem 0.75rem; border-radius:14px; border:1px solid var(--border);
+  font-size:0.72rem; cursor:pointer; background:transparent; color:var(--text-sub);
+  font-family:var(--font); transition:all .14s;
+}
+.summary-filter-btn:hover,.summary-filter-btn.active { background:#eff6ff; border-color:#93c5fd; color:#1d4ed8; font-weight:600; }
+.summary-filter-sep { width:1px; height:24px; background:var(--border); margin:0 0.2rem; }
+
+.score-card {
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+  padding:1rem 1.2rem; margin-bottom:0.75rem;
+  box-shadow:var(--shadow-sm); transition:all .18s; cursor:pointer;
+  position:relative;
+}
+.score-card:hover { box-shadow:var(--shadow-md); transform:translateY(-1px); border-color:#bfdbfe; }
+.score-card.admin-mode { cursor:default; }
+
+.score-card-rank {
+  position:absolute; left:-1px; top:0; bottom:0;
+  width:4px; border-radius:var(--radius) 0 0 var(--radius);
+}
+.rank-gold   { background:linear-gradient(180deg,#fbbf24,#f59e0b); }
+.rank-silver { background:linear-gradient(180deg,#94a3b8,#64748b); }
+.rank-bronze { background:linear-gradient(180deg,#cd7c4f,#a16207); }
+.rank-normal { background:var(--border); }
+
+.score-card-top {
+  display:flex; align-items:flex-start; gap:0.8rem; margin-bottom:0.6rem;
+}
+.score-rank-num {
+  font-size:1.1rem; font-weight:800; min-width:2rem; text-align:center;
+  color:var(--text-muted); flex-shrink:0; padding-top:0.1rem;
+}
+.score-rank-num.gold   { color:#d97706; }
+.score-rank-num.silver { color:#64748b; }
+.score-rank-num.bronze { color:#a16207; }
+
+.score-card-body { flex:1; min-width:0; }
+.score-card-meta { display:flex; flex-wrap:wrap; gap:0.3rem; margin-bottom:0.38rem; align-items:center; }
+.score-card-title { font-size:0.88rem; font-weight:700; color:var(--text); line-height:1.5; margin-bottom:0.3rem; }
+.score-card-authors { font-size:0.72rem; color:var(--text-muted); margin-bottom:0.35rem; }
+
+.score-ja-summary {
+  background:rgba(37,99,235,0.05); border-left:3px solid #2563eb;
+  border-radius:0 var(--radius-xs) var(--radius-xs) 0;
+  padding:0.45rem 0.75rem; font-size:0.78rem; color:var(--text-sub);
+  line-height:1.65; margin-bottom:0.45rem;
+}
+.score-ja-summary.empty { color:var(--text-muted); font-style:italic; border-left-color:var(--border); background:#fafbfc; }
+
+.score-bar-wrap { display:flex; align-items:center; gap:0.7rem; margin-bottom:0.38rem; }
+.score-total-badge {
+  font-size:0.95rem; font-weight:800; color:#2563eb;
+  background:#eff6ff; border:1px solid #bfdbfe;
+  border-radius:var(--radius-xs); padding:0.15rem 0.6rem; flex-shrink:0;
+  min-width:56px; text-align:center;
+}
+.score-bars { flex:1; display:flex; flex-direction:column; gap:2px; }
+.score-bar-row { display:flex; align-items:center; gap:0.4rem; font-size:0.63rem; color:var(--text-muted); }
+.score-bar-label { width:88px; flex-shrink:0; }
+.score-bar-track { flex:1; height:4px; background:#f1f5f9; border-radius:2px; }
+.score-bar-fill { height:100%; border-radius:2px; transition:width .3s; }
+
+.score-card-footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; }
+.score-card-actions { display:flex; gap:0.4rem; }
+.score-action-btn {
+  padding:0.25rem 0.65rem; border-radius:var(--radius-xs); font-size:0.7rem;
+  border:1px solid var(--border); background:transparent; color:var(--text-sub);
+  cursor:pointer; font-family:var(--font); transition:all .13s;
+}
+.score-action-btn:hover { background:#eff6ff; border-color:#93c5fd; color:#2563eb; }
+.score-action-btn.archive-add { border-color:#86efac; color:#15803d; background:#f0fdf4; }
+.score-action-btn.archive-add:hover { background:#dcfce7; }
+.score-action-btn.archive-done { border-color:#bfdbfe; color:#2563eb; background:#eff6ff; cursor:default; }
+
+.score-stats-mini { display:flex; gap:0.8rem; font-size:0.68rem; color:var(--text-muted); }
+
+/* score breakdown tooltip */
+.score-breakdown { display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.35rem; }
+.score-chip {
+  font-size:0.62rem; border-radius:8px; padding:0.08rem 0.45rem;
+  border:1px solid; font-weight:600;
+}
+.score-chip.if-chip  { background:#eff6ff; border-color:#93c5fd; color:#1d4ed8; }
+.score-chip.ev-chip  { background:#f0fdf4; border-color:#86efac; color:#15803d; }
+.score-chip.ci-chip  { background:#fefce8; border-color:#fde047; color:#a16207; }
+.score-chip.ns-chip  { background:rgba(59,130,246,0.08); border-color:rgba(59,130,246,0.25); color:#1d4ed8; }
+.score-chip.x-chip   { background:#f8fafc; border-color:#cbd5e1; color:#475569; }
+
+/* admin inline summary editor */
+.ja-edit-wrap { display:flex; gap:0.4rem; margin-top:0.4rem; }
+.ja-edit-input {
+  flex:1; border:1.5px solid #93c5fd; border-radius:var(--radius-xs);
+  padding:0.35rem 0.6rem; font-size:0.78rem; font-family:var(--font); color:var(--text);
+  outline:none; background:#fff;
+}
+.ja-edit-input:focus { border-color:#2563eb; box-shadow:0 0 0 2px rgba(37,99,235,0.1); }
+.ja-save-btn {
+  padding:0.3rem 0.7rem; border-radius:var(--radius-xs); font-size:0.72rem;
+  background:#2563eb; color:#fff; border:none; cursor:pointer; font-family:var(--font);
+  white-space:nowrap;
+}
+.ja-save-btn:hover { background:#1d4ed8; }
+
+/* archive page enhanced */
+.archive-enhanced-header {
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; flex-wrap:wrap; gap:0.6rem;
+}
+.archive-auto-badge {
+  font-size:0.68rem; background:#f0fdf4; border:1px solid #86efac; border-radius:10px;
+  padding:0.18rem 0.65rem; color:#15803d; font-weight:600;
+}
 </style>
 </head>
 <body>
@@ -602,7 +737,7 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
       <button class="nav-link" onclick="navClick('bmi')">BMI / BCI</button>
       <button class="nav-link" onclick="navClick('robot')">人型ロボット</button>
       <button class="nav-link" onclick="navClick('ai')">医療AI</button>
-      <button class="nav-link" onclick="openPage('profilePage')">まとめ</button>
+      <button class="nav-link" onclick="openSummary()">まとめ</button>
     </nav>
     <div class="hdr-right">
       <div class="search-wrap">
@@ -627,6 +762,8 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
   <div class="admin-actions">
     <button class="admin-action" onclick="toggleAdminMode()">✏️ 編集モード切替</button>
     <button class="admin-action" onclick="addPaperPrompt()">＋ 論文を手動追加</button>
+    <button class="admin-action" onclick="openSummaryAdmin()">📊 スコアランキング編集</button>
+    <button class="admin-action" onclick="runAutoArchive()">🤖 上位10件を自動アーカイブ</button>
     <button class="admin-action" onclick="runManualFetch()">🔄 今すぐ自動取得</button>
     <button class="admin-action" onclick="exportList()">📥 エクスポート</button>
     <button class="admin-action" style="color:#be123c" onclick="toggleAdmin()">✕ 閉じる</button>
@@ -881,6 +1018,37 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
   <div id="bmiDetailPage" class="page-section">
     <button class="page-back" onclick="closeBMIDetail()">← 詳細一覧に戻る</button>
     <div class="bmi-detail-view" id="bmiDetailBody"></div>
+  </div>
+
+  <!-- ═══ SUMMARY PAGE (スコアランキング) ═══ -->
+  <div id="summaryPage" class="page-section">
+    <button class="page-back" onclick="showHome()">← ホームに戻る</button>
+
+    <div class="summary-header">
+      <h2>📊 論文スコアランキング</h2>
+      <p>Impact Factor・エビデンスレベル（RCT/Meta-analysis重視）・Citation速度・Neurosurgery関連度・X（Twitter）話題度を総合スコア化。高スコア論文を上位に表示します。</p>
+    </div>
+
+    <div class="score-legend">
+      <div class="score-legend-item"><div class="score-legend-dot" style="background:#2563eb"></div>IF スコア (×2.0)</div>
+      <div class="score-legend-item"><div class="score-legend-dot" style="background:#15803d"></div>Meta/RCT (×2.5/2.0)</div>
+      <div class="score-legend-item"><div class="score-legend-dot" style="background:#d97706"></div>Citation速度 (×1.5)</div>
+      <div class="score-legend-item"><div class="score-legend-dot" style="background:#0e7490"></div>NS関連度 (×1.5)</div>
+      <div class="score-legend-item"><div class="score-legend-dot" style="background:#475569"></div>X話題度 (×1.0)</div>
+    </div>
+
+    <div class="summary-filter-bar">
+      <button class="summary-filter-btn active" onclick="filterSummary('all',this)">🧭 全領域</button>
+      <button class="summary-filter-btn" onclick="filterSummary('ns',this)">🧠 脳神経外科</button>
+      <button class="summary-filter-btn" onclick="filterSummary('bmi',this)">⚡ BMI/BCI</button>
+      <button class="summary-filter-btn" onclick="filterSummary('ai',this)">🔬 医療AI</button>
+      <button class="summary-filter-btn" onclick="filterSummary('robot',this)">🤖 ロボット</button>
+      <div class="summary-filter-sep"></div>
+      <button class="summary-filter-btn" onclick="filterSummary('ns-only',this)">🧠 NS優先</button>
+      <button class="summary-filter-btn" onclick="filterSummary('top20',this)">🏆 TOP 20</button>
+    </div>
+
+    <div id="summaryBody"></div>
   </div>
 
   <!-- ═══ PROFILE PAGE ═══ -->
@@ -1540,10 +1708,316 @@ BrainGate研究コンソーシアム（Brown大学・スタンフォード大学
 let archives2 = { ns:[], bmi:[], ai:[], robot:[] };
 let adminMode = false, adminOpen = false, currentField = 'all', currentSubcat = {};
 let currentBMICat = 'all';
+let currentSummaryFilter = 'all';
+
+// 日本語要約ストレージ (id -> { summary, point, addedToArchive })
+let jaSummaries = {};
+// アーカイブ（全フィールド統合）
+let archiveAll = [];
 
 /* ══════════════════════════════════════════════════
-   RENDER
+   SCORING ENGINE
 ══════════════════════════════════════════════════ */
+
+// ジャーナルIF推定テーブル（2024年版概算）
+const JOURNAL_IF = {
+  'N Engl J Med':99,'NEJM':99,'New Engl J Med':99,
+  'Lancet':98,'The Lancet':98,
+  'JAMA':120,'JAMA Neurol':29,'JAMA Surg':16,
+  'Nature':69,'Nature Medicine':87,'Nat Med':87,'Nature Commun':17,'Nat Commun':17,
+  'Science':56,'Science Robotics':26,'Sci Transl Med':17,
+  'Cell':64,'Cancer Cell':50,
+  'Lancet Neurol':53,'Lancet Digit Health':36,
+  'Brain':14,'J Neurosurg':5,'Neurosurgery':5,
+  'Radiology':19,'AJR':5,'AJNR':4,
+  'Stroke':10,'J Stroke':9,'Eur Stroke J':5,
+  'Cochrane Database Syst Rev':12,'Cochrane':12,
+  'IEEE Trans Neural Syst Rehabil Eng':5,'IEEE':3,
+  'Geroscience':6,'J Cereb Blood Flow Metab':7,
+  'Br J Cancer':9,'Global Spine J':3,'J Clin Neurosci':3,
+  'Neuroradiol J':2,'Acta Neurochir':2,
+  'NEJM AI':15,'NEJM Evid':10,
+};
+
+function estimateIF(journal) {
+  if(!journal) return 1;
+  // 完全一致
+  if(JOURNAL_IF[journal]) return JOURNAL_IF[journal];
+  // 部分一致
+  for(const [k,v] of Object.entries(JOURNAL_IF)){
+    if(journal.toLowerCase().includes(k.toLowerCase())) return v;
+  }
+  return 2; // デフォルト
+}
+
+function scoreIF(journal) {
+  const ifVal = estimateIF(journal);
+  // IF 0-5:1pt, 5-10:2pt, 10-20:3pt, 20-50:4pt, 50+:5pt
+  if(ifVal >= 50) return 5;
+  if(ifVal >= 20) return 4;
+  if(ifVal >= 10) return 3;
+  if(ifVal >= 5)  return 2;
+  return 1;
+}
+
+function scoreEvidenceLevel(evLevel) {
+  // Meta(1a)=5pt, RCT(1b)=4pt, Cohort(2)=2pt, Case(3)=1pt
+  return {'1a':5,'1b':4,'2':2,'3':1}[evLevel] || 1;
+}
+
+function scoreCitationSpeed(p) {
+  // 発表からの経過月数で正規化
+  const now = new Date();
+  const pubDate = p.published_date ? new Date(p.published_date) : new Date(p.year, 0, 1);
+  const monthsElapsed = Math.max(1, (now - pubDate) / (1000*60*60*24*30));
+  const citsPerMonth = (p.citations || 0) / monthsElapsed;
+  // 月0-0.5:1pt, 0.5-2:2pt, 2-5:3pt, 5-15:4pt, 15+:5pt
+  if(citsPerMonth >= 15) return 5;
+  if(citsPerMonth >= 5)  return 4;
+  if(citsPerMonth >= 2)  return 3;
+  if(citsPerMonth >= 0.5) return 2;
+  return 1;
+}
+
+function scoreNSRelevance(p) {
+  // 脳神経外科関連度：fieldがnsなら高スコア、subcatで調整
+  if(p.field === 'ns') {
+    const highSubs = ['stroke','endo','tumor','skull','functional'];
+    return highSubs.includes(p.subcat) ? 5 : 4;
+  }
+  // BMIも神経外科に近い
+  if(p.field === 'bmi') return 3;
+  // タイトルに神経外科キーワードがあれば加点
+  const nsKeywords = ['brain','neuro','cranial','spinal','stroke','glioma','aneurysm','dbs'];
+  const titleLower = (p.title||'').toLowerCase();
+  if(nsKeywords.some(k=>titleLower.includes(k))) return 2;
+  return 1;
+}
+
+function scoreXBuzz(p) {
+  // Altmetricスコアから換算
+  const altmetric = p.altmetric || 0;
+  const newsCount = p.news_count || 0;
+  const combined = altmetric + newsCount * 2;
+  if(combined >= 50) return 5;
+  if(combined >= 20) return 4;
+  if(combined >= 5)  return 3;
+  if(combined >= 1)  return 2;
+  // hotタグで補正
+  if((p.tags||[]).includes('hot')) return 2;
+  return 1;
+}
+
+function calcTotalScore(p) {
+  const weights = { if:2.0, ev:2.5, ci:1.5, ns:1.5, x:1.0 };
+  const raw = {
+    if: scoreIF(p.journal),
+    ev: scoreEvidenceLevel(p.evLevel),
+    ci: scoreCitationSpeed(p),
+    ns: scoreNSRelevance(p),
+    x:  scoreXBuzz(p),
+  };
+  const total = Object.entries(raw).reduce((sum,[k,v]) => sum + v * weights[k], 0);
+  return { total: Math.round(total*10)/10, raw, weights };
+}
+
+function getAllPapers() {
+  const all = [];
+  const seen = new Set();
+  ['ns','bmi','ai','robot'].forEach(f => {
+    ['new','popular'].forEach(col => {
+      (papers[f][col]||[]).forEach(p => { if(!seen.has(p.id)){ seen.add(p.id); all.push(p); } });
+    });
+    (archives[f]||[]).forEach(p => { if(!seen.has(p.id)){ seen.add(p.id); all.push(p); } });
+  });
+  archiveAll.forEach(p => { if(!seen.has(p.id)){ seen.add(p.id); all.push(p); } });
+  return all;
+}
+
+function getScoredPapers(filter='all') {
+  let all = getAllPapers();
+  // フィルタ
+  if(filter === 'ns') all = all.filter(p => p.field === 'ns');
+  else if(filter === 'bmi') all = all.filter(p => p.field === 'bmi');
+  else if(filter === 'ai') all = all.filter(p => p.field === 'ai');
+  else if(filter === 'robot') all = all.filter(p => p.field === 'robot');
+  else if(filter === 'ns-only') {
+    // NS論文を上位スコアに
+    all = all.sort((a,b) => {
+      const sa = calcTotalScore(a), sb = calcTotalScore(b);
+      const bonusA = a.field==='ns' ? 5 : 0;
+      const bonusB = b.field==='ns' ? 5 : 0;
+      return (sb.total+bonusB) - (sa.total+bonusA);
+    });
+    return all.slice(0, filter==='top20'?20:all.length);
+  }
+  // スコア降順ソート
+  all.sort((a,b) => calcTotalScore(b).total - calcTotalScore(a).total);
+  if(filter === 'top20') return all.slice(0,20);
+  return all;
+}
+
+/* ══════════════════════════════════════════════════
+   SUMMARY PAGE RENDER
+══════════════════════════════════════════════════ */
+function openSummary() {
+  renderSummary();
+  showOnlyPage('summaryPage');
+  document.querySelectorAll('.nav-link').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(b=>{ if(b.textContent.includes('まとめ')) b.classList.add('active'); });
+}
+
+function filterSummary(filter, btn) {
+  currentSummaryFilter = filter;
+  document.querySelectorAll('.summary-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderSummary();
+}
+
+function renderSummary() {
+  const el = document.getElementById('summaryBody'); if(!el) return;
+  const list = getScoredPapers(currentSummaryFilter);
+  if(!list.length){
+    el.innerHTML = '<div style="color:var(--text-muted);text-align:center;padding:3rem">論文がありません</div>';
+    return;
+  }
+  el.innerHTML = list.map((p,i) => renderScoreCard(p, i+1)).join('');
+}
+
+const FIELD_COLORS = {ns:'#3b82f6',bmi:'#06b6d4',ai:'#14b8a6',robot:'#6366f1'};
+const FIELD_LABELS2 = {ns:'🧠 脳神経外科',bmi:'⚡ BMI/BCI',ai:'🔬 医療AI',robot:'🤖 ロボット'};
+
+function renderScoreCard(p, rank) {
+  const sc = calcTotalScore(p);
+  const maxScore = (2.0+2.5+1.5+1.5+1.0)*5; // 45
+  const pct = (sc.total / maxScore * 100).toFixed(0);
+  const rankClass = rank===1?'gold':rank===2?'silver':rank===3?'bronze':'normal';
+  const rankNumClass = rank<=3?rankClass:'';
+  const jaMeta = jaSummaries[p.id] || {};
+  const jaText = jaMeta.summary || '';
+  const isArchived = jaMeta.addedToArchive || archiveAll.some(x=>x.id===p.id);
+
+  const archiveBtn = adminMode
+    ? (isArchived
+        ? `<button class="score-action-btn archive-done">✓ アーカイブ済</button>`
+        : `<button class="score-action-btn archive-add" onclick="addToArchiveAll('${p.id}',event)">📁 アーカイブ追加</button>`)
+    : '';
+
+  const jaEditSection = adminMode ? `
+    <div class="ja-edit-wrap">
+      <input class="ja-edit-input" id="ja-input-${p.id}" placeholder="日本語1行要約・ポイントを入力…" value="${jaText.replace(/"/g,'&quot;')}">
+      <button class="ja-save-btn" onclick="saveJaSummary('${p.id}',event)">保存</button>
+    </div>` : '';
+
+  const jaSummaryHtml = jaText
+    ? `<div class="score-ja-summary">📝 ${jaText}</div>`
+    : (adminMode ? `<div class="score-ja-summary empty">（日本語要約未登録 — 下欄から入力）</div>` : '');
+
+  const scoreBarCfg = [
+    { label:'IF スコア', key:'if', color:'#2563eb', max:5 },
+    { label:'Meta/RCT', key:'ev', color:'#15803d', max:5 },
+    { label:'Citation速度', key:'ci', color:'#d97706', max:5 },
+    { label:'NS関連度', key:'ns', color:'#0e7490', max:5 },
+    { label:'X話題度', key:'x',  color:'#475569', max:5 },
+  ];
+
+  const bars = scoreBarCfg.map(cfg => {
+    const rawVal = sc.raw[cfg.key];
+    const wtVal = (rawVal * sc.weights[cfg.key]).toFixed(1);
+    const barPct = (rawVal/cfg.max*100).toFixed(0);
+    return `<div class="score-bar-row">
+      <div class="score-bar-label">${cfg.label}</div>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:${barPct}%;background:${cfg.color}"></div></div>
+      <div style="width:26px;text-align:right;font-size:.62rem;color:var(--text-sub)">${wtVal}</div>
+    </div>`;
+  }).join('');
+
+  const tags = (p.tags||[]).map(t=>
+    t==='hot'?'<span class="tag tag-hot">🔥 HOT</span>':
+    t==='pop'?'<span class="tag tag-pop">☆ 人気</span>':
+    t==='new'?'<span class="tag tag-new">NEW</span>':''
+  ).join('');
+
+  const fieldLabel = `<span style="font-size:.65rem;border:1px solid;border-radius:6px;padding:.06rem .4rem;color:${FIELD_COLORS[p.field]||'#64748b'};border-color:${FIELD_COLORS[p.field]||'#64748b'}33;background:${FIELD_COLORS[p.field]||'#64748b'}0f">${FIELD_LABELS2[p.field]||p.field}</span>`;
+
+  const pmlLink = p.pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/" target="_blank" class="score-action-btn" onclick="event.stopPropagation()" style="text-decoration:none">PubMed ↗</a>` : '';
+  const doiLink = p.doi  ? `<a href="https://doi.org/${p.doi}" target="_blank" class="score-action-btn" onclick="event.stopPropagation()" style="text-decoration:none">DOI ↗</a>` : '';
+
+  return `<div class="score-card" onclick="openPaper('${p.id}')">
+    <div class="score-card-rank rank-${rankClass}"></div>
+    <div class="score-card-top">
+      <div class="score-rank-num ${rankNumClass}">${rank}</div>
+      <div class="score-card-body">
+        <div class="score-card-meta">
+          <span class="ev-badge ${evClass(p.evLevel)}">${evLabel(p.evLevel)}</span>
+          ${fieldLabel}${tags}
+          <span class="journal-label" style="font-size:.68rem">${p.journal||''} ${p.year||''}</span>
+        </div>
+        <div class="score-card-title">${p.title}</div>
+        <div class="score-card-authors">${p.authors||''}</div>
+        ${jaSummaryHtml}
+        <div class="score-bar-wrap">
+          <div class="score-total-badge">${sc.total}pt</div>
+          <div class="score-bars">${bars}</div>
+        </div>
+        ${jaEditSection}
+      </div>
+    </div>
+    <div class="score-card-footer">
+      <div class="score-stats-mini">
+        <span>📚 引用 ${p.citations||0}</span>
+        <span>Altmetric ${p.altmetric||0}</span>
+        ${p.pmid?`<span>PMID: ${p.pmid}</span>`:''}
+      </div>
+      <div class="score-card-actions">
+        ${pmlLink}${doiLink}${archiveBtn}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* 日本語要約保存 */
+function saveJaSummary(id, event) {
+  event.stopPropagation();
+  const input = document.getElementById(`ja-input-${id}`);
+  if(!input) return;
+  if(!jaSummaries[id]) jaSummaries[id] = {};
+  jaSummaries[id].summary = input.value.trim();
+  renderSummary();
+}
+
+/* アーカイブ追加（全領域統合版） */
+function addToArchiveAll(id, event) {
+  event.stopPropagation();
+  if(archiveAll.some(x=>x.id===id)) { alert('既にアーカイブ済みです'); return; }
+  const p = findPaper(id);
+  if(!p) return;
+  archiveAll.push({ ...p, archivedAt: new Date().toISOString(), jaSummary: (jaSummaries[id]||{}).summary||'' });
+  if(!jaSummaries[id]) jaSummaries[id] = {};
+  jaSummaries[id].addedToArchive = true;
+  // 分野別archivesにも追加
+  const f = p.field;
+  if(f && archives[f]) {
+    if(!archives[f].some(x=>x.id===id)) archives[f].unshift(p);
+  }
+  renderSummary();
+  alert(`「${p.title.slice(0,30)}…」をアーカイブに追加しました`);
+}
+
+/* 高スコア論文の自動アーカイブ（スコア上位N件） */
+function autoArchiveTopN(n=10) {
+  const top = getScoredPapers('all').slice(0,n);
+  let added = 0;
+  top.forEach(p => {
+    if(!archiveAll.some(x=>x.id===p.id)){
+      archiveAll.push({ ...p, archivedAt: new Date().toISOString(), autoArchived:true });
+      const f = p.field;
+      if(f && archives[f] && !archives[f].some(x=>x.id===p.id)) archives[f].unshift(p);
+      added++;
+    }
+  });
+  return added;
+}
 const evClass = lv => ({'1a':'ev-1a','1b':'ev-1b','2':'ev-2','3':'ev-3'}[lv]||'ev-3');
 const evLabel = lv => ({'1a':'IA SR/Meta','1b':'IB RCT','2':'II Cohort','3':'III Case'}[lv]||'III');
 const CAT_LABELS = {company_news:'企業ニュース',conference:'学会発表',clinical_application:'臨床応用',brain_analysis:'脳解析',ai_technology:'AI技術',japan_research:'日本の研究',unknown_frontiers:'未解明の領域'};
@@ -1673,7 +2147,7 @@ function formatContent(text){
 /* ══════════════════════════════════════════════════
    PAGE NAVIGATION
 ══════════════════════════════════════════════════ */
-const PAGES=['homePage','papersPage','archivePage','searchPage','bmiListPage','bmiDetailPage','profilePage','privacyPage','operatorPage'];
+const PAGES=['homePage','papersPage','archivePage','searchPage','bmiListPage','bmiDetailPage','summaryPage','profilePage','privacyPage','operatorPage'];
 
 function showOnlyPage(id){
   PAGES.forEach(p=>{
@@ -1717,8 +2191,15 @@ function selectSubcat(f, sub, btn){
 const FIELD_LABELS={ns:'🧠 脳神経外科',bmi:'⚡ BMI / BCI',ai:'🔬 医療AI',robot:'🤖 人型ロボット'};
 function openArchive(f){
   const list=archives[f]||[];
-  document.getElementById('archiveTitle').innerHTML=`<span>${FIELD_LABELS[f]} アーカイブ</span>`;
-  document.getElementById('archiveBody').innerHTML=list.length?list.map(renderCard).join(''):'<div style="color:var(--text-muted);text-align:center;padding:2rem">アーカイブはまだありません</div>';
+  const autoLabel = `<span class="archive-auto-badge">自動+手動</span>`;
+  document.getElementById('archiveTitle').innerHTML=`<div class="archive-enhanced-header"><span>${FIELD_LABELS[f]} アーカイブ ${autoLabel}</span><span style="font-size:.72rem;color:var(--text-muted)">${list.length}件</span></div>`;
+  document.getElementById('archiveBody').innerHTML=list.length
+    ?list.map(p=>{
+        const sc=calcTotalScore(p);
+        const ja=(jaSummaries[p.id]||{}).summary||'';
+        return renderCard(p)+(ja?`<div class="score-ja-summary" style="margin:-0.2rem 0 0.5rem;font-size:.75rem">📝 ${ja}</div>`:'');
+      }).join('')
+    :'<div style="color:var(--text-muted);text-align:center;padding:2rem">アーカイブはまだありません</div>';
   showOnlyPage('archivePage');
 }
 function closeArchive(){ showOnlyPage('papersPage'); }
@@ -1803,6 +2284,21 @@ function toggleAdmin(){
   adminOpen=!adminOpen;
   document.getElementById('adminPanel').classList.toggle('open',adminOpen);
 }
+function openSummaryAdmin(){
+  adminMode = true;
+  renderSummary();
+  showOnlyPage('summaryPage');
+  document.getElementById('adminPanel').classList.remove('open');
+  adminOpen = false;
+  alert('スコアランキング編集モードON — 各論文カードから日本語要約を入力・アーカイブ追加できます');
+}
+function runAutoArchive(){
+  const n = parseInt(prompt('上位何件をアーカイブしますか？', '10'));
+  if(isNaN(n)||n<1) return;
+  const added = autoArchiveTopN(n);
+  renderSummary();
+  alert(`スコア上位${n}件中 ${added}件を新規アーカイブしました`);
+}
 function toggleAdminMode(){ adminMode=!adminMode; renderAll(); alert(adminMode?'編集モードON — ▲▼で順序変更、✕で削除できます':'編集モードOFF'); }
 function mvP(id,dir,e){
   e.stopPropagation();
@@ -1839,6 +2335,7 @@ function exportList(){
   const out = {
     generated_at: new Date().toISOString(),
     papers, archives,
+    archiveAll, jaSummaries,
     _note: 'NeuroSciHub エクスポート — 手動編集後は data/papers.json に配置してください'
   };
   const b=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
@@ -1865,6 +2362,8 @@ async function init(){
       const data=await r.json();
       if(data.papers)  Object.assign(papers, data.papers);
       if(data.archives) Object.assign(archives, data.archives);
+      if(data.jaSummaries) Object.assign(jaSummaries, data.jaSummaries);
+      if(data.archiveAll) archiveAll.push(...data.archiveAll);
       // 最終取得日時を更新
       if(data.generated_at){
         const d2=new Date(data.generated_at);
