@@ -710,6 +710,74 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
 }
 .ja-save-btn:hover { background:#1d4ed8; }
 
+/* ═══════════════════════════════════════════
+   WEEKLY COMMENT on domain cards
+═══════════════════════════════════════════ */
+.dc-comment {
+  margin: 0.55rem 0 0.1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-xs);
+  background: rgba(255,255,255,0.55);
+  border-left: 3px solid rgba(255,255,255,0.8);
+  font-size: 0.73rem;
+  line-height: 1.65;
+  color: rgba(15,23,42,0.8);
+  min-height: 2.4rem;
+  word-break: break-all;
+}
+.dc-comment.empty {
+  color: rgba(15,23,42,0.35);
+  font-style: italic;
+}
+.dc-comment-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+/* 管理者モード時の編集UI */
+.dc-comment-edit {
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+.dc-comment-edit.show { display: flex; }
+.dc-comment-input {
+  width: 100%;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  border-radius: var(--radius-xs);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.73rem;
+  font-family: var(--font);
+  background: rgba(255,255,255,0.85);
+  color: var(--text);
+  outline: none;
+  resize: none;
+  line-height: 1.5;
+}
+.dc-comment-input:focus {
+  border-color: rgba(255,255,255,1);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+.dc-comment-save {
+  align-self: flex-end;
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-xs);
+  background: rgba(255,255,255,0.9);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+}
+.dc-comment-save:hover { background: #fff; }
+
 /* archive page enhanced */
 .archive-enhanced-header {
   display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; flex-wrap:wrap; gap:0.6rem;
@@ -761,6 +829,7 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
   <h3>Admin Mode</h3>
   <div class="admin-actions">
     <button class="admin-action" onclick="toggleAdminMode()">✏️ 編集モード切替</button>
+    <button class="admin-action" onclick="toggleDcCommentEdit()">💬 週次コメント編集</button>
     <button class="admin-action" onclick="addPaperPrompt()">＋ 論文を手動追加</button>
     <button class="admin-action" onclick="openSummaryAdmin()">📊 スコアランキング編集</button>
     <button class="admin-action" onclick="runAutoArchive()">🤖 上位10件を自動アーカイブ</button>
@@ -796,6 +865,12 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
           <span class="dc-tag">脳卒中外科</span><span class="dc-tag">血管内治療</span>
           <span class="dc-tag">脳腫瘍</span><span class="dc-tag">頭蓋底</span>
         </div>
+        <div class="dc-comment-label">💬 今週のポイント</div>
+        <div class="dc-comment empty" id="dc-comment-ns">コメント未登録</div>
+        <div class="dc-comment-edit" id="dc-edit-ns" onclick="event.stopPropagation()">
+          <textarea class="dc-comment-input" id="dc-input-ns" rows="2" placeholder="今週の注目ポイントを入力…"></textarea>
+          <button class="dc-comment-save" onclick="saveDcComment('ns')">保存</button>
+        </div>
         <div class="dc-footer"><span class="dc-count" id="cnt-ns">0 論文</span><span class="dc-arrow">→</span></div>
         <div class="dc-glow"></div>
       </div>
@@ -806,6 +881,12 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
         <div class="dc-tags">
           <span class="dc-tag">デバイス開発</span><span class="dc-tag">脳波解析</span>
           <span class="dc-tag">侵襲型</span><span class="dc-tag">非侵襲型</span>
+        </div>
+        <div class="dc-comment-label">💬 今週のポイント</div>
+        <div class="dc-comment empty" id="dc-comment-bmi">コメント未登録</div>
+        <div class="dc-comment-edit" id="dc-edit-bmi" onclick="event.stopPropagation()">
+          <textarea class="dc-comment-input" id="dc-input-bmi" rows="2" placeholder="今週の注目ポイントを入力…"></textarea>
+          <button class="dc-comment-save" onclick="saveDcComment('bmi')">保存</button>
         </div>
         <div class="dc-footer"><span class="dc-count" id="cnt-bmi">0 論文</span><span class="dc-arrow">→</span></div>
         <div class="dc-glow"></div>
@@ -818,6 +899,12 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
           <span class="dc-tag">画像診断AI</span><span class="dc-tag">予後予測</span>
           <span class="dc-tag">医療LLM</span><span class="dc-tag">ゲノム・病理</span>
         </div>
+        <div class="dc-comment-label">💬 今週のポイント</div>
+        <div class="dc-comment empty" id="dc-comment-ai">コメント未登録</div>
+        <div class="dc-comment-edit" id="dc-edit-ai" onclick="event.stopPropagation()">
+          <textarea class="dc-comment-input" id="dc-input-ai" rows="2" placeholder="今週の注目ポイントを入力…"></textarea>
+          <button class="dc-comment-save" onclick="saveDcComment('ai')">保存</button>
+        </div>
         <div class="dc-footer"><span class="dc-count" id="cnt-ai">0 論文</span><span class="dc-arrow">→</span></div>
         <div class="dc-glow"></div>
       </div>
@@ -828,6 +915,12 @@ footer a:hover { color:#2563eb; text-decoration:underline; }
         <div class="dc-tags">
           <span class="dc-tag">ヒューマノイド</span><span class="dc-tag">手術支援</span>
           <span class="dc-tag">リハビリ</span>
+        </div>
+        <div class="dc-comment-label">💬 今週のポイント</div>
+        <div class="dc-comment empty" id="dc-comment-robot">コメント未登録</div>
+        <div class="dc-comment-edit" id="dc-edit-robot" onclick="event.stopPropagation()">
+          <textarea class="dc-comment-input" id="dc-input-robot" rows="2" placeholder="今週の注目ポイントを入力…"></textarea>
+          <button class="dc-comment-save" onclick="saveDcComment('robot')">保存</button>
         </div>
         <div class="dc-footer"><span class="dc-count" id="cnt-robot">0 論文</span><span class="dc-arrow">→</span></div>
         <div class="dc-glow"></div>
@@ -1710,6 +1803,10 @@ let adminMode = false, adminOpen = false, currentField = 'all', currentSubcat = 
 let currentBMICat = 'all';
 let currentSummaryFilter = 'all';
 
+// 週次コメントストレージ (field -> { text, updatedAt })
+let dcComments = { ns:'', bmi:'', ai:'', robot:'' };
+let dcCommentEditMode = false;
+
 // 日本語要約ストレージ (id -> { summary, point, addedToArchive })
 let jaSummaries = {};
 // アーカイブ（全フィールド統合）
@@ -2331,11 +2428,71 @@ function runManualFetch(){
     window.open(ghUrl, '_blank');
   }
 }
+/* ══════════════════════════════════════════════════
+   WEEKLY COMMENT (domain cards)
+══════════════════════════════════════════════════ */
+function renderDcComments() {
+  ['ns','bmi','ai','robot'].forEach(f => {
+    const el = document.getElementById(`dc-comment-${f}`);
+    if(!el) return;
+    const text = dcComments[f] || '';
+    if(text) {
+      el.textContent = text;
+      el.classList.remove('empty');
+    } else {
+      el.textContent = 'コメント未登録';
+      el.classList.add('empty');
+    }
+    // 入力欄にも反映
+    const inp = document.getElementById(`dc-input-${f}`);
+    if(inp) inp.value = text;
+  });
+}
+
+function toggleDcCommentEdit() {
+  dcCommentEditMode = !dcCommentEditMode;
+  ['ns','bmi','ai','robot'].forEach(f => {
+    const editEl = document.getElementById(`dc-edit-${f}`);
+    if(editEl) editEl.classList.toggle('show', dcCommentEditMode);
+  });
+  // 管理パネルを閉じてホームへ
+  document.getElementById('adminPanel').classList.remove('open');
+  adminOpen = false;
+  showHome();
+  if(dcCommentEditMode) {
+    setTimeout(() => {
+      const first = document.getElementById('dc-input-ns');
+      if(first) first.focus();
+    }, 200);
+  }
+}
+
+function saveDcComment(field) {
+  const inp = document.getElementById(`dc-input-${field}`);
+  if(!inp) return;
+  dcComments[field] = inp.value.trim();
+  renderDcComments();
+  // 保存成功フィードバック
+  const btn = inp.nextElementSibling;
+  const orig = btn.textContent;
+  btn.textContent = '✓ 保存済';
+  btn.style.background = 'rgba(187,247,208,0.95)';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+  }, 1500);
+}
+
+function loadDcComments(data) {
+  if(data.dcComments) Object.assign(dcComments, data.dcComments);
+  renderDcComments();
+}
+
 function exportList(){
   const out = {
     generated_at: new Date().toISOString(),
     papers, archives,
-    archiveAll, jaSummaries,
+    archiveAll, jaSummaries, dcComments,
     _note: 'NeuroSciHub エクスポート — 手動編集後は data/papers.json に配置してください'
   };
   const b=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
@@ -2364,6 +2521,7 @@ async function init(){
       if(data.archives) Object.assign(archives, data.archives);
       if(data.jaSummaries) Object.assign(jaSummaries, data.jaSummaries);
       if(data.archiveAll) archiveAll.push(...data.archiveAll);
+      if(data.dcComments) Object.assign(dcComments, data.dcComments);
       // 最終取得日時を更新
       if(data.generated_at){
         const d2=new Date(data.generated_at);
@@ -2387,6 +2545,7 @@ async function init(){
   }
 
   renderAll();
+  renderDcComments();
   showOnlyPage('homePage');
 }
 
